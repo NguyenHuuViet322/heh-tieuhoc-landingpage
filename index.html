@@ -106,8 +106,47 @@
     animation: slideUp .7s .2s cubic-bezier(.22,1,.36,1) both;
   }
 
+  /* ── ENROLLMENT BOX ── */
+  .enroll-box {
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    border-radius: 50px;
+    padding: 10px 20px 10px 12px;
+    box-shadow: 0 4px 20px rgba(2,136,209,.13);
+    animation: slideUp .7s .25s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .enroll-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+    box-shadow: 0 0 0 3px rgba(255,107,107,.2);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(255,107,107,.2); }
+    50%       { box-shadow: 0 0 0 6px rgba(255,107,107,.08); }
+  }
+
+  .enroll-text {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--mid);
+  }
+
+  .enroll-text strong {
+    color: var(--charcoal);
+    font-weight: 800;
+  }
+
   .hero-cta-row {
-    margin-top: 36px;
+    margin-top: 28px;
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
@@ -569,24 +608,6 @@
   .reveal-delay-3 { transition-delay: .3s; }
   .reveal-delay-4 { transition-delay: .4s; }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-photo-wrap { display: none; }
-    .sessions-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr; }
-    .whom-cards { grid-template-columns: 1fr 1fr; }
-    .nav-links { display: none; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .g-item.tall { grid-row: auto; }
-    .testi-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 600px) {
-    .whom-cards { grid-template-columns: 1fr; }
-    .phil-pillars { gap: 12px; }
-    .pillar { min-width: 120px; }
-  }
-
   /* ── HERO PHOTO ── */
   .hero-photo-wrap {
     position: relative;
@@ -639,6 +660,8 @@
     padding: 80px 24px;
     background: linear-gradient(160deg, #f0f9ff 0%, var(--cream) 100%);
   }
+
+  /* Desktop: 3-col asymmetric layout */
   .gallery-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -649,6 +672,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .g-item {
     border-radius: 20px;
     overflow: hidden;
@@ -657,7 +681,6 @@
     transition: transform .35s, box-shadow .35s;
   }
   .g-item:hover { transform: scale(1.025); box-shadow: 0 12px 36px rgba(0,0,0,.16); }
-  .g-item.span-col { grid-column: span 1; }
   .g-item.tall { grid-row: span 2; }
   .g-item img {
     width: 100%;
@@ -735,12 +758,6 @@
   .testi-name { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; color: var(--charcoal); }
   .testi-role { font-size: 13px; color: var(--mid); }
 
-  @media (max-width: 900px) {
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .g-item.tall { grid-row: auto; }
-    .testi-grid { grid-template-columns: 1fr; }
-  }
-
   /* Stars decorative */
   .star {
     position: absolute;
@@ -752,6 +769,40 @@
   @keyframes spin {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo-wrap { display: none; }
+    .sessions-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .whom-cards { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .testi-grid { grid-template-columns: 1fr; }
+
+    /* Mobile gallery: 2 equal columns, all same height, no span */
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: none;
+      auto-rows: 180px;
+    }
+    .gallery-grid { grid-auto-rows: 180px; }
+    .g-item.tall { grid-row: auto; }
+    .g-item { height: 180px; }
+  }
+
+  @media (max-width: 600px) {
+    .whom-cards { grid-template-columns: 1fr; }
+    .phil-pillars { gap: 12px; }
+    .pillar { min-width: 120px; }
+
+    /* On very small screens: single column gallery */
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 200px;
+    }
+    .g-item { height: 200px; }
   }
 </style>
 </head>
@@ -787,6 +838,13 @@
         Mô hình học <strong>3 buổi/tuần</strong> giúp trẻ 5–6 tuổi phát triển toàn diện: 
         Tiếng Việt · Toán tư duy · Tiếng Anh — không học trước nặng nề, chỉ xây nền thật đúng.
       </p>
+
+      <!-- ENROLLMENT INFO BOX -->
+      <div class="enroll-box">
+        <span class="enroll-dot"></span>
+        <span class="enroll-text">Khai giảng <strong>02/04 – 05/04/2026</strong></span>
+      </div>
+
       <div class="hero-cta-row">
         <a href="#lien-he" class="btn-primary">📞 Đăng ký tư vấn ngay</a>
         <a href="#chuong-trinh" class="btn-secondary">Xem chương trình ↓</a>
@@ -890,44 +948,29 @@
   </div>
 
   <div class="gallery-grid reveal" style="margin-top: 44px;">
-    <!-- Big left -->
+    <!-- Big left — tall only on desktop -->
     <div class="g-item tall">
-      <img 
-        src="img/hero.jpg"
-        alt="Lớp học vui vẻ"
-      />
+      <img src="img/hero.jpg" alt="Lớp học vui vẻ" />
       <div class="g-caption">Học sinh hào hứng trong giờ học 📚</div>
     </div>
     <!-- Top middle -->
     <div class="g-item">
-      <img 
-        src="img/img1.png"
-        alt="Giờ Tiếng Anh"
-      />
+      <img src="img/img1.png" alt="Giờ Tiếng Anh" />
       <div class="g-caption">Trung tâm HEH</div>
     </div>
     <!-- Top right -->
     <div class="g-item">
-      <img 
-        src="img/img2.jpg"
-        alt="Trẻ học chữ"
-      />
+      <img src="img/img2.jpg" alt="Trẻ học chữ" />
       <div class="g-caption">Workshop & sản phẩm hands-on 🎨</div>
     </div>
     <!-- Bottom middle -->
     <div class="g-item">
-      <img 
-        src="img/img3.jpg"
-        alt="Workshop sáng tạo"
-      />
+      <img src="img/img3.jpg" alt="Workshop sáng tạo" />
       <div class="g-caption">School Readiness Lab ✏️</div>
     </div>
     <!-- Bottom right -->
     <div class="g-item">
-      <img 
-        src="img/img4.jpg"
-        alt="Tư duy toán học"
-      />
+      <img src="img/img5.jpg" alt="Tư duy toán học" />
       <div class="g-caption">Các em học sinh tự tin hơn</div>
     </div>
   </div>
@@ -1008,7 +1051,7 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonial-section">
+<!-- <section class="testimonial-section">
   <div style="max-width: 1100px; margin: 0 auto;">
     <div class="reveal" style="text-align: center;">
       <div class="section-label" style="text-align:center;">Phụ huynh nói gì?</div>
@@ -1050,7 +1093,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- PHILOSOPHY -->
 <section class="philosophy">
@@ -1095,9 +1138,9 @@
     </div>
 
     <div class="contact-cards reveal reveal-delay-1">
-      <a href="tel:0813809696" class="contact-card">
+      <a href="tel:0817219986" class="contact-card">
         <span class="icon">📞</span>
-        <span>0813 809 696</span>
+        <span>0817 219 986</span>
       </a>
       <a href="tel:0923783593" class="contact-card">
         <span class="icon">📱</span>
