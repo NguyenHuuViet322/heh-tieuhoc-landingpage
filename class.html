@@ -3,935 +3,596 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HEH Smart Kids – Các lớp học</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>HEH Smart Kids – Đăng Ký Lớp Học</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --cream:     #FDFAF5;
-  --surface:   #FFFFFF;
-  --surface2:  #F7F3ED;
-  --border:    #E6E0D6;
-  --text:      #18160F;
-  --text2:     #48443C;
-  --text3:     #928C82;
-  --sun:       #F5A800;
-  --sun-bg:    #FFF8E4;
-  --sun-bdr:   #F0CC60;
-  --sky:       #0075CC;
-  --sky-bg:    #EAF3FF;
-  --sky-bdr:   #90BFEE;
-  --mint:      #0A9060;
-  --mint-bg:   #E5F5EF;
-  --mint-bdr:  #7DCBAA;
-  --coral:     #CC3A00;
-  --coral-bg:  #FEF0E8;
-  --coral-bdr: #ECA080;
-  --violet:    #6030A0;
-  --violet-bg: #F2ECFB;
-  --violet-bdr:#BBA0DC;
-  --rose:      #B81E48;
-  --rose-bg:   #FCEEF3;
-  --rose-bdr:  #EAA0BC;
-  --r:         18px;
-}
+  :root {
+    --sky: #e8f4fd;
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --teal: #0d9488;
+    --teal-light: #ccfbf1;
+    --orange: #f97316;
+    --orange-light: #fff7ed;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --rose: #e11d48;
+    --rose-light: #ffe4e6;
+    --yellow: #b45309;
+    --yellow-light: #fef3c7;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+    --bg: #f8fafc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0ea5e9 100%);
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 320px; height: 320px; background: rgba(255,255,255,0.07); border-radius: 50%;
+  }
+  header::after {
+    content: ''; position: absolute; bottom: -100px; left: 8%;
+    width: 400px; height: 400px; background: rgba(255,255,255,0.05); border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 1100px; margin: 0 auto; padding: 48px 24px 44px;
+    position: relative; z-index: 1; text-align: center;
+  }
+  .logo-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50px; padding: 7px 18px; margin-bottom: 18px;
+    font-size: 12px; color: rgba(255,255,255,0.92); font-weight: 700;
+    letter-spacing: 0.8px; text-transform: uppercase;
+  }
+  header h1 {
+    font-family: 'Baloo 2', cursive; font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 12px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+  header h1 em { font-style: normal; color: #fde68a; }
+  header p {
+    color: rgba(255,255,255,0.82); font-size: 1rem; max-width: 520px;
+    margin: 0 auto 28px; line-height: 1.65;
+  }
+  .header-stats { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .stat {
+    background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px; padding: 11px 20px; color: #fff; font-size: 0.82rem; font-weight: 600;
+  }
+  .stat strong { display: block; font-size: 1.35rem; font-weight: 800; font-family: 'Baloo 2', cursive; }
 
-body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  background: var(--cream);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+  /* FILTER */
+  .filter-bar {
+    background: var(--white); border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .filter-inner {
+    max-width: 1100px; margin: 0 auto; padding: 13px 24px;
+    display: flex; align-items: center; gap: 10px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  .filter-label { font-size: 12px; font-weight: 800; color: var(--text-muted); white-space: nowrap; margin-right: 2px; }
+  .filter-btn {
+    border: 1.5px solid var(--border); background: var(--white); border-radius: 50px;
+    padding: 6px 16px; font-size: 13px; font-weight: 700; font-family: 'Nunito', sans-serif;
+    cursor: pointer; white-space: nowrap; color: var(--text-muted); transition: all 0.16s;
+  }
+  .filter-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+  .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
 
-/* ── NAV ── */
-.nav {
-  position: sticky; top: 0; z-index: 200;
-  height: 62px;
-  background: rgba(253,250,245,.95);
-  backdrop-filter: blur(16px);
-  border-bottom: 1.5px solid var(--border);
-  display: flex; align-items: center; padding: 0 32px; gap: 0;
-}
-.nav-logo {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px;
-  color: var(--sky); text-decoration: none; margin-right: auto; letter-spacing: -.3px;
-}
-.nav-logo em { color: var(--sun); font-style: normal; }
-.nav-links { display: flex; gap: 2px; margin-right: 16px; }
-.nav-link {
-  font-size: 14px; font-weight: 500; color: var(--text3);
-  text-decoration: none; padding: 7px 13px; border-radius: 9px;
-  transition: background .15s, color .15s; white-space: nowrap;
-}
-.nav-link:hover { background: var(--surface2); color: var(--text); }
-.nav-cta {
-  font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 700;
-  color: #fff; background: var(--sky); padding: 9px 20px; border-radius: 50px;
-  text-decoration: none; transition: background .15s;
-}
-.nav-cta:hover { background: #005BA0; }
+  /* MAIN */
+  main { max-width: 1100px; margin: 0 auto; padding: 36px 24px 60px; }
+  .section-title {
+    font-family: 'Baloo 2', cursive; font-size: 1.35rem; font-weight: 700;
+    color: var(--text); margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 2px; background: var(--border); border-radius: 2px; }
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px; margin-bottom: 44px;
+  }
 
-/* ── HERO ── */
-.hero {
-  background: linear-gradient(160deg, #FFF7D0 0%, #E5F2FF 55%, #F0EAFC 100%);
-  padding: 80px 32px 72px; text-align: center;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--sun-bg); border: 1.5px solid var(--sun-bdr);
-  color: #6A4400; font-size: 13px; font-weight: 600;
-  padding: 6px 18px; border-radius: 50px; margin-bottom: 24px;
-}
-.hero h1 {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800;
-  font-size: clamp(36px, 5.5vw, 60px);
-  line-height: 1.1; margin-bottom: 20px;
-}
-.hero h1 .c1 { color: var(--sky); }
-.hero h1 .c2 { color: var(--sun); }
-.hero h1 .c3 { color: var(--violet); }
-.hero-sub {
-  font-size: clamp(16px, 2vw, 19px); color: var(--text2);
-  max-width: 580px; margin: 0 auto 44px; line-height: 1.75;
-}
-.stat-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-.stat-chip {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 16px; padding: 16px 26px; text-align: center; min-width: 116px;
-}
-.stat-chip .n { font-family: 'Baloo 2', sans-serif; font-size: 32px; font-weight: 800; line-height: 1; }
-.stat-chip .l { font-size: 12px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
+  /* CARD */
+  .card {
+    background: var(--white); border-radius: 18px; border: 1.5px solid var(--border);
+    overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(0,0,0,0.1); border-color: transparent; }
+  .card-top { padding: 20px 20px 16px; }
+  .card-badge {
+    display: inline-block; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 0.5px; text-transform: uppercase; border-radius: 6px;
+    padding: 3px 10px; margin-bottom: 9px; color: #fff;
+  }
+  .card h3 {
+    font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 700;
+    color: var(--text); margin-bottom: 4px; line-height: 1.3;
+  }
+  .card-code {
+    font-size: 10.5px; color: var(--text-muted); font-weight: 600;
+    font-family: 'Courier New', monospace; background: var(--bg);
+    display: inline-block; padding: 2px 8px; border-radius: 5px;
+    margin-bottom: 11px; border: 1px solid var(--border);
+  }
+  .card-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 13px; }
+  .sessions { display: flex; flex-direction: column; gap: 6px; }
+  .session {
+    display: flex; align-items: flex-start; gap: 9px;
+    background: var(--bg); border-radius: 9px; padding: 8px 11px;
+    font-size: 0.785rem; border: 1px solid var(--border);
+  }
+  .session-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .session-label { font-weight: 700; color: var(--text); margin-bottom: 1px; }
+  .session-detail { color: var(--text-muted); line-height: 1.4; }
+  .card-footer {
+    padding: 13px 18px 17px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; margin-top: auto;
+  }
+  .teacher-info { display: flex; align-items: center; gap: 8px; }
+  .teacher-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; flex-shrink: 0; color: #fff;
+  }
+  .teacher-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+  .teacher-role { font-size: 0.72rem; color: var(--text-muted); }
+  .register-btn {
+    border: none; border-radius: 10px; padding: 9px 16px;
+    font-size: 13px; font-weight: 800; font-family: 'Nunito', sans-serif;
+    cursor: pointer; color: #fff; transition: filter 0.16s, transform 0.14s; white-space: nowrap;
+  }
+  .register-btn:hover { filter: brightness(0.88); transform: scale(1.04); }
 
-/* ── TABS ── */
-.tabs-bar {
-  position: sticky; top: 62px; z-index: 190;
-  background: rgba(253,250,245,.95); backdrop-filter: blur(12px);
-  border-bottom: 1.5px solid var(--border);
-}
-.tabs-inner {
-  max-width: 960px; margin: 0 auto; padding: 0 32px;
-  display: flex; overflow-x: auto; scrollbar-width: none;
-}
-.tabs-inner::-webkit-scrollbar { display: none; }
-.tab {
-  font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700;
-  color: var(--text3); text-decoration: none; padding: 15px 20px;
-  border-bottom: 2.5px solid transparent; white-space: nowrap;
-  transition: color .15s, border-color .15s;
-}
-.tab:hover { color: var(--text2); }
-.tab.active { color: var(--sky); border-bottom-color: var(--sky); }
+  /* Color themes */
+  .t-blue  .card-top { background: var(--blue-light); }
+  .t-blue  .card-badge, .t-blue  .teacher-avatar, .t-blue  .register-btn { background: var(--blue); }
+  .t-teal  .card-top { background: var(--teal-light); }
+  .t-teal  .card-badge, .t-teal  .teacher-avatar, .t-teal  .register-btn { background: var(--teal); }
+  .t-orange .card-top { background: var(--orange-light); }
+  .t-orange .card-badge, .t-orange .teacher-avatar, .t-orange .register-btn { background: var(--orange); }
+  .t-purple .card-top { background: var(--purple-light); }
+  .t-purple .card-badge, .t-purple .teacher-avatar, .t-purple .register-btn { background: var(--purple); }
+  .t-green  .card-top { background: var(--green-light); }
+  .t-green  .card-badge, .t-green  .teacher-avatar, .t-green  .register-btn { background: var(--green); }
+  .t-rose   .card-top { background: var(--rose-light); }
+  .t-rose   .card-badge, .t-rose   .teacher-avatar, .t-rose   .register-btn { background: var(--rose); }
+  .t-yellow .card-top { background: var(--yellow-light); }
+  .t-yellow .card-badge, .t-yellow .teacher-avatar, .t-yellow .register-btn { background: var(--yellow); }
 
-/* ── PAGE WRAPPER ── */
-.page { max-width: 960px; margin: 0 auto; padding: 0 32px 100px; }
+  /* NOTE BOX */
+  .note-box {
+    background: #fffbeb; border: 1.5px solid #fde68a;
+    border-radius: 14px; padding: 20px 24px; margin-top: 4px;
+  }
+  .note-box h4 {
+    font-weight: 800; font-size: 0.92rem; color: #92400e;
+    margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+  }
+  .note-box ol { padding-left: 20px; }
+  .note-box li { font-size: 0.86rem; color: #78350f; line-height: 1.7; margin-bottom: 2px; }
 
-/* ── SECTION HEADER ── */
-.sec-head {
-  padding: 64px 0 32px;
-  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-}
-.sec-icon {
-  width: 60px; height: 60px; border-radius: 16px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center; font-size: 30px;
-}
-.sec-tag {
-  font-size: 12px; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; margin-bottom: 5px;
-}
-.sec-head h2 {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800;
-  font-size: clamp(26px, 3.5vw, 38px); color: var(--text); line-height: 1.15;
-}
-.sec-head p { font-size: 16px; color: var(--text2); margin-top: 5px; line-height: 1.7; }
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(15,23,42,0.52);
+    backdrop-filter: blur(4px); z-index: 999;
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--white); border-radius: 22px; width: 100%; max-width: 470px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.18); overflow: hidden;
+    transform: scale(0.95) translateY(14px); transition: transform 0.22s;
+  }
+  .modal-overlay.open .modal { transform: scale(1) translateY(0); }
+  .modal-header {
+    padding: 22px 24px 16px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  }
+  .modal-header h3 { font-family: 'Baloo 2', cursive; font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+  .modal-header p { font-size: 0.8rem; color: var(--text-muted); margin-top: 3px; }
+  .close-btn {
+    background: var(--bg); border: none; border-radius: 8px;
+    width: 30px; height: 30px; cursor: pointer; font-size: 16px; color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s;
+  }
+  .close-btn:hover { background: var(--border); }
+  .modal-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 13px; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group label { font-size: 12.5px; font-weight: 700; color: var(--text); }
+  .form-group input, .form-group select, .form-group textarea {
+    border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 13px;
+    font-size: 14px; font-family: 'Nunito', sans-serif; color: var(--text);
+    transition: border-color 0.15s; background: var(--white); outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  .form-group textarea { resize: none; height: 76px; }
+  .modal-footer { padding: 14px 24px 20px; display: flex; gap: 10px; }
+  .btn-cancel {
+    flex: 1; background: var(--bg); border: 1.5px solid var(--border); border-radius: 11px;
+    padding: 11px; font-size: 13.5px; font-weight: 700; font-family: 'Nunito', sans-serif;
+    cursor: pointer; color: var(--text-muted); transition: background 0.14s;
+  }
+  .btn-cancel:hover { background: var(--border); }
+  .btn-submit {
+    flex: 2; background: var(--blue); border: none; border-radius: 11px;
+    padding: 11px; font-size: 13.5px; font-weight: 800; font-family: 'Nunito', sans-serif;
+    cursor: pointer; color: #fff; transition: background 0.14s, transform 0.13s;
+  }
+  .btn-submit:hover { background: #1d4ed8; transform: scale(1.02); }
 
-/* ── CLASS BLOCK ── */
-.class-block {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: var(--r); margin-bottom: 24px; overflow: hidden;
-}
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 26px; right: 26px; background: #166534; color: #fff;
+    border-radius: 14px; padding: 13px 20px; font-size: 14px; font-weight: 700;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18); z-index: 9999;
+    transform: translateY(80px); opacity: 0; transition: all 0.3s;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
 
-/* Class title bar */
-.cb-title {
-  display: flex; align-items: center; gap: 16px;
-  padding: 24px 28px 20px;
-  border-bottom: 1.5px solid var(--border);
-}
-.cb-icon {
-  width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center; font-size: 26px;
-}
-.cb-grade {
-  font-size: 12px; font-weight: 700; letter-spacing: .08em;
-  text-transform: uppercase; margin-bottom: 3px;
-}
-.cb-name {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800;
-  font-size: 22px; color: var(--text); line-height: 1.2;
-}
-.cb-sched {
-  font-size: 14px; color: var(--text3); margin-top: 3px;
-  display: flex; align-items: center; gap: 6px;
-}
-.cb-code {
-  margin-left: auto; flex-shrink: 0;
-  font-size: 12px; font-weight: 700; letter-spacing: .06em;
-  padding: 5px 14px; border-radius: 8px; border: 1.5px solid;
-}
+  .card.hidden { display: none; }
 
-/* Sessions row */
-.sessions {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-}
-.ses {
-  padding: 24px 26px;
-  border-right: 1.5px solid var(--border);
-}
-.ses:last-child { border-right: none; }
-
-.ses-num {
-  font-size: 11px; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--text3); margin-bottom: 12px;
-}
-.ses-icon-box {
-  width: 44px; height: 44px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px; margin-bottom: 14px;
-}
-.ses-name {
-  font-family: 'Baloo 2', sans-serif; font-weight: 700;
-  font-size: 17px; color: var(--text); margin-bottom: 6px; line-height: 1.25;
-}
-.ses-time {
-  font-size: 13.5px; font-weight: 600; color: var(--text3);
-  margin-bottom: 10px; display: flex; align-items: center; gap: 5px;
-}
-.ses-desc {
-  font-size: 14.5px; color: var(--text2); line-height: 1.65;
-}
-.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-.tag {
-  font-size: 13px; font-weight: 600;
-  padding: 4px 12px; border-radius: 7px; border: 1.5px solid;
-}
-
-/* Teachers footer */
-.cb-teachers {
-  padding: 16px 26px; border-top: 1.5px solid var(--border);
-  background: var(--surface2);
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-}
-.tv-label {
-  font-size: 12px; font-weight: 700; letter-spacing: .07em;
-  text-transform: uppercase; color: var(--text3); margin-right: 4px;
-}
-.tv {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 50px; padding: 5px 14px 5px 8px;
-  font-size: 14px; font-weight: 600; color: var(--text2);
-}
-.tv-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-
-/* ── MATH CARDS ── */
-.math-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
-  margin-bottom: 20px;
-}
-.math-card {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 16px; padding: 24px 18px 20px;
-  text-align: center; border-top: 4px solid;
-}
-.math-card .mi { font-size: 36px; margin-bottom: 12px; }
-.math-card .mn {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800;
-  font-size: 20px; color: var(--text); margin-bottom: 4px;
-}
-.math-card .mc {
-  font-size: 11px; color: var(--text3); font-weight: 600;
-  letter-spacing: .05em; margin-bottom: 10px;
-}
-.math-card .md {
-  font-size: 13.5px; color: var(--text2); line-height: 1.6; margin-bottom: 14px;
-}
-.math-teacher {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 700;
-  padding: 5px 13px; border-radius: 50px; border: 1.5px solid;
-}
-
-/* Info + Action banners */
-.info-box {
-  background: var(--sun-bg); border: 1.5px solid var(--sun-bdr);
-  border-radius: 14px; padding: 18px 22px;
-  display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px;
-}
-.info-box .ib-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-.info-box .ib-title { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; color: #5A3800; margin-bottom: 3px; }
-.info-box .ib-desc  { font-size: 14px; color: #7A5000; line-height: 1.65; }
-.action-row {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 14px; padding: 18px 22px;
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-}
-.action-row p { font-size: 15px; color: var(--text2); flex: 1; min-width: 200px; }
-.action-btn {
-  background: var(--sun); color: #3A2200;
-  font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 700;
-  padding: 11px 22px; border-radius: 50px; text-decoration: none; white-space: nowrap;
-}
-.action-btn:hover { background: #D98E00; }
-
-/* ── CLUBS ── */
-.clubs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.club-card {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: var(--r); overflow: hidden;
-}
-.club-top { padding: 28px 24px 20px; }
-.club-icon-big { font-size: 40px; margin-bottom: 14px; }
-.club-name {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800;
-  font-size: 20px; color: var(--text); margin-bottom: 4px;
-}
-.club-code { font-size: 11.5px; color: var(--text3); font-weight: 600; letter-spacing: .06em; margin-bottom: 14px; }
-.club-desc { font-size: 15px; color: var(--text2); line-height: 1.7; }
-.club-foot {
-  padding: 16px 24px 20px; border-top: 1.5px solid var(--border);
-  background: var(--surface2);
-  display: flex; flex-direction: column; gap: 10px;
-}
-.club-reg {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 700;
-  padding: 6px 16px; border-radius: 50px;
-  align-self: flex-start; border: 1.5px solid;
-}
-
-/* ── PHILOSOPHY ── */
-.phil-block {
-  background: var(--text); border-radius: var(--r);
-  padding: 56px 40px; text-align: center; margin: 56px 0 0;
-  position: relative; overflow: hidden;
-}
-.phil-block::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 25% 60%, rgba(0,117,204,.13) 0%, transparent 55%),
-              radial-gradient(ellipse at 75% 40%, rgba(245,168,0,.09) 0%, transparent 55%);
-}
-.phil-inner { position: relative; z-index: 2; max-width: 620px; margin: 0 auto; }
-.phil-eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,.4); margin-bottom: 18px; }
-.phil-block h2 {
-  font-family: 'Baloo 2', sans-serif; font-weight: 800;
-  font-size: clamp(24px, 3vw, 36px); color: #fff; line-height: 1.3; margin-bottom: 16px;
-}
-.phil-block h2 em { color: var(--sun); font-style: normal; }
-.phil-block p { font-size: 16px; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 36px; }
-.pillars { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-.pillar {
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-  border-radius: 12px; padding: 16px 20px; min-width: 110px; text-align: center;
-}
-.pillar .pi { font-size: 24px; margin-bottom: 7px; }
-.pillar .pl { font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 700; color: rgba(255,255,255,.85); }
-
-/* ── NOTES ── */
-.notes {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 16px; padding: 24px 28px; margin-top: 28px;
-}
-.notes h4 { font-family: 'Baloo 2', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
-.note { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; color: var(--text2); line-height: 1.65; }
-.note:last-child { border-bottom: none; padding-bottom: 0; }
-.note-n { width: 24px; height: 24px; border-radius: 7px; background: var(--surface2); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--text3); flex-shrink: 0; margin-top: 2px; }
-
-/* ── CTA ── */
-.cta {
-  background: linear-gradient(140deg, #FFFCE8 0%, #FFF5C0 100%);
-  border: 1.5px solid var(--sun-bdr); border-radius: var(--r);
-  padding: 52px 40px; text-align: center; margin-top: 28px;
-}
-.cta h2 { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 34px); color: var(--text); margin-bottom: 14px; }
-.cta p { font-size: 16px; color: var(--text2); max-width: 460px; margin: 0 auto 32px; line-height: 1.75; }
-.cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-.cta-btn {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 14px; padding: 16px 24px;
-  display: flex; align-items: center; gap: 10px;
-  font-size: 16px; font-weight: 600; color: var(--text);
-  text-decoration: none; transition: border-color .15s;
-}
-.cta-btn:hover { border-color: var(--sky); }
-.cta-btn .ci { font-size: 22px; }
-.addr {
-  margin-top: 22px; display: inline-block;
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 12px; padding: 14px 22px; text-align: left;
-}
-.addr .al { font-size: 12px; color: var(--text3); font-weight: 600; margin-bottom: 4px; }
-.addr .av { font-size: 15px; color: var(--text); font-weight: 600; line-height: 1.55; }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--text); color: rgba(255,255,255,.45);
-  text-align: center; padding: 30px 24px; font-size: 14px; line-height: 1.9;
-  margin-top: 80px;
-}
-footer strong { color: var(--sun); }
-
-/* ── DIVIDER ── */
-.divider {
-  border: none; border-top: 1.5px solid var(--border); margin: 0;
-}
-
-/* ── SCROLL REVEAL ── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
-.reveal.in { opacity: 1; transform: none; }
-.d1{transition-delay:.07s} .d2{transition-delay:.13s} .d3{transition-delay:.19s}
-.d4{transition-delay:.25s} .d5{transition-delay:.31s}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 760px) {
-  .sessions { grid-template-columns: 1fr; }
-  .ses { border-right: none; border-bottom: 1.5px solid var(--border); }
-  .ses:last-child { border-bottom: none; }
-  .math-grid { grid-template-columns: repeat(2, 1fr); }
-  .clubs-grid { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .page { padding: 0 18px 80px; }
-  .phil-block { padding: 40px 24px; }
-  .cta { padding: 40px 24px; }
-  .hero { padding: 64px 20px 56px; }
-  .cb-title { flex-wrap: wrap; }
-  .cb-code { margin-left: 0; }
-}
-@media (max-width: 480px) {
-  .math-grid { grid-template-columns: 1fr; }
-}
+  @media (max-width: 640px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .header-stats { gap: 10px; }
+    .modal { border-radius: 18px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <a class="nav-logo" href="#">HEH <em>Smart Kids</em></a>
-  <div class="nav-links">
-    <a class="nav-link" href="#tieng-anh">Tiếng Anh</a>
-    <a class="nav-link" href="#toan-tu-duy">Toán tư duy</a>
-    <a class="nav-link" href="#cau-lac-bo">Câu lạc bộ</a>
-    <a class="nav-link" href="#lien-he">Liên hệ</a>
+<header>
+  <div class="header-inner">
+    <div class="logo-badge">⭐ Happy Edu Hub</div>
+    <h1>HEH <em>Smart Kids</em><br>Chương Trình Lớp Học 2024–2025</h1>
+    <p>Hệ thống lớp học chất lượng cao cho học sinh tiểu học – song ngữ, tư duy và kỹ năng toàn diện</p>
+    <div class="header-stats">
+      <div class="stat"><strong>13</strong>Lớp &amp; CLB</div>
+      <div class="stat"><strong>6</strong>Giáo viên</div>
+      <div class="stat"><strong>5–11</strong>Tuổi</div>
+    </div>
   </div>
-  <a class="nav-cta" href="#lien-he">Đăng ký</a>
-</nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">🎓 Chương trình 2026–2027</div>
-  <h1><span class="c1">Tiếng Anh</span> · <span class="c2">Toán tư duy</span> · <span class="c3">Câu lạc bộ</span></h1>
-  <p class="hero-sub">Chương trình học toàn diện dành cho học sinh tiểu học — từ Tiền tiểu học đến lớp 5, với đội ngũ giáo viên tâm huyết và phương pháp hiện đại.</p>
-  <div class="stat-row">
-    <div class="stat-chip"><div class="n" style="color:var(--sky)">5</div><div class="l">Lớp Tiếng Anh</div></div>
-    <div class="stat-chip"><div class="n" style="color:var(--sun)">5</div><div class="l">Lớp Toán tư duy</div></div>
-    <div class="stat-chip"><div class="n" style="color:var(--violet)">3</div><div class="l">Câu lạc bộ</div></div>
-    <div class="stat-chip"><div class="n" style="color:var(--mint)">7</div><div class="l">Giáo viên</div></div>
-  </div>
-</section>
-
-<!-- TABS -->
-<div class="tabs-bar">
-  <div class="tabs-inner">
-    <a class="tab active" href="#tieng-anh">🌏 Tiếng Anh</a>
-    <a class="tab" href="#toan-tu-duy">🧮 Toán tư duy</a>
-    <a class="tab" href="#cau-lac-bo">🎨 Câu lạc bộ</a>
-    <a class="tab" href="#lien-he">📞 Liên hệ</a>
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">🔍 Lọc:</span>
+    <button class="filter-btn active" onclick="filter('all',this)">Tất cả</button>
+    <button class="filter-btn" onclick="filter('tieng-anh',this)">Tiếng Anh</button>
+    <button class="filter-btn" onclick="filter('toan',this)">Toán tư duy</button>
+    <button class="filter-btn" onclick="filter('clb',this)">Câu lạc bộ</button>
+    <button class="filter-btn" onclick="filter('tien-tieu-hoc',this)">Tiền tiểu học</button>
   </div>
 </div>
 
-<div class="page">
+<main>
 
-<!-- ═══════════════════════════
-     TIẾNG ANH
-═══════════════════════════ -->
-<div id="tieng-anh">
-  <div class="sec-head reveal">
-    <div class="sec-icon" style="background:var(--sky-bg)">🌏</div>
-    <div>
-      <div class="sec-tag" style="color:var(--sky)">Chương trình Tiếng Anh</div>
-      <h2>Các lớp Tiếng Anh &amp; Tiền tiểu học</h2>
-      <p>Mỗi lớp học 3 buổi/tuần — 2 buổi chính khoá và 1 buổi Workshop sáng tạo cuối tuần.</p>
+<h2 class="section-title">📚 Lớp Tiếng Anh &amp; Học Thuật</h2>
+<div class="cards-grid">
+
+  <div class="card t-blue" data-cat="tieng-anh tien-tieu-hoc">
+    <div class="card-top">
+      <span class="card-badge">Tiền Tiểu Học</span>
+      <h3>Lớp Tiền Tiểu Học</h3>
+      <div class="card-code">HSK-TTH-[số lớp]</div>
+      <p class="card-desc">Chuẩn bị toán, tiếng Việt và tiếng Anh vững chắc trước khi vào lớp 1. Kỹ năng học tập và workshop sáng tạo cuối tuần.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">📖</span><div class="session-info"><div class="session-label">Toán / Tiếng Việt — Buổi 1</div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Vân Anh</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 5 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Thứ 7 · 8:30 – 10:30 · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">VA</div><div><div class="teacher-name">Cô Vân Anh</div><div class="teacher-role">Giáo viên phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Lớp Tiền Tiểu Học','HSK-TTH')">Đăng ký</button>
     </div>
   </div>
 
-  <!-- TTH -->
-  <div class="class-block reveal">
-    <div class="cb-title">
-      <div class="cb-icon" style="background:var(--coral-bg)">🌱</div>
+  <div class="card t-teal" data-cat="tieng-anh">
+    <div class="card-top">
+      <span class="card-badge">Khối 2</span>
+      <h3>Lớp Tiếng Anh – Khối 2</h3>
+      <div class="card-code">HSK-G2-[số lớp]</div>
+      <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào cuối tuần.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 3 · 17:30 – 19:00 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 6 · 17:30 – 19:00 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Thứ 7 · 8:30 – 10:30 · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">KN</div><div><div class="teacher-name">Cô Kim Ngân</div><div class="teacher-role">Giáo viên phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Lớp Tiếng Anh Khối 2','HSK-G2')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-orange" data-cat="tieng-anh">
+    <div class="card-top">
+      <span class="card-badge">Khối 3</span>
+      <h3>Lớp Tiếng Anh – Khối 3</h3>
+      <div class="card-code">HSK-G3-[số lớp]</div>
+      <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào cuối tuần.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 5 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Chủ nhật · 8:30 – 10:30 · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">NH</div><div><div class="teacher-name">Cô Ngọc Hà</div><div class="teacher-role">Giáo viên phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Lớp Tiếng Anh Khối 3','HSK-G3')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-purple" data-cat="tieng-anh">
+    <div class="card-top">
+      <span class="card-badge">Khối 4</span>
+      <h3>Lớp Tiếng Anh – Khối 4</h3>
+      <div class="card-code">HSK-G4-[số lớp]</div>
+      <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào cuối tuần.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 3 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 6 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Chủ nhật · 8:30 – 10:30 · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">NH</div><div><div class="teacher-name">Cô Ngọc Hà</div><div class="teacher-role">Giáo viên phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Lớp Tiếng Anh Khối 4','HSK-G4')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-rose" data-cat="tieng-anh">
+    <div class="card-top">
+      <span class="card-badge">Khối 5</span>
+      <h3>Lớp Tiếng Anh – Khối 5</h3>
+      <div class="card-code">HSK-G5-[số lớp]</div>
+      <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào chiều Chủ nhật.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 7 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · 14:30 – 16:30 · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">KN</div><div><div class="teacher-name">Cô Kim Ngân</div><div class="teacher-role">Giáo viên phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Lớp Tiếng Anh Khối 5','HSK-G5')">Đăng ký</button>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="section-title">🧮 Toán Tư Duy – Định Hướng Olympic</h2>
+<div class="cards-grid">
+
+  <div class="card t-yellow" data-cat="toan">
+    <div class="card-top">
+      <span class="card-badge">Math Olympiad · Lớp 1</span>
+      <h3>Toán Tư Duy – Khối 1</h3>
+      <div class="card-code">HSK-G1-MO-01</div>
+      <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Vân Anh (dự kiến)</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">VA</div><div><div class="teacher-name">Cô Vân Anh</div><div class="teacher-role">Dự kiến phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Toán Tư Duy Khối 1','HSK-G1-MO')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-green" data-cat="toan">
+    <div class="card-top">
+      <span class="card-badge">Math Olympiad · Lớp 2</span>
+      <h3>Toán Tư Duy – Khối 2</h3>
+      <div class="card-code">HSK-G2-MO-01</div>
+      <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Vân Anh (dự kiến)</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">VA</div><div><div class="teacher-name">Cô Vân Anh</div><div class="teacher-role">Dự kiến phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Toán Tư Duy Khối 2','HSK-G2-MO')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-teal" data-cat="toan">
+    <div class="card-top">
+      <span class="card-badge">Math Olympiad · Lớp 3</span>
+      <h3>Toán Tư Duy – Khối 3</h3>
+      <div class="card-code">HSK-G3-MO-01</div>
+      <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">MH</div><div><div class="teacher-name">Cô Minh Hạnh</div><div class="teacher-role">Dự kiến phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Toán Tư Duy Khối 3','HSK-G3-MO')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-blue" data-cat="toan">
+    <div class="card-top">
+      <span class="card-badge">Math Olympiad · Lớp 4</span>
+      <h3>Toán Tư Duy – Khối 4</h3>
+      <div class="card-code">HSK-G4-MO-01</div>
+      <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Sáng – Chiều Chủ nhật · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">MH</div><div><div class="teacher-name">Cô Minh Hạnh</div><div class="teacher-role">Dự kiến phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Toán Tư Duy Khối 4','HSK-G4-MO')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-purple" data-cat="toan">
+    <div class="card-top">
+      <span class="card-badge">Math Olympiad · Lớp 5</span>
+      <h3>Toán Tư Duy – Khối 5</h3>
+      <div class="card-code">HSK-G5-MO-01</div>
+      <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
+        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Sáng – Chiều Chủ nhật · Nhóm GV</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">MH</div><div><div class="teacher-name">Cô Minh Hạnh</div><div class="teacher-role">Dự kiến phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('Toán Tư Duy Khối 5','HSK-G5-MO')">Đăng ký</button>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="section-title">🌟 Câu Lạc Bộ</h2>
+<div class="cards-grid">
+
+  <div class="card t-orange" data-cat="clb">
+    <div class="card-top">
+      <span class="card-badge">CLB Kỹ năng</span>
+      <h3>CLB Luyện Viết Chữ Đẹp</h3>
+      <div class="card-code">HSK-CLB-LVCĐ-01</div>
+      <p class="card-desc">Rèn tư thế ngồi viết, cách cầm bút, nét chữ đúng–đều–đẹp và thói quen học tập cẩn thận, kiên trì cho học sinh tiểu học.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">✍️</span><div class="session-info"><div class="session-label">Đăng ký để được xếp lịch phù hợp</div><div class="session-detail">GV: Cô Phương Anh, Cô Minh Hạnh, Cô Vân Anh</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">PA</div><div><div class="teacher-name">Cô Phương Anh</div><div class="teacher-role">&amp; Nhóm giáo viên</div></div></div>
+      <button class="register-btn" onclick="openModal('CLB Luyện Viết Chữ Đẹp','HSK-CLB-LVCĐ')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-rose" data-cat="clb">
+    <div class="card-top">
+      <span class="card-badge">CLB Kỹ năng</span>
+      <h3>CLB MC – Nói Trước Đám Đông</h3>
+      <div class="card-code">HSK-CLB-MC-01</div>
+      <p class="card-desc">Rèn sự tự tin, kỹ năng nói trước đám đông, dẫn dắt chương trình và diễn đạt rõ ràng, mạch lạc cho học sinh tiểu học.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">🎤</span><div class="session-info"><div class="session-label">Đăng ký để được xếp lịch phù hợp</div><div class="session-detail">GV: MC Tuấn Tú (dự kiến)</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">TT</div><div><div class="teacher-name">MC Tuấn Tú</div><div class="teacher-role">Dự kiến phụ trách</div></div></div>
+      <button class="register-btn" onclick="openModal('CLB MC – Nói Trước Đám Đông','HSK-CLB-MC')">Đăng ký</button>
+    </div>
+  </div>
+
+  <div class="card t-teal" data-cat="clb">
+    <div class="card-top">
+      <span class="card-badge">CLB Tư duy</span>
+      <h3>CLB Cờ Vua</h3>
+      <div class="card-code">HSK-CLB-CV-01</div>
+      <p class="card-desc">Rèn tư duy logic, khả năng tập trung, lập kế hoạch và ra quyết định qua các hoạt động cờ vua phù hợp lứa tuổi tiểu học.</p>
+      <div class="sessions">
+        <div class="session"><span class="session-icon">♟️</span><div class="session-info"><div class="session-label">Đăng ký để được xếp lịch phù hợp</div><div class="session-detail">Giáo viên sẽ được thông báo sớm</div></div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="teacher-info"><div class="teacher-avatar">♟</div><div><div class="teacher-name">GV Cờ Vua</div><div class="teacher-role">Sẽ thông báo sau</div></div></div>
+      <button class="register-btn" onclick="openModal('CLB Cờ Vua','HSK-CLB-CV')">Đăng ký</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="note-box">
+  <h4>📌 Ghi Chú Quan Trọng</h4>
+  <ol>
+    <li>Các buổi học cuối tuần có sự phối hợp của Cô Kim Ngân, Cô Ngọc Hà và Cô Phương Anh.</li>
+    <li>Giáo viên sẽ thay nhau phụ trách theo kế hoạch chuyên môn của trung tâm.</li>
+    <li>Các lớp Toán tư duy và CLB hiện đang chờ cập nhật lịch học cụ thể – phụ huynh liên hệ để đăng ký trước.</li>
+    <li>Thời khóa biểu là bản dự kiến, trung tâm có thể điều chỉnh để phù hợp với tình hình tổ chức lớp học.</li>
+  </ol>
+</div>
+
+</main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="bgClose(event)">
+  <div class="modal">
+    <div class="modal-header">
       <div>
-        <div class="cb-grade" style="color:var(--coral)">Tiền tiểu học · Độ tuổi 5–6</div>
-        <div class="cb-name">Lớp Tiền tiểu học</div>
-        <div class="cb-sched">📅 Thứ 2 &nbsp;·&nbsp; Thứ 5 &nbsp;·&nbsp; Sáng Thứ 7</div>
+        <h3 id="mTitle">Đăng ký lớp học</h3>
+        <p id="mCode"></p>
       </div>
-      <span class="cb-code" style="color:var(--coral);border-color:var(--coral-bdr);background:var(--coral-bg)">HSK-TTH</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
     </div>
-    <div class="sessions">
-      <div class="ses">
-        <div class="ses-num">Buổi 1 · Thứ 2</div>
-        <div class="ses-icon-box" style="background:var(--sky-bg)">🏫</div>
-        <div class="ses-name">School Readiness Lab</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Vân Anh</div>
-        <div class="ses-desc">Toán &amp; Tiếng Việt chuẩn bị vào lớp 1 — xây nền đúng cách, không áp lực.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Chữ cái &amp; âm vần</span>
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Số &amp; hình học</span>
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Kỹ năng học tập</span>
-        </div>
+    <div class="modal-body">
+      <div class="form-group"><label>Họ tên phụ huynh *</label><input type="text" placeholder="Nguyễn Văn A"></div>
+      <div class="form-group"><label>Số điện thoại *</label><input type="tel" placeholder="0912 345 678"></div>
+      <div class="form-group"><label>Họ tên học sinh *</label><input type="text" placeholder="Nguyễn Bé B"></div>
+      <div class="form-group">
+        <label>Học sinh đang học lớp</label>
+        <select>
+          <option value="">-- Chọn --</option>
+          <option>Tiền tiểu học (5–6 tuổi)</option>
+          <option>Lớp 1</option><option>Lớp 2</option><option>Lớp 3</option>
+          <option>Lớp 4</option><option>Lớp 5</option>
+        </select>
       </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 2 · Thứ 5</div>
-        <div class="ses-icon-box" style="background:var(--coral-bg)">🌍</div>
-        <div class="ses-name">English Foundation</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Kim Ngân</div>
-        <div class="ses-desc">Phonics, nghe – nói – phản xạ tự nhiên theo chủ đề phù hợp lứa tuổi.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--coral);border-color:var(--coral-bdr);background:var(--coral-bg)">Phonics</span>
-          <span class="tag" style="color:var(--coral);border-color:var(--coral-bdr);background:var(--coral-bg)">Giao tiếp tình huống</span>
-          <span class="tag" style="color:var(--coral);border-color:var(--coral-bdr);background:var(--coral-bg)">Từ vựng chủ đề</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 3 · Sáng Thứ 7</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">🎨</div>
-        <div class="ses-name">Workshop &amp; Thinking Lab</div>
-        <div class="ses-time">🕗 8h30 – 10h00 / 10h30</div>
-        <div class="ses-desc">Ôn tập tích hợp, Toán tư duy song ngữ và sản phẩm hands-on cuối buổi.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Toán tư duy song ngữ</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Craft &amp; Mini Project</span>
-        </div>
-      </div>
+      <div class="form-group"><label>Ghi chú thêm</label><textarea placeholder="Câu hỏi hoặc yêu cầu đặc biệt..."></textarea></div>
     </div>
-    <div class="cb-teachers">
-      <span class="tv-label">Giáo viên</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--coral)"></span>Cô Vân Anh</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--sky)"></span>Cô Kim Ngân</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--violet)"></span>Cô Phương Anh</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--mint)"></span>Cô Ngọc Hà</span>
-    </div>
-  </div>
-
-  <!-- G2 -->
-  <div class="class-block reveal d1">
-    <div class="cb-title">
-      <div class="cb-icon" style="background:var(--sky-bg)">✏️</div>
-      <div>
-        <div class="cb-grade" style="color:var(--sky)">Grade 2 · Khối 2</div>
-        <div class="cb-name">Lớp 2 — Tiếng Anh</div>
-        <div class="cb-sched">📅 Thứ 3 &nbsp;·&nbsp; Thứ 6 &nbsp;·&nbsp; Sáng Thứ 7</div>
-      </div>
-      <span class="cb-code" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">HSK-G2</span>
-    </div>
-    <div class="sessions">
-      <div class="ses">
-        <div class="ses-num">Buổi 1 · Thứ 3</div>
-        <div class="ses-icon-box" style="background:var(--sky-bg)">📖</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h30 – 19h00 &nbsp;·&nbsp; Cô Kim Ngân</div>
-        <div class="ses-desc">4 kỹ năng nghe – nói – đọc – viết theo lộ trình khối 2.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Reading</span>
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Writing</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 2 · Thứ 6</div>
-        <div class="ses-icon-box" style="background:var(--sky-bg)">🔤</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h30 – 19h00 &nbsp;·&nbsp; Cô Kim Ngân</div>
-        <div class="ses-desc">Grammar, vocabulary và giao tiếp thực tế theo chủ đề tuần.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Grammar</span>
-          <span class="tag" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">Speaking</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 3 · Sáng Thứ 7</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">🎨</div>
-        <div class="ses-name">Workshop &amp; Thinking Lab</div>
-        <div class="ses-time">🕗 8h30 – 10h00 / 10h30</div>
-        <div class="ses-desc">Kỹ năng học tập, Toán tư duy song ngữ và hoạt động sáng tạo cuối tuần.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Kỹ năng học tập</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Toán song ngữ</span>
-        </div>
-      </div>
-    </div>
-    <div class="cb-teachers">
-      <span class="tv-label">Giáo viên</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--sky)"></span>Cô Kim Ngân</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--mint)"></span>Cô Ngọc Hà</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--violet)"></span>Cô Phương Anh</span>
-    </div>
-  </div>
-
-  <!-- G3 -->
-  <div class="class-block reveal d2">
-    <div class="cb-title">
-      <div class="cb-icon" style="background:var(--mint-bg)">🔬</div>
-      <div>
-        <div class="cb-grade" style="color:var(--mint)">Grade 3 · Khối 3</div>
-        <div class="cb-name">Lớp 3 — Tiếng Anh</div>
-        <div class="cb-sched">📅 Thứ 2 &nbsp;·&nbsp; Thứ 5 &nbsp;·&nbsp; Sáng Chủ nhật</div>
-      </div>
-      <span class="cb-code" style="color:var(--mint);border-color:var(--mint-bdr);background:var(--mint-bg)">HSK-G3</span>
-    </div>
-    <div class="sessions">
-      <div class="ses">
-        <div class="ses-num">Buổi 1 · Thứ 2</div>
-        <div class="ses-icon-box" style="background:var(--mint-bg)">📚</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Ngọc Hà</div>
-        <div class="ses-desc">Đọc hiểu văn bản ngắn, cấu trúc câu và mở rộng vốn từ cấp độ G3.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--mint);border-color:var(--mint-bdr);background:var(--mint-bg)">Reading</span>
-          <span class="tag" style="color:var(--mint);border-color:var(--mint-bdr);background:var(--mint-bg)">Vocabulary</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 2 · Thứ 5</div>
-        <div class="ses-icon-box" style="background:var(--mint-bg)">💬</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Ngọc Hà</div>
-        <div class="ses-desc">Luyện nói, thảo luận nhóm và mini presentation — rèn sự tự tin.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--mint);border-color:var(--mint-bdr);background:var(--mint-bg)">Speaking</span>
-          <span class="tag" style="color:var(--mint);border-color:var(--mint-bdr);background:var(--mint-bg)">Listening</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 3 · Sáng CN</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">🎨</div>
-        <div class="ses-name">Workshop &amp; Thinking Lab</div>
-        <div class="ses-time">🕗 8h30 – 10h00 / 10h30</div>
-        <div class="ses-desc">Kỹ năng học tập, Toán tư duy song ngữ và dự án sáng tạo cuối tuần.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Kỹ năng học tập</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Toán song ngữ</span>
-        </div>
-      </div>
-    </div>
-    <div class="cb-teachers">
-      <span class="tv-label">Giáo viên</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--mint)"></span>Cô Ngọc Hà</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--sky)"></span>Cô Kim Ngân</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--violet)"></span>Cô Phương Anh</span>
-    </div>
-  </div>
-
-  <!-- G4 -->
-  <div class="class-block reveal d3">
-    <div class="cb-title">
-      <div class="cb-icon" style="background:var(--rose-bg)">🚀</div>
-      <div>
-        <div class="cb-grade" style="color:var(--rose)">Grade 4 · Khối 4</div>
-        <div class="cb-name">Lớp 4 — Tiếng Anh</div>
-        <div class="cb-sched">📅 Thứ 3 &nbsp;·&nbsp; Thứ 6 &nbsp;·&nbsp; Sáng Chủ nhật</div>
-      </div>
-      <span class="cb-code" style="color:var(--rose);border-color:var(--rose-bdr);background:var(--rose-bg)">HSK-G4</span>
-    </div>
-    <div class="sessions">
-      <div class="ses">
-        <div class="ses-num">Buổi 1 · Thứ 3</div>
-        <div class="ses-icon-box" style="background:var(--rose-bg)">🌐</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Ngọc Hà</div>
-        <div class="ses-desc">Đọc hiểu nâng cao, viết đoạn văn và ngữ pháp phức hợp khối 4.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--rose);border-color:var(--rose-bdr);background:var(--rose-bg)">Advanced Reading</span>
-          <span class="tag" style="color:var(--rose);border-color:var(--rose-bdr);background:var(--rose-bg)">Paragraph Writing</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 2 · Thứ 6</div>
-        <div class="ses-icon-box" style="background:var(--rose-bg)">🎤</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Ngọc Hà</div>
-        <div class="ses-desc">Luyện nói theo chủ đề, debating cơ bản và phản xạ ngôn ngữ tự nhiên.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--rose);border-color:var(--rose-bdr);background:var(--rose-bg)">Speaking</span>
-          <span class="tag" style="color:var(--rose);border-color:var(--rose-bdr);background:var(--rose-bg)">Debate</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 3 · Sáng CN</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">🎨</div>
-        <div class="ses-name">Workshop &amp; Thinking Lab</div>
-        <div class="ses-time">🕗 8h30 – 10h00 / 10h30</div>
-        <div class="ses-desc">Kỹ năng học tập, Toán tư duy song ngữ và dự án sáng tạo cuối tuần.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Kỹ năng học tập</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Toán song ngữ</span>
-        </div>
-      </div>
-    </div>
-    <div class="cb-teachers">
-      <span class="tv-label">Giáo viên</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--mint)"></span>Cô Ngọc Hà</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--sky)"></span>Cô Kim Ngân</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--violet)"></span>Cô Phương Anh</span>
-    </div>
-  </div>
-
-  <!-- G5 -->
-  <div class="class-block reveal d4">
-    <div class="cb-title">
-      <div class="cb-icon" style="background:var(--violet-bg)">⭐</div>
-      <div>
-        <div class="cb-grade" style="color:var(--violet)">Grade 5 · Khối 5</div>
-        <div class="cb-name">Lớp 5 — Tiếng Anh</div>
-        <div class="cb-sched">📅 Thứ 2 &nbsp;·&nbsp; Thứ 7 &nbsp;·&nbsp; Chiều Chủ nhật</div>
-      </div>
-      <span class="cb-code" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">HSK-G5</span>
-    </div>
-    <div class="sessions">
-      <div class="ses">
-        <div class="ses-num">Buổi 1 · Thứ 2</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">🏆</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Kim Ngân</div>
-        <div class="ses-desc">Hoàn thiện cuối cấp — đọc hiểu &amp; writing nền vững cho THCS.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Reading Comprehension</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Essay Writing</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 2 · Thứ 7</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">💡</div>
-        <div class="ses-name">Tiếng Anh</div>
-        <div class="ses-time">🕓 17h45 – 19h15 &nbsp;·&nbsp; Cô Kim Ngân</div>
-        <div class="ses-desc">Luyện nói, phản xạ ngôn ngữ và ôn tập ngữ pháp tổng hợp.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Speaking</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Grammar Review</span>
-        </div>
-      </div>
-      <div class="ses">
-        <div class="ses-num">Buổi 3 · Chiều CN</div>
-        <div class="ses-icon-box" style="background:var(--violet-bg)">🎨</div>
-        <div class="ses-name">Workshop &amp; Thinking Lab</div>
-        <div class="ses-time">🕝 14h30 – 16h30</div>
-        <div class="ses-desc">Kỹ năng học tập, Toán tư duy song ngữ và dự án sáng tạo cuối tuần.</div>
-        <div class="tags">
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Kỹ năng học tập</span>
-          <span class="tag" style="color:var(--violet);border-color:var(--violet-bdr);background:var(--violet-bg)">Toán song ngữ</span>
-        </div>
-      </div>
-    </div>
-    <div class="cb-teachers">
-      <span class="tv-label">Giáo viên</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--sky)"></span>Cô Kim Ngân</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--mint)"></span>Cô Ngọc Hà</span>
-      <span class="tv"><span class="tv-dot" style="background:var(--violet)"></span>Cô Phương Anh</span>
-    </div>
-  </div>
-</div><!-- /tieng-anh -->
-
-
-<!-- ═══════════════════════════
-     TOÁN TƯ DUY
-═══════════════════════════ -->
-<div id="toan-tu-duy">
-  <div class="sec-head reveal">
-    <div class="sec-icon" style="background:var(--sun-bg)">🧮</div>
-    <div>
-      <div class="sec-tag" style="color:var(--sun)">Math Olympiad · Toán nâng cao</div>
-      <h2>Toán tư duy — Lớp 1 đến Lớp 5</h2>
-      <p>Phát triển tư duy, hướng tới Olympic phù hợp lứa tuổi. Đề song ngữ Anh–Việt, giảng dạy bằng Tiếng Việt.</p>
-    </div>
-  </div>
-
-  <div class="math-grid">
-    <div class="math-card reveal d1" style="border-top-color:var(--sun)">
-      <div class="mi">🥇</div>
-      <div class="mn">Lớp 1</div>
-      <div class="mc">HSK-G1-MO-01</div>
-      <div class="md">Số học, hình học, tư duy logic sơ cấp định hướng Olympic.</div>
-      <span class="math-teacher" style="color:#6A4400;border-color:var(--sun-bdr);background:var(--sun-bg)">👩‍🏫 Cô Vân Anh</span>
-    </div>
-    <div class="math-card reveal d2" style="border-top-color:var(--sky)">
-      <div class="mi">🥈</div>
-      <div class="mn">Lớp 2</div>
-      <div class="mc">HSK-G2-MO-01</div>
-      <div class="md">Số học mở rộng, bài toán đố, hình học định hướng Olympic.</div>
-      <span class="math-teacher" style="color:#004899;border-color:var(--sky-bdr);background:var(--sky-bg)">👩‍🏫 Cô Vân Anh</span>
-    </div>
-    <div class="math-card reveal d3" style="border-top-color:var(--mint)">
-      <div class="mi">🏆</div>
-      <div class="mn">Lớp 3</div>
-      <div class="mc">HSK-G3-MO-01</div>
-      <div class="md">Phân số, số học nâng cao, logic &amp; lập luận toán học.</div>
-      <span class="math-teacher" style="color:#065840;border-color:var(--mint-bdr);background:var(--mint-bg)">👩‍🏫 Cô Minh Hạnh</span>
-    </div>
-    <div class="math-card reveal d4" style="border-top-color:var(--violet)">
-      <div class="mi">🎯</div>
-      <div class="mn">Lớp 4</div>
-      <div class="mc">HSK-G4-MO-01</div>
-      <div class="md">Số học phức tạp, tổ hợp, hình học nâng cao.</div>
-      <span class="math-teacher" style="color:#3E1880;border-color:var(--violet-bdr);background:var(--violet-bg)">👩‍🏫 Cô Minh Hạnh</span>
-    </div>
-    <div class="math-card reveal d5" style="border-top-color:var(--rose)">
-      <div class="mi">🌟</div>
-      <div class="mn">Lớp 5</div>
-      <div class="mc">HSK-G5-MO-01</div>
-      <div class="md">Chuẩn bị Olympic, tư duy logic tổng hợp cuối cấp.</div>
-      <span class="math-teacher" style="color:#7A0030;border-color:var(--rose-bdr);background:var(--rose-bg)">👩‍🏫 Cô Minh Hạnh</span>
-    </div>
-  </div>
-
-  <div class="info-box reveal" style="margin-top:8px">
-    <div class="ib-icon">💡</div>
-    <div>
-      <div class="ib-title">Buổi Workshop cuối tuần (Buổi 3)</div>
-      <div class="ib-desc">Tất cả lớp Toán tư duy đều có buổi Workshop Chủ nhật — kỹ năng học tập &amp; Toán tư duy song ngữ Anh–Việt. Lịch cụ thể cập nhật khi khai giảng.</div>
-    </div>
-  </div>
-  <div class="action-row reveal">
-    <p>📋 Lịch học đang được <strong>cập nhật</strong> — phụ huynh đăng ký để nhận thông báo sớm nhất.</p>
-    <a class="action-btn" href="#lien-he">Đăng ký ngay →</a>
-  </div>
-</div><!-- /toan-tu-duy -->
-
-
-<!-- ═══════════════════════════
-     CÂU LẠC BỘ
-═══════════════════════════ -->
-<div id="cau-lac-bo">
-  <div class="sec-head reveal">
-    <div class="sec-icon" style="background:var(--violet-bg)">🎨</div>
-    <div>
-      <div class="sec-tag" style="color:var(--violet)">Hoạt động ngoại khoá</div>
-      <h2>Câu lạc bộ kỹ năng</h2>
-      <p>Phát triển toàn diện — tư duy, kỹ năng mềm và sự tự tin — ngoài chương trình học chính khoá.</p>
-    </div>
-  </div>
-
-  <div class="clubs-grid">
-    <div class="club-card reveal d1">
-      <div class="club-top">
-        <div class="club-icon-big">✍️</div>
-        <div class="club-name">Luyện viết chữ đẹp</div>
-        <div class="club-code">HSK-CLB-LVCĐ-01</div>
-        <p class="club-desc">Rèn tư thế ngồi viết, cách cầm bút đúng, nét chữ <strong>đúng – đều – đẹp</strong> và thói quen học tập cẩn thận cho học sinh tiểu học.</p>
-      </div>
-      <div class="club-foot">
-        <div style="display:flex;gap:7px;flex-wrap:wrap">
-          <span class="tv"><span class="tv-dot" style="background:var(--rose)"></span>Cô Phương Anh</span>
-          <span class="tv"><span class="tv-dot" style="background:var(--coral)"></span>Cô Minh Hạnh</span>
-          <span class="tv"><span class="tv-dot" style="background:var(--sun)"></span>Cô Vân Anh</span>
-        </div>
-        <span class="club-reg" style="color:var(--rose);border-color:var(--rose-bdr);background:var(--rose-bg)">📋 Đăng ký với phụ huynh</span>
-      </div>
-    </div>
-
-    <div class="club-card reveal d2">
-      <div class="club-top">
-        <div class="club-icon-big">🎤</div>
-        <div class="club-name">CLB MC</div>
-        <div class="club-code">HSK-CLB-MC-01</div>
-        <p class="club-desc">Rèn sự <strong>tự tin</strong>, kỹ năng nói trước đám đông, dẫn dắt chương trình và diễn đạt rõ ràng, mạch lạc cho học sinh tiểu học.</p>
-      </div>
-      <div class="club-foot">
-        <span class="tv"><span class="tv-dot" style="background:var(--sky)"></span>MC Tuấn Tú (dự kiến)</span>
-        <span class="club-reg" style="color:var(--sky);border-color:var(--sky-bdr);background:var(--sky-bg)">📋 Đăng ký với phụ huynh</span>
-      </div>
-    </div>
-
-    <div class="club-card reveal d3">
-      <div class="club-top">
-        <div class="club-icon-big">♟️</div>
-        <div class="club-name">CLB Cờ vua</div>
-        <div class="club-code">HSK-CLB-CV-01</div>
-        <p class="club-desc">Rèn <strong>tư duy logic</strong>, khả năng tập trung, lập kế hoạch và ra quyết định qua cờ vua phù hợp lứa tuổi tiểu học.</p>
-      </div>
-      <div class="club-foot">
-        <span class="tv" style="font-style:italic;color:var(--text3)">Giáo viên đang cập nhật</span>
-        <span class="club-reg" style="color:#6A4400;border-color:var(--sun-bdr);background:var(--sun-bg)">📋 Đăng ký với phụ huynh</span>
-      </div>
-    </div>
-  </div>
-</div><!-- /cau-lac-bo -->
-
-
-<!-- PHILOSOPHY -->
-<div class="phil-block reveal">
-  <div class="phil-inner">
-    <div class="phil-eyebrow">Triết lý giáo dục</div>
-    <h2>Không chỉ dạy kiến thức —<br>giúp trẻ <em>biết suy nghĩ</em> và <em>yêu thích học.</em></h2>
-    <p>Từ Tiền tiểu học đến lớp 5, HEH Smart Kids đồng hành cùng từng bước trưởng thành của các con — nền tảng chắc, tư duy sắc, niềm vui thật.</p>
-    <div class="pillars">
-      <div class="pillar"><div class="pi">🏗️</div><div class="pl">Vững nền</div></div>
-      <div class="pillar"><div class="pi">❤️</div><div class="pl">Thích học</div></div>
-      <div class="pillar"><div class="pi">🧠</div><div class="pl">Biết suy nghĩ</div></div>
-      <div class="pillar"><div class="pi">💬</div><div class="pl">Biết diễn đạt</div></div>
-      <div class="pillar"><div class="pi">🌟</div><div class="pl">Tự tin tiếp bước</div></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Hủy</button>
+      <button class="btn-submit" onclick="submitForm()">✓ Gửi đăng ký</button>
     </div>
   </div>
 </div>
 
-<!-- NOTES -->
-<div class="notes reveal">
-  <h4>📌 Ghi chú chung</h4>
-  <div class="note"><div class="note-n">1</div><div>Các buổi học cuối tuần có sự phối hợp của <strong>Cô Kim Ngân, Cô Ngọc Hà</strong> và <strong>Cô Phương Anh</strong>.</div></div>
-  <div class="note"><div class="note-n">2</div><div>Giáo viên sẽ thay nhau phụ trách theo kế hoạch chuyên môn của trung tâm.</div></div>
-  <div class="note"><div class="note-n">3</div><div>Lịch các lớp Toán tư duy và CLB Luyện viết chữ đẹp đang chờ cập nhật. Dự kiến: Cô Vân Anh, Cô Minh Hạnh, Cô Phương Anh.</div></div>
-  <div class="note"><div class="note-n">4</div><div>Thời khóa biểu là <strong>bản dự kiến</strong> — trung tâm có thể điều chỉnh khi cần thiết.</div></div>
-</div>
-
-<!-- CTA -->
-<div id="lien-he" class="cta reveal">
-  <h2>Muốn tìm lộ trình phù hợp cho con? 🎒</h2>
-  <p>Liên hệ HEH Smart Kids để được tư vấn chương trình phù hợp với độ tuổi và mức độ của bé — hoàn toàn miễn phí.</p>
-  <div class="cta-btns">
-    <a class="cta-btn" href="tel:0817219986"><span class="ci">📞</span><span>0817 219 986</span></a>
-    <a class="cta-btn" href="tel:0923783593"><span class="ci">📱</span><span>0923 783 593</span></a>
-  </div>
-  <div class="addr">
-    <div class="al">📍 Địa chỉ</div>
-    <div class="av">Số 27, Lô 3E Lê Hồng Phong, P. Ngô Quyền, TP. Hải Phòng</div>
-  </div>
-</div>
-
-</div><!-- /page -->
-
-<footer>
-  <strong>Trung tâm Ngoại ngữ HEH · HEH Smart Kids</strong><br>
-  Học chắc nền – Tư duy tốt – Phát triển toàn diện<br>
-  <span style="font-size:12.5px">© 2026 HEH Smart Kids. All rights reserved.</span>
-</footer>
+<div class="toast" id="toast">✅ Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.</div>
 
 <script>
-const reveals = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.07 });
-reveals.forEach(el => obs.observe(el));
-
-const sections = ['tieng-anh','toan-tu-duy','cau-lac-bo','lien-he'];
-const tabs = document.querySelectorAll('.tab');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 150) cur = id;
-  });
-  tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + cur));
-}, { passive: true });
+  function openModal(t,c){
+    document.getElementById('mTitle').textContent='Đăng ký: '+t;
+    document.getElementById('mCode').textContent='Mã lớp: '+c;
+    document.getElementById('overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    document.getElementById('overlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function bgClose(e){ if(e.target===document.getElementById('overlay')) closeModal(); }
+  function submitForm(){
+    closeModal();
+    const t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),4000);
+  }
+  function filter(cat,btn){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(c=>{
+      c.classList.toggle('hidden', cat!=='all' && !(c.dataset.cat||'').includes(cat));
+    });
+  }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 </script>
 </body>
 </html>
