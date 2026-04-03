@@ -134,12 +134,25 @@
     background: var(--bg); border-radius: 9px; padding: 8px 11px;
     font-size: 0.785rem; border: 1px solid var(--border);
   }
+  .session.session-clb {
+    background: var(--white);
+    border: 2px solid #0d9488;
+    box-shadow: 0 0 0 3px rgba(13,148,136,0.12);
+  }
   .session-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
   .session-label { font-weight: 700; color: var(--text); margin-bottom: 1px; }
+  .draft-tag {
+    display: inline-block; font-size: 9.5px; font-weight: 700; color: #92400e;
+    background: #fef3c7; border: 1px solid #fde68a; border-radius: 4px;
+    padding: 1px 5px; margin-left: 5px; vertical-align: middle; letter-spacing: 0.3px;
+  }
   .session-detail { color: var(--text-muted); line-height: 1.4; }
+  .session-clb-note {
+    font-size: 0.74rem; color: #0f766e; font-weight: 600; margin-top: 3px; line-height: 1.4;
+  }
   .card-footer {
     padding: 13px 18px 17px; border-top: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; margin-top: auto;
+    display: flex; align-items: center; justify-content: flex-start; margin-top: auto;
   }
   .teacher-info { display: flex; align-items: center; gap: 8px; }
   .teacher-avatar {
@@ -149,12 +162,7 @@
   }
   .teacher-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
   .teacher-role { font-size: 0.72rem; color: var(--text-muted); }
-  .register-btn {
-    border: none; border-radius: 10px; padding: 9px 16px;
-    font-size: 13px; font-weight: 800; font-family: 'Nunito', sans-serif;
-    cursor: pointer; color: #fff; transition: filter 0.16s, transform 0.14s; white-space: nowrap;
-  }
-  .register-btn:hover { filter: brightness(0.88); transform: scale(1.04); }
+  .register-btn { display: none; }
 
   /* Color themes */
   .t-blue  .card-top { background: var(--blue-light); }
@@ -171,6 +179,16 @@
   .t-rose   .card-badge, .t-rose   .teacher-avatar, .t-rose   .register-btn { background: var(--rose); }
   .t-yellow .card-top { background: var(--yellow-light); }
   .t-yellow .card-badge, .t-yellow .teacher-avatar, .t-yellow .register-btn { background: var(--yellow); }
+
+  /* CLB INFO BOX */
+  .clb-info-box {
+    background: #f0fdf4; border: 1.5px solid #86efac;
+    border-radius: 14px; padding: 16px 20px; margin-bottom: 18px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .clb-info-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+  .clb-info-text h5 { font-size: 0.88rem; font-weight: 800; color: #166534; margin-bottom: 4px; }
+  .clb-info-text p { font-size: 0.82rem; color: #15803d; line-height: 1.6; }
 
   /* NOTE BOX */
   .note-box {
@@ -284,6 +302,15 @@
 <main>
 
 <h2 class="section-title">📚 Lớp Tiếng Anh, Nghệ thuật &amp; Toán tư duy</h2>
+
+<div class="clb-info-box">
+  <div class="clb-info-icon">🌟</div>
+  <div class="clb-info-text">
+    <h5>Về Buổi 3 — CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy (cuối tuần)</h5>
+    <p>Đây là buổi học đặc biệt kết hợp ba nội dung: <strong>kỹ năng học tập</strong> (tổ chức, ghi chép, lập kế hoạch), <strong>nghệ thuật sáng tạo</strong> (phát huy tính sáng tạo qua việc thực hiện các dự án thực tiễn) và <strong>toán tư duy bằng tiếng Anh</strong> (giải toán, thảo luận và trình bày bằng tiếng Anh). Mục tiêu: học vui – học sâu – tự tin thể hiện bản thân.</p>
+  </div>
+</div>
+
 <div class="cards-grid">
 
   <div class="card t-blue" data-cat="tieng-anh tien-tieu-hoc">
@@ -293,9 +320,9 @@
       <div class="card-code">HSK-TTH-[số lớp]</div>
       <p class="card-desc">Chuẩn bị toán, tiếng Việt và tiếng Anh vững chắc trước khi vào lớp 1. Kỹ năng học tập và workshop sáng tạo cuối tuần.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">📖</span><div class="session-info"><div class="session-label">Toán / Tiếng Việt — Buổi 1</div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Vân Anh</div></div></div>
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 5 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Thứ 7 · 8:30 – 10:30 · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">📖</span><div class="session-info"><div class="session-label">Toán / Tiếng Việt — Buổi 1 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Vân Anh</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 5 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Sáng Thứ 7 · 8:30 – 10:30 · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -311,9 +338,9 @@
       <div class="card-code">HSK-G2-[số lớp]</div>
       <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào cuối tuần.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 3 · 17:30 – 19:00 · Cô Kim Ngân</div></div></div>
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 6 · 17:30 – 19:00 · Cô Kim Ngân</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Thứ 7 · 8:30 – 10:30 · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 3 · 17:30 – 19:00 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 6 · 17:30 – 19:00 · Cô Kim Ngân</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Sáng Thứ 7 · 8:30 – 10:30 · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -329,9 +356,9 @@
       <div class="card-code">HSK-G3-[số lớp]</div>
       <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào cuối tuần.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 5 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Chủ nhật · 8:30 – 10:30 · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 5 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Sáng Chủ nhật · 8:30 – 10:30 · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -347,9 +374,9 @@
       <div class="card-code">HSK-G4-[số lớp]</div>
       <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào cuối tuần.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 3 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 6 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Sáng Chủ nhật · 8:30 – 10:30 · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 3 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 6 · 17:45 – 19:15 · Cô Ngọc Hà</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Sáng Chủ nhật · 8:30 – 10:30 · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -365,9 +392,9 @@
       <div class="card-code">HSK-G5-[số lớp]</div>
       <p class="card-desc">Tiếng Anh song ngữ kết hợp workshop kỹ năng học tập và toán tư duy Anh–Việt vào chiều Chủ nhật.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1</div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
-        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2</div><div class="session-detail">Thứ 7 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop &amp; Toán tư duy — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · 14:30 – 16:30 · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 1 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 2 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
+        <div class="session"><span class="session-icon">🌏</span><div class="session-info"><div class="session-label">Tiếng Anh — Buổi 2 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Thứ 7 · 17:45 – 19:15 · Cô Kim Ngân</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Chiều Chủ nhật · 14:30 – 16:30 · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -388,8 +415,8 @@
       <div class="card-code">HSK-G1-MO-01</div>
       <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Vân Anh (dự kiến)</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: Cô Vân Anh (dự kiến)</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -405,8 +432,8 @@
       <div class="card-code">HSK-G2-MO-01</div>
       <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Vân Anh (dự kiến)</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: Cô Vân Anh (dự kiến)</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -422,8 +449,8 @@
       <div class="card-code">HSK-G3-MO-01</div>
       <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Chiều Chủ nhật · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -439,8 +466,8 @@
       <div class="card-code">HSK-G4-MO-01</div>
       <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Sáng – Chiều Chủ nhật · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Sáng – Chiều Chủ nhật · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -456,8 +483,8 @@
       <div class="card-code">HSK-G5-MO-01</div>
       <p class="card-desc">Toán nâng cao phát triển tư duy, hướng tới các kỳ thi Olympic phù hợp lứa tuổi. Đề song ngữ, giảng bằng tiếng Việt.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học</div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
-        <div class="session"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">Workshop song ngữ — Buổi 3</div><div class="session-detail">Sáng – Chiều Chủ nhật · Nhóm GV</div></div></div>
+        <div class="session"><span class="session-icon">📐</span><div class="session-info"><div class="session-label">Liên hệ để xếp lịch học <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: Cô Minh Hạnh (dự kiến)</div></div></div>
+        <div class="session session-clb"><span class="session-icon">🎯</span><div class="session-info"><div class="session-label">CLB Tiếng Anh, Nghệ thuật &amp; Toán tư duy — Buổi 3 <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Sáng – Chiều Chủ nhật · Nhóm GV</div><div class="session-clb-note">✦ Kỹ năng học tập · Dự án sáng tạo · Toán tư duy bằng tiếng Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -478,7 +505,7 @@
       <div class="card-code">HSK-CLB-LVCĐ-01</div>
       <p class="card-desc">Rèn tư thế ngồi viết, cách cầm bút, nét chữ đúng–đều–đẹp và thói quen học tập cẩn thận, kiên trì cho học sinh tiểu học.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">✍️</span><div class="session-info"><div class="session-label">Đăng ký để được xếp lịch phù hợp</div><div class="session-detail">GV: Cô Phương Anh, Cô Minh Hạnh, Cô Vân Anh</div></div></div>
+        <div class="session"><span class="session-icon">✍️</span><div class="session-info"><div class="session-label">Liên hệ để được xếp lịch phù hợp <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: Cô Phương Anh, Cô Minh Hạnh, Cô Vân Anh</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -494,7 +521,7 @@
       <div class="card-code">HSK-CLB-MC-01</div>
       <p class="card-desc">Rèn sự tự tin, kỹ năng nói trước đám đông, dẫn dắt chương trình và diễn đạt rõ ràng, mạch lạc cho học sinh tiểu học.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">🎤</span><div class="session-info"><div class="session-label">Đăng ký để được xếp lịch phù hợp</div><div class="session-detail">GV: MC Tuấn Tú (dự kiến)</div></div></div>
+        <div class="session"><span class="session-icon">🎤</span><div class="session-info"><div class="session-label">Liên hệ để được xếp lịch phù hợp <span class="draft-tag">Dự kiến</span></div><div class="session-detail">GV: MC Tuấn Tú (dự kiến)</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -510,7 +537,7 @@
       <div class="card-code">HSK-CLB-CV-01</div>
       <p class="card-desc">Rèn tư duy logic, khả năng tập trung, lập kế hoạch và ra quyết định qua các hoạt động cờ vua phù hợp lứa tuổi tiểu học.</p>
       <div class="sessions">
-        <div class="session"><span class="session-icon">♟️</span><div class="session-info"><div class="session-label">Đăng ký để được xếp lịch phù hợp</div><div class="session-detail">Giáo viên sẽ được thông báo sớm</div></div></div>
+        <div class="session"><span class="session-icon">♟️</span><div class="session-info"><div class="session-label">Liên hệ để được xếp lịch phù hợp <span class="draft-tag">Dự kiến</span></div><div class="session-detail">Giáo viên sẽ được thông báo sớm</div></div></div>
       </div>
     </div>
     <div class="card-footer">
@@ -527,7 +554,7 @@
     <li>Các buổi học cuối tuần có sự phối hợp của Cô Kim Ngân, Cô Ngọc Hà và Cô Phương Anh.</li>
     <li>Giáo viên sẽ thay nhau phụ trách theo kế hoạch chuyên môn của trung tâm.</li>
     <li>Các lớp Toán tư duy và CLB hiện đang chờ cập nhật lịch học cụ thể – phụ huynh liên hệ để đăng ký trước.</li>
-    <li>Thời khóa biểu là bản dự kiến, trung tâm có thể điều chỉnh để phù hợp với tình hình tổ chức lớp học.</li>
+    <li>Thời khóa biểu là bản <strong>dự kiến</strong>, trung tâm có thể điều chỉnh (hoặc mở thêm lớp) để phù hợp với nguyện vọng của phụ huynh và tình hình tổ chức lớp học.</li>
   </ol>
 </div>
 
