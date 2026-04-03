@@ -55,7 +55,7 @@ body {
   background: rgba(253,250,245,.95);
   backdrop-filter: blur(16px);
   border-bottom: 1.5px solid var(--border);
-  display: flex; align-items: center; padding: 0 48px; gap: 0;
+  display: flex; align-items: center; padding: 0 32px; gap: 0;
 }
 .nav-logo {
   font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px;
@@ -79,9 +79,8 @@ body {
 /* ── HERO ── */
 .hero {
   background: linear-gradient(160deg, #FFF7D0 0%, #E5F2FF 55%, #F0EAFC 100%);
-  padding: 80px 48px 72px; text-align: center;
+  padding: 80px 32px 72px; text-align: center;
 }
-.hero-inner { max-width: 760px; margin: 0 auto; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 7px;
   background: var(--sun-bg); border: 1.5px solid var(--sun-bdr);
@@ -115,7 +114,7 @@ body {
   border-bottom: 1.5px solid var(--border);
 }
 .tabs-inner {
-  max-width: 1280px; margin: 0 auto; padding: 0 48px;
+  max-width: 960px; margin: 0 auto; padding: 0 32px;
   display: flex; overflow-x: auto; scrollbar-width: none;
 }
 .tabs-inner::-webkit-scrollbar { display: none; }
@@ -129,7 +128,7 @@ body {
 .tab.active { color: var(--sky); border-bottom-color: var(--sky); }
 
 /* ── PAGE WRAPPER ── */
-.page { max-width: 1280px; margin: 0 auto; padding: 0 48px 100px; }
+.page { max-width: 960px; margin: 0 auto; padding: 0 32px 100px; }
 
 /* ── SECTION HEADER ── */
 .sec-head {
@@ -159,7 +158,7 @@ body {
 /* Class title bar */
 .cb-title {
   display: flex; align-items: center; gap: 16px;
-  padding: 24px 32px 20px;
+  padding: 24px 28px 20px;
   border-bottom: 1.5px solid var(--border);
 }
 .cb-icon {
@@ -186,10 +185,10 @@ body {
 
 /* Sessions row */
 .sessions {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: grid; grid-template-columns: repeat(3, 1fr);
 }
 .ses {
-  padding: 28px 32px;
+  padding: 24px 26px;
   border-right: 1.5px solid var(--border);
 }
 .ses:last-child { border-right: none; }
@@ -222,7 +221,7 @@ body {
 
 /* Teachers footer */
 .cb-teachers {
-  padding: 16px 32px; border-top: 1.5px solid var(--border);
+  padding: 16px 26px; border-top: 1.5px solid var(--border);
   background: var(--surface2);
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
@@ -240,7 +239,7 @@ body {
 
 /* ── MATH CARDS ── */
 .math-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
   margin-bottom: 20px;
 }
 .math-card {
@@ -289,7 +288,7 @@ body {
 .action-btn:hover { background: #D98E00; }
 
 /* ── CLUBS ── */
-.clubs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.clubs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .club-card {
   background: var(--surface); border: 1.5px solid var(--border);
   border-radius: var(--r); overflow: hidden;
@@ -398,22 +397,6 @@ footer strong { color: var(--sun); }
 .d4{transition-delay:.25s} .d5{transition-delay:.31s}
 
 /* ── RESPONSIVE ── */
-@media (min-width: 1200px) {
-  .nav { padding: 0 64px; }
-  .hero { padding: 96px 64px 80px; }
-  .tabs-inner { padding: 0 64px; }
-  .page { padding: 0 64px 100px; }
-  .sec-head { padding: 80px 0 40px; }
-  .cb-title { padding: 28px 40px 24px; }
-  .ses { padding: 32px 36px; }
-  .cb-teachers { padding: 18px 40px; }
-}
-
-@media (max-width: 900px) {
-  .ses { border-right: none; border-bottom: 1.5px solid var(--border); }
-  .ses:last-child { border-bottom: none; }
-}
-
 @media (max-width: 760px) {
   .sessions { grid-template-columns: 1fr; }
   .ses { border-right: none; border-bottom: 1.5px solid var(--border); }
@@ -421,18 +404,13 @@ footer strong { color: var(--sun); }
   .math-grid { grid-template-columns: repeat(2, 1fr); }
   .clubs-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
-  .nav { padding: 0 20px; }
   .page { padding: 0 18px 80px; }
-  .tabs-inner { padding: 0 18px; }
-  .hero { padding: 64px 20px 56px; }
   .phil-block { padding: 40px 24px; }
   .cta { padding: 40px 24px; }
-  .cb-title { flex-wrap: wrap; padding: 20px 20px 16px; }
+  .hero { padding: 64px 20px 56px; }
+  .cb-title { flex-wrap: wrap; }
   .cb-code { margin-left: 0; }
-  .ses { padding: 22px 20px; }
-  .cb-teachers { padding: 14px 20px; }
 }
-
 @media (max-width: 480px) {
   .math-grid { grid-template-columns: 1fr; }
 }
@@ -454,16 +432,14 @@ footer strong { color: var(--sun); }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">🎓 Chương trình 2026–2027</div>
-    <h1><span class="c1">Tiếng Anh</span> · <span class="c2">Toán tư duy</span> · <span class="c3">Câu lạc bộ</span></h1>
-    <p class="hero-sub">Chương trình học toàn diện dành cho học sinh tiểu học — từ Tiền tiểu học đến lớp 5, với đội ngũ giáo viên tâm huyết và phương pháp hiện đại.</p>
-    <div class="stat-row">
-      <div class="stat-chip"><div class="n" style="color:var(--sky)">5</div><div class="l">Lớp Tiếng Anh</div></div>
-      <div class="stat-chip"><div class="n" style="color:var(--sun)">5</div><div class="l">Lớp Toán tư duy</div></div>
-      <div class="stat-chip"><div class="n" style="color:var(--violet)">3</div><div class="l">Câu lạc bộ</div></div>
-      <div class="stat-chip"><div class="n" style="color:var(--mint)">7</div><div class="l">Giáo viên</div></div>
-    </div>
+  <div class="hero-badge">🎓 Chương trình 2026–2027</div>
+  <h1><span class="c1">Tiếng Anh</span> · <span class="c2">Toán tư duy</span> · <span class="c3">Câu lạc bộ</span></h1>
+  <p class="hero-sub">Chương trình học toàn diện dành cho học sinh tiểu học — từ Tiền tiểu học đến lớp 5, với đội ngũ giáo viên tâm huyết và phương pháp hiện đại.</p>
+  <div class="stat-row">
+    <div class="stat-chip"><div class="n" style="color:var(--sky)">5</div><div class="l">Lớp Tiếng Anh</div></div>
+    <div class="stat-chip"><div class="n" style="color:var(--sun)">5</div><div class="l">Lớp Toán tư duy</div></div>
+    <div class="stat-chip"><div class="n" style="color:var(--violet)">3</div><div class="l">Câu lạc bộ</div></div>
+    <div class="stat-chip"><div class="n" style="color:var(--mint)">7</div><div class="l">Giáo viên</div></div>
   </div>
 </section>
 
