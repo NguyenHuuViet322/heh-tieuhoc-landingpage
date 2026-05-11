@@ -249,8 +249,18 @@ hr.div { border: none; border-top: 1.5px dashed #B5D4F4; margin: 16px 0; }
 /* Watermark */
 .wm {
   position: fixed; bottom: 20px; right: 20px;
-  width: 130px; opacity: 0.06; filter: grayscale(1);
+  width: 100px; opacity: 0.5;
   pointer-events: none; z-index: 0; user-select: none;
+}
+
+/* Watermark to ở giữa body */
+.wm-bg {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, 80vw);
+  opacity: 0.03;
+  pointer-events: none; z-index: 0; user-select: none;
+  filter: grayscale(100%) blur(1px);
 }
 
 @media (max-width: 500px) {
@@ -265,7 +275,9 @@ hr.div { border: none; border-top: 1.5px dashed #B5D4F4; margin: 16px 0; }
 </head>
 <body>
 
-<img src="/img/logo.png" class="wm" alt="" aria-hidden="true" onerror="this.style.display='none'">
+<img src="img/logo_2.png" class="wm" alt="" aria-hidden="true" onerror="this.style.display='none'">
+<img src="img/logo.png" class="wm-bg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+
 
 <header>
   <div class="h-logo">
