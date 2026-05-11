@@ -319,6 +319,16 @@ hr.div { border: none; border-top: 1.5px dashed #B5D4F4; margin: 16px 0; }
         <div id="grade-warn">❌ Không nhận lớp 12. Vui lòng liên hệ để tư vấn thêm.</div>
       </div>
     </div>
+    <div class="row2">
+      <div class="f">
+        <label>Lớp học</label>
+        <input type="text" id="class" placeholder="VD: 11A1, 11 Toán...">
+      </div>
+      <div class="f">
+        <label>Trường học</label>
+        <input type="text" id="school" placeholder="VD: THPT Chu Văn An">
+      </div>
+    </div>
     <hr class="div">
     <div class="row2">
       <div class="f">
@@ -493,15 +503,17 @@ document.getElementById('frm').addEventListener('submit', async function(e) {
   btn.disabled = true;
   btn.innerHTML = '<span class="spin"></span>Đang gửi...';
 
-  const name  = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const grade = document.getElementById('grade').value;
-  const pname = document.getElementById('pname').value.trim();
-  const pphone= document.getElementById('pphone').value.trim();
-  const exams = getChecked('exam');
-  const combo = getChecked('combo')[0];
-  const note  = document.getElementById('note').value.trim();
+  const name   = document.getElementById('name').value.trim();
+  const phone  = document.getElementById('phone').value.trim();
+  const email  = document.getElementById('email').value.trim();
+  const grade  = document.getElementById('grade').value;
+  const cls    = document.getElementById('class').value.trim();
+  const school = document.getElementById('school').value.trim();
+  const pname  = document.getElementById('pname').value.trim();
+  const pphone = document.getElementById('pphone').value.trim();
+  const exams  = getChecked('exam');
+  const combo  = getChecked('combo')[0];
+  const note   = document.getElementById('note').value.trim();
 
   // Ngày sinh theo khối lớp
   const dobMap = { '11': '2009-01-01', '12': '2008-01-01' };
@@ -519,10 +531,12 @@ document.getElementById('frm').addEventListener('submit', async function(e) {
         phone_number: phone,
         date_of_birth: dob,
         gender: 'OTHER',
-        address: note || '',
+        address: '',
         additional_student_data: {
           first_contact_name: pname,
           first_contact_tel: pphone,
+          class: cls   || null,
+          school: school || null,
           registration_info: { exams, combo: combo || null, note: note || null }
         }
       })
