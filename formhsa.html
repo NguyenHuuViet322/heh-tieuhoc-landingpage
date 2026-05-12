@@ -1,722 +1,1262 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đăng ký lớp luyện thi ĐGNL – HappyEdu Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Ký Học ĐGNL & ĐGTD 2026–2027 – HappyEdu Hub</title>
 
-body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  background: #EBF3FC;
-  min-height: 100vh;
-}
+  <!-- ── SEO cơ bản ── -->
+  <meta name="description"
+    content="Đăng ký học ĐGNL & ĐGTD năm học 2026–2027 tại HappyEdu Hub. Khai giảng tháng 6/2026. Ôn luyện chuyên sâu cho học sinh lớp 11 lên 12.">
+  <meta name="robots" content="index, follow">
 
-/* ── Header ── */
-header {
-  background: #0C447C;
-  text-align: center;
-  padding: 36px 20px 52px;
-  position: relative; overflow: hidden;
-}
-header::after {
-  content: '';
-  position: absolute; bottom: -2px; left: 0; right: 0; height: 44px;
-  background: #EBF3FC;
-  clip-path: ellipse(55% 100% at 50% 100%);
-}
-header::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(-50deg,
-    transparent, transparent 50px,
-    rgba(255,255,255,0.02) 50px, rgba(255,255,255,0.02) 100px);
-}
-.h-logo { display: flex; justify-content: center; margin-bottom: 20px; position: relative; z-index:1; }
-.h-logo img { height: 72px; object-fit: contain; }
-.logo-fb { display: none; align-items: center; gap: 10px; }
-.logo-fb .li { width: 58px; height: 58px; border-radius: 14px; background: white; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-.logo-fb .lt { font-size: 20px; font-weight: 700; color: white; line-height:1.2; }
-.logo-fb .lt span { color: #FAC775; }
-header h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); font-weight: 700; color: white; line-height: 1.2; margin-bottom: 8px; position: relative; z-index: 1; }
-header h1 em { color: #FAC775; font-style: normal; }
-header p { font-size: 14px; color: rgba(255,255,255,0.7); position: relative; z-index: 1; }
+  <!-- ── Open Graph (Facebook, Zalo, Messenger) ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://happyeduhub.vn/dang-ky">
+  <meta property="og:site_name" content="HappyEdu Hub">
+  <meta property="og:title" content="📚 Đăng Ký Học ĐGNL & ĐGTD 2026–2027 – HappyEdu Hub">
+  <meta property="og:description"
+    content="Khai giảng tháng 6/2026 · Dành cho học sinh lớp 11 lên 12 · Ôn luyện ĐGNL ĐHQG, Quân Đội, Công An, ĐGTD Bách Khoa, Sư Phạm và TN THPT. Đăng ký ngay để nhận lịch học!">
+  <meta property="og:image" content="https://happyeduhub.vn/img/og-dang-ky.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HappyEdu Hub – Đăng ký học ĐGNL & ĐGTD 2026-2027">
+  <meta property="og:locale" content="vi_VN">
 
-/* ── Notice ── */
-.notice { max-width: 620px; margin: 20px auto 0; background: white; border: 1px solid #B5D4F4; border-top: 4px solid #0C447C; border-radius: 12px; padding: 18px 20px; line-height: 1.65; box-shadow: 0 4px 16px rgba(12,68,124,0.08); }
-.notice .ntag { display: inline-block; background: #0C447C; color: white; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 5px; margin-bottom: 10px; }
-.notice p { font-size: 14px; color: #1a2a3a; }
-.notice p strong { color: #0C447C; }
-.notice .nsub { font-size: 12.5px; color: #378ADD; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E6F1FB; }
+  <!-- ── Twitter Card (cũng dùng được cho một số nền tảng) ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="📚 Đăng Ký Học ĐGNL & ĐGTD 2026–2027 – HappyEdu Hub">
+  <meta name="twitter:description"
+    content="Khai giảng tháng 6/2026 · Ôn luyện ĐGNL, ĐGTD chuyên sâu cho học sinh lớp 11 lên 12.">
+  <meta name="twitter:image" content="https://happyeduhub.vn/img/og-dang-ky.png">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ── Form card ── */
-.wrap { max-width: 620px; margin: 24px auto 60px; padding: 0 16px; }
-.card { background: white; border-radius: 18px; box-shadow: 0 6px 28px rgba(12,68,124,0.10); border: 1px solid #B5D4F4; overflow: hidden; }
-.sh { background: #0C447C; color: white; padding: 12px 24px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
-.sb { padding: 22px 24px 18px; }
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: #EBF3FC;
+      min-height: 100vh;
+    }
 
-/* ── Fields ── */
-.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-.row1 { margin-bottom: 14px; }
-.f label { display: block; font-size: 12.5px; font-weight: 600; color: #1a2a3a; margin-bottom: 5px; }
-.f label .r { color: #c62828; }
-.f input, .f select, .f textarea {
-  font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px;
-  padding: 10px 13px; width: 100%;
-  border: 1.5px solid #B5D4F4; border-radius: 9px;
-  background: #E6F1FB; color: #1a2a3a; outline: none; appearance: none;
-  transition: border-color .15s, box-shadow .15s, background .15s;
-}
-.f input::placeholder, .f textarea::placeholder { color: #85B7EB; }
-.f input:focus, .f select:focus, .f textarea:focus { border-color: #378ADD; background: white; box-shadow: 0 0 0 3px rgba(55,138,221,0.12); }
-.f select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23378ADD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 12px center;
-  background-color: #E6F1FB; padding-right: 34px; cursor: pointer;
-}
-#grade-warn { display: none; margin-top: 6px; padding: 9px 12px; background: #FCEBEB; border: 1.5px solid #F09595; border-radius: 8px; font-size: 13px; color: #c62828; line-height: 1.5; }
-hr.div { border: none; border-top: 1.5px dashed #B5D4F4; margin: 16px 0; }
+    /* ── Header ── */
+    header {
+      background: #0C447C;
+      text-align: center;
+      padding: 36px 20px 52px;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* ── Click hint ── */
-.pick-hint { font-size: 12px; color: #378ADD; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
-.pick-hint::before { content: '👆'; font-size: 13px; }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 44px;
+      background: #EBF3FC;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
 
-/* ── SELECT CARDS ── */
-.sel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 9px; }
-.sel-card {
-  position: relative; cursor: pointer; user-select: none;
-  border: 1.5px solid #B5D4F4; border-radius: 11px;
-  background: #E6F1FB; padding: 13px 12px 11px;
-  transition: border-color .15s, background .15s, box-shadow .15s;
-  display: flex; flex-direction: column; gap: 6px;
-}
-.sel-card:hover { border-color: #378ADD; background: white; }
-.sel-card.on { border-color: #0C447C; background: white; box-shadow: 0 0 0 3px rgba(12,68,124,0.11); }
-.sel-card input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
-.sel-card .dot { position: absolute; top: 9px; right: 9px; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #85B7EB; background: white; display: flex; align-items: center; justify-content: center; transition: all .15s; }
-.sel-card.on .dot { background: #0C447C; border-color: #0C447C; }
-.sel-card .dot::after { content: ''; width: 5px; height: 3.5px; border-left: 1.8px solid white; border-bottom: 1.8px solid white; transform: rotate(-45deg) translateY(-0.5px); opacity: 0; transition: opacity .12s; }
-.sel-card.on .dot::after { opacity: 1; }
-.sel-card .ico { font-size: 20px; line-height: 1; }
-.sel-card .nm { font-size: 12.5px; font-weight: 700; color: #0C447C; line-height: 1.35; }
-.sel-card .sub { font-size: 11px; color: #378ADD; line-height: 1.3; }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-50deg,
+          transparent, transparent 50px,
+          rgba(255, 255, 255, 0.02) 50px, rgba(255, 255, 255, 0.02) 100px);
+    }
 
-/* ── DYNAMIC SUBJECT SECTIONS ── */
-.subject-sections { display: flex; flex-direction: column; gap: 0; }
+    .h-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
 
-.subject-block {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height .35s ease, opacity .25s ease, margin .3s ease, padding .3s ease;
-  margin: 0;
-}
-.subject-block.visible {
-  max-height: 600px;
-  opacity: 1;
-  margin: 0;
-}
+    .h-logo img {
+      height: 72px;
+      object-fit: contain;
+    }
 
-.subject-block-inner {
-  border-top: 1.5px dashed #B5D4F4;
-  padding: 18px 0 4px;
-  margin-top: 18px;
-}
+    .logo-fb {
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
 
-.subject-block-title {
-  display: flex; align-items: center; gap: 8px;
-  margin-bottom: 12px;
-}
-.subject-block-title .exam-tag {
-  background: #E6F1FB; border: 1px solid #B5D4F4;
-  color: #0C447C; font-size: 11px; font-weight: 700;
-  letter-spacing: .5px; padding: 3px 9px; border-radius: 20px;
-}
-.subject-block-title .arrow {
-  font-size: 13px; color: #378ADD;
-}
-.subject-block-title .prompt {
-  font-size: 12.5px; color: #1a2a3a; font-weight: 600;
-}
+    .logo-fb .li {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
 
-/* ── RADIO CARDS ── */
-.radio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.radio-grid.col3 { grid-template-columns: repeat(3, 1fr); }
-.radio-card {
-  position: relative; cursor: pointer; user-select: none;
-  border: 1.5px solid #B5D4F4; border-radius: 11px;
-  background: #E6F1FB; padding: 14px 13px;
-  transition: border-color .15s, background .15s, box-shadow .15s;
-  display: flex; align-items: flex-start; gap: 10px;
-}
-.radio-card:hover { border-color: #378ADD; background: white; }
-.radio-card.on { border-color: #0C447C; background: white; box-shadow: 0 0 0 3px rgba(12,68,124,0.11); }
-.radio-card input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
-.radio-card .rdot { width: 18px; height: 18px; min-width: 18px; border-radius: 50%; border: 1.5px solid #85B7EB; background: white; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all .15s; flex-shrink: 0; }
-.radio-card.on .rdot { border-color: #0C447C; }
-.radio-card .rdot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #0C447C; opacity: 0; transition: opacity .12s; display: block; }
-.radio-card.on .rdot::after { opacity: 1; }
-.radio-card .rtxt .nm { font-size: 12.5px; font-weight: 700; color: #0C447C; margin-bottom: 3px; line-height: 1.3; }
-.radio-card .rtxt .sub { font-size: 11px; color: #378ADD; line-height: 1.35; }
+    .logo-fb .lt {
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+    }
 
-/* Full-width subject cards */
-.full-card {
-  border: 1.5px solid #B5D4F4; border-radius: 11px;
-  background: #E6F1FB; padding: 14px 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.full-card .ico { font-size: 22px; flex-shrink: 0; }
-.full-card .rtxt .nm { font-size: 13px; font-weight: 700; color: #0C447C; }
-.full-card .rtxt .sub { font-size: 11.5px; color: #378ADD; margin-top: 2px; line-height: 1.4; }
+    .logo-fb .lt span {
+      color: #FAC775;
+    }
 
-/* ── Submit ── */
-.sub-area { padding: 4px 24px 28px; text-align: center; background: linear-gradient(180deg, white 0%, #E6F1FB 100%); border-top: 1.5px solid #E6F1FB; }
-.btn { margin-top: 18px; background: #0C447C; color: white; border: none; padding: 14px 40px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 15px; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; max-width: 340px; box-shadow: 0 5px 18px rgba(12,68,124,0.28); transition: all .2s; }
-.btn:hover { background: #185FA5; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(24,95,165,0.35); }
-.btn:active { transform: none; }
-.btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-.note { margin-top: 9px; font-size: 12px; color: #888780; }
+    header h1 {
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
 
-/* ── Toast ── */
-.toast { position: fixed; top: 20px; right: 20px; z-index: 999; background: white; border-radius: 12px; padding: 14px 18px; max-width: 320px; box-shadow: 0 8px 30px rgba(0,0,0,0.14); border-left: 4px solid #0F6E56; display: none; animation: tin .25s ease; font-size: 13.5px; }
-.toast.err { border-left-color: #c62828; }
-.toast b { display: block; margin-bottom: 3px; font-size: 14px; }
-@keyframes tin { from { opacity:0; transform:translateX(50px); } to { opacity:1; transform:none; } }
-.spin { width: 16px; height: 16px; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; display: inline-block; animation: rot .7s linear infinite; margin-right: 7px; vertical-align: middle; }
-@keyframes rot { to { transform: rotate(360deg); } }
-.wm { position: fixed; bottom: 20px; right: 20px; width: 100px; opacity: 0.5; pointer-events: none; z-index: 0; user-select: none; }
-.wm-bg { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(520px, 80vw); opacity: 0.03; pointer-events: none; z-index: 0; user-select: none; filter: grayscale(100%) blur(1px); }
+    header h1 em {
+      color: #FAC775;
+      font-style: normal;
+    }
 
-@media (max-width: 500px) {
-  .row2 { grid-template-columns: 1fr; }
-  .sel-grid { grid-template-columns: 1fr 1fr; }
-  .radio-grid { grid-template-columns: 1fr; }
-  .radio-grid.col3 { grid-template-columns: 1fr 1fr; }
-  .sb { padding: 18px 16px 14px; }
-  .sh { padding: 11px 16px; }
-  .sub-area { padding: 4px 16px 24px; }
-}
-</style>
+    header p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Notice ── */
+    .notice {
+      max-width: 620px;
+      margin: 20px auto 0;
+      background: white;
+      border: 1px solid #B5D4F4;
+      border-top: 4px solid #0C447C;
+      border-radius: 12px;
+      padding: 18px 20px;
+      line-height: 1.65;
+      box-shadow: 0 4px 16px rgba(12, 68, 124, 0.08);
+    }
+
+    .notice .ntag {
+      display: inline-block;
+      background: #0C447C;
+      color: white;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .notice p {
+      font-size: 14px;
+      color: #1a2a3a;
+    }
+
+    .notice p strong {
+      color: #0C447C;
+    }
+
+    .notice .nsub {
+      font-size: 12.5px;
+      color: #378ADD;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #E6F1FB;
+    }
+
+    /* ── Form card ── */
+    .wrap {
+      max-width: 620px;
+      margin: 24px auto 60px;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 6px 28px rgba(12, 68, 124, 0.10);
+      border: 1px solid #B5D4F4;
+      overflow: hidden;
+    }
+
+    .sh {
+      background: #0C447C;
+      color: white;
+      padding: 12px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sb {
+      padding: 22px 24px 18px;
+    }
+
+    /* ── Fields ── */
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .row1 {
+      margin-bottom: 14px;
+    }
+
+    .f label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #1a2a3a;
+      margin-bottom: 5px;
+    }
+
+    .f label .r {
+      color: #c62828;
+    }
+
+    .f input,
+    .f select,
+    .f textarea {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      padding: 10px 13px;
+      width: 100%;
+      border: 1.5px solid #B5D4F4;
+      border-radius: 9px;
+      background: #E6F1FB;
+      color: #1a2a3a;
+      outline: none;
+      appearance: none;
+      transition: border-color .15s, box-shadow .15s, background .15s;
+    }
+
+    .f input::placeholder,
+    .f textarea::placeholder {
+      color: #85B7EB;
+    }
+
+    .f input:focus,
+    .f select:focus,
+    .f textarea:focus {
+      border-color: #378ADD;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.12);
+    }
+
+    .f select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23378ADD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-color: #E6F1FB;
+      padding-right: 34px;
+      cursor: pointer;
+    }
+
+    #grade-warn {
+      display: none;
+      margin-top: 6px;
+      padding: 9px 12px;
+      background: #FCEBEB;
+      border: 1.5px solid #F09595;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #c62828;
+      line-height: 1.5;
+    }
+
+    hr.div {
+      border: none;
+      border-top: 1.5px dashed #B5D4F4;
+      margin: 16px 0;
+    }
+
+    /* ── Click hint ── */
+    .pick-hint {
+      font-size: 12px;
+      color: #378ADD;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pick-hint::before {
+      content: '👆';
+      font-size: 13px;
+    }
+
+    /* ── SELECT CARDS ── */
+    .sel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 9px;
+    }
+
+    .sel-card {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      border: 1.5px solid #B5D4F4;
+      border-radius: 11px;
+      background: #E6F1FB;
+      padding: 13px 12px 11px;
+      transition: border-color .15s, background .15s, box-shadow .15s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sel-card:hover {
+      border-color: #378ADD;
+      background: white;
+    }
+
+    .sel-card.on {
+      border-color: #0C447C;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(12, 68, 124, 0.11);
+    }
+
+    .sel-card input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+
+    .sel-card .dot {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid #85B7EB;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s;
+    }
+
+    .sel-card.on .dot {
+      background: #0C447C;
+      border-color: #0C447C;
+    }
+
+    .sel-card .dot::after {
+      content: '';
+      width: 5px;
+      height: 3.5px;
+      border-left: 1.8px solid white;
+      border-bottom: 1.8px solid white;
+      transform: rotate(-45deg) translateY(-0.5px);
+      opacity: 0;
+      transition: opacity .12s;
+    }
+
+    .sel-card.on .dot::after {
+      opacity: 1;
+    }
+
+    .sel-card .ico {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .sel-card .nm {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0C447C;
+      line-height: 1.35;
+    }
+
+    .sel-card .sub {
+      font-size: 11px;
+      color: #378ADD;
+      line-height: 1.3;
+    }
+
+    /* ── DYNAMIC SUBJECT SECTIONS ── */
+    .subject-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .subject-block {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .35s ease, opacity .25s ease, margin .3s ease, padding .3s ease;
+      margin: 0;
+    }
+
+    .subject-block.visible {
+      max-height: 600px;
+      opacity: 1;
+      margin: 0;
+    }
+
+    .subject-block-inner {
+      border-top: 1.5px dashed #B5D4F4;
+      padding: 18px 0 4px;
+      margin-top: 18px;
+    }
+
+    .subject-block-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .subject-block-title .exam-tag {
+      background: #E6F1FB;
+      border: 1px solid #B5D4F4;
+      color: #0C447C;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+
+    .subject-block-title .arrow {
+      font-size: 13px;
+      color: #378ADD;
+    }
+
+    .subject-block-title .prompt {
+      font-size: 12.5px;
+      color: #1a2a3a;
+      font-weight: 600;
+    }
+
+    /* ── RADIO CARDS ── */
+    .radio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .radio-grid.col3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .radio-card {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      border: 1.5px solid #B5D4F4;
+      border-radius: 11px;
+      background: #E6F1FB;
+      padding: 14px 13px;
+      transition: border-color .15s, background .15s, box-shadow .15s;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .radio-card:hover {
+      border-color: #378ADD;
+      background: white;
+    }
+
+    .radio-card.on {
+      border-color: #0C447C;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(12, 68, 124, 0.11);
+    }
+
+    .radio-card input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+
+    .radio-card .rdot {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border-radius: 50%;
+      border: 1.5px solid #85B7EB;
+      background: white;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s;
+      flex-shrink: 0;
+    }
+
+    .radio-card.on .rdot {
+      border-color: #0C447C;
+    }
+
+    .radio-card .rdot::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #0C447C;
+      opacity: 0;
+      transition: opacity .12s;
+      display: block;
+    }
+
+    .radio-card.on .rdot::after {
+      opacity: 1;
+    }
+
+    .radio-card .rtxt .nm {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0C447C;
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+
+    .radio-card .rtxt .sub {
+      font-size: 11px;
+      color: #378ADD;
+      line-height: 1.35;
+    }
+
+    /* Full-width subject cards */
+    .full-card {
+      border: 1.5px solid #B5D4F4;
+      border-radius: 11px;
+      background: #E6F1FB;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .full-card .ico {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .full-card .rtxt .nm {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0C447C;
+    }
+
+    .full-card .rtxt .sub {
+      font-size: 11.5px;
+      color: #378ADD;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    /* ── Submit ── */
+    .sub-area {
+      padding: 4px 24px 28px;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, #E6F1FB 100%);
+      border-top: 1.5px solid #E6F1FB;
+    }
+
+    .btn {
+      margin-top: 18px;
+      background: #0C447C;
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 340px;
+      box-shadow: 0 5px 18px rgba(12, 68, 124, 0.28);
+      transition: all .2s;
+    }
+
+    .btn:hover {
+      background: #185FA5;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(24, 95, 165, 0.35);
+    }
+
+    .btn:active {
+      transform: none;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .note {
+      margin-top: 9px;
+      font-size: 12px;
+      color: #888780;
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background: white;
+      border-radius: 12px;
+      padding: 14px 18px;
+      max-width: 320px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+      border-left: 4px solid #0F6E56;
+      display: none;
+      animation: tin .25s ease;
+      font-size: 13.5px;
+    }
+
+    .toast.err {
+      border-left-color: #c62828;
+    }
+
+    .toast b {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    @keyframes tin {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .spin {
+      width: 16px;
+      height: 16px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      animation: rot .7s linear infinite;
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+
+    @keyframes rot {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .wm {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+    }
+
+    .wm-bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(520px, 80vw);
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+      filter: grayscale(100%) blur(1px);
+    }
+
+    @media (max-width: 500px) {
+      .row2 {
+        grid-template-columns: 1fr;
+      }
+
+      .sel-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .radio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .radio-grid.col3 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sb {
+        padding: 18px 16px 14px;
+      }
+
+      .sh {
+        padding: 11px 16px;
+      }
+
+      .sub-area {
+        padding: 4px 16px 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<img src="img/logo_2.png" class="wm" alt="" aria-hidden="true" onerror="this.style.display='none'">
-<img src="img/logo.png" class="wm-bg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <img src="img/logo_2.png" class="wm" alt="" aria-hidden="true" onerror="this.style.display='none'">
+  <img src="img/logo.png" class="wm-bg" alt="" aria-hidden="true" onerror="this.style.display='none'">
 
-<header>
-  <div class="h-logo">
-    <img src="/img/logo.png" alt="HappyEdu Hub"
-         onerror="this.style.display='none'; document.querySelector('.logo-fb').style.display='flex';">
-    <div class="logo-fb">
-      <div class="li">🎓</div>
-      <div class="lt">Happy<span>Edu</span><br>Hub</div>
+  <header>
+    <div class="h-logo">
+      <img src="/img/logo.png" alt="HappyEdu Hub"
+        onerror="this.style.display='none'; document.querySelector('.logo-fb').style.display='flex';">
+      <div class="logo-fb">
+        <div class="li">🎓</div>
+        <div class="lt">Happy<span>Edu</span><br>Hub</div>
+      </div>
     </div>
-  </div>
-  <h1>Đăng Ký Học<br><em>ĐGNL &amp; ĐGTD</em></h1>
-  <p>Khai giảng tháng 6 · 2026 — Năm học 2026–2027</p>
-</header>
+    <h1>Đăng Ký Học<br><em>ĐGNL &amp; ĐGTD</em></h1>
+    <p>Khai giảng tháng 6 · 2026 — Năm học 2026–2027</p>
+  </header>
 
-<div style="padding:0 16px; position:relative; z-index:1;">
-  <div class="notice">
-    <p>Dành cho các bạn <strong>học sinh khối 11 lên 12</strong> muốn chuẩn bị sớm cho kỳ thi đánh giá năng lực <strong>năm học 2026–2027</strong>.</p>
-    <div class="nsub">📅 Dự kiến khai giảng tháng 6/2026 — Để lại thông tin, chúng tôi sẽ liên hệ xác nhận lịch học.</div>
-  </div>
-</div>
-
-<div class="wrap">
-<form class="card" id="frm" novalidate>
-
-  <!-- THÔNG TIN -->
-  <div class="sh">👤 Thông tin học sinh</div>
-  <div class="sb">
-    <div class="row2">
-      <div class="f">
-        <label>Họ tên học sinh <span class="r">*</span></label>
-        <input type="text" id="name" placeholder="Nguyễn Văn A">
-      </div>
-      <div class="f">
-        <label>SĐT học sinh <span class="r">*</span></label>
-        <input type="tel" id="phone" placeholder="0912 345 678" maxlength="10">
-      </div>
-    </div>
-    <div class="row2">
-      <div class="f">
-        <label>Email <span class="r">*</span></label>
-        <input type="email" id="email" placeholder="hs@example.com">
-      </div>
-      <div class="f">
-        <label>Khối lớp <span class="r">*</span></label>
-        <select id="grade">
-          <option value="">-- Chọn --</option>
-          <option value="10">Lớp 10</option>
-          <option value="11">Lớp 11 (lên 12)</option>
-          <option value="12">Lớp 12 (hiện tại)</option>
-        </select>
-        <div id="grade-warn">❌ Không nhận lớp 12. Vui lòng liên hệ để tư vấn thêm.</div>
-      </div>
-    </div>
-    <div class="row2">
-      <div class="f">
-        <label>Lớp học</label>
-        <input type="text" id="class" placeholder="VD: 11A1, 11 Toán...">
-      </div>
-      <div class="f">
-        <label>Trường học</label>
-        <input type="text" id="school" placeholder="VD: THPT Chu Văn An">
-      </div>
-    </div>
-    <div class="row2">
-      <div class="f">
-        <label>Năm học đăng ký <span class="r">*</span></label>
-        <select id="school-year">
-          <option value="">-- Chọn --</option>
-          <option value="2025-2026">2025 – 2026</option>
-          <option value="2026-2027" selected>2026 – 2027</option>
-          <option value="2027-2028">2027 – 2028</option>
-        </select>
-      </div>
-      <div class="f">
-        <!-- placeholder for layout balance -->
-      </div>
-    </div>
-    <hr class="div">
-    <div class="row2">
-      <div class="f">
-        <label>Họ tên phụ huynh <span class="r">*</span></label>
-        <input type="text" id="pname" placeholder="Nguyễn Văn B">
-      </div>
-      <div class="f">
-        <label>SĐT phụ huynh <span class="r">*</span></label>
-        <input type="tel" id="pphone" placeholder="0987 654 321" maxlength="10">
+  <div style="padding:0 16px; position:relative; z-index:1;">
+    <div class="notice">
+      <p>Dành cho các bạn <strong>học sinh khối 11 lên 12</strong> muốn chuẩn bị sớm cho kỳ thi đánh giá năng lực
+        <strong>năm học 2026–2027</strong>.</p>
+      <div class="nsub">📅 Dự kiến khai giảng tháng 6/2026 — Để lại thông tin, chúng tôi sẽ liên hệ xác nhận lịch học.
       </div>
     </div>
   </div>
 
-  <!-- KỲ THI -->
-  <div class="sh">🎯 Kỳ thi đăng ký</div>
-  <div class="sb">
-    <p class="pick-hint">Chọn một hoặc nhiều kỳ thi — phần môn học sẽ hiện bên dưới</p>
-    <div class="sel-grid">
+  <div class="wrap">
+    <form class="card" id="frm" novalidate>
 
-      <label class="sel-card" id="card-DGNL_HN" onclick="toggleExam(this,'DGNL_HN')">
-        <input type="checkbox" name="exam" value="DGNL_HN">
-        <div class="dot"></div>
-        <div class="ico">🏛️</div>
-        <div class="nm">ĐGNL ĐHQG Hà Nội</div>
-        <div class="sub">ĐH Quốc gia HN</div>
-      </label>
-
-      <label class="sel-card" id="card-DGNL_QD" onclick="toggleExam(this,'DGNL_QD')">
-        <input type="checkbox" name="exam" value="DGNL_QD">
-        <div class="dot"></div>
-        <div class="ico">⭐</div>
-        <div class="nm">ĐGNL Quân Đội</div>
-        <div class="sub">Học viện Quân sự</div>
-      </label>
-
-      <label class="sel-card" id="card-DGNL_CA" onclick="toggleExam(this,'DGNL_CA')">
-        <input type="checkbox" name="exam" value="DGNL_CA">
-        <div class="dot"></div>
-        <div class="ico">🛡️</div>
-        <div class="nm">ĐGNL Công An</div>
-        <div class="sub">Học viện Công an</div>
-      </label>
-
-      <label class="sel-card" id="card-DGTD_BK" onclick="toggleExam(this,'DGTD_BK')">
-        <input type="checkbox" name="exam" value="DGTD_BK">
-        <div class="dot"></div>
-        <div class="ico">⚙️</div>
-        <div class="nm">ĐGTD Bách Khoa</div>
-        <div class="sub">ĐHBK Hà Nội</div>
-      </label>
-
-      <label class="sel-card" id="card-DGTD_SP" onclick="toggleExam(this,'DGTD_SP')">
-        <input type="checkbox" name="exam" value="DGTD_SP">
-        <div class="dot"></div>
-        <div class="ico">📐</div>
-        <div class="nm">ĐGTD Sư Phạm</div>
-        <div class="sub">ĐHSP Hà Nội</div>
-      </label>
-
-      <label class="sel-card" id="card-ON_TN" onclick="toggleExam(this,'ON_TN')">
-        <input type="checkbox" name="exam" value="ON_TN">
-        <div class="dot"></div>
-        <div class="ico">📋</div>
-        <div class="nm">Ôn thi TN THPT</div>
-        <div class="sub">Tốt nghiệp</div>
-      </label>
-
-    </div>
-
-    <!-- ── DYNAMIC SUBJECT BLOCKS ── -->
-    <div class="subject-sections" id="subject-sections">
-
-      <!-- ĐGNL ĐHQG HN: học đủ, fix cứng -->
-      <div class="subject-block" id="block-DGNL_HN">
-        <div class="subject-block-inner">
-          <div class="subject-block-title">
-            <span class="exam-tag">🏛️ ĐGNL ĐHQG Hà Nội</span>
-            <span class="arrow">→</span>
-            <span class="prompt">Môn thi bắt buộc</span>
+      <!-- THÔNG TIN -->
+      <div class="sh">👤 Thông tin học sinh</div>
+      <div class="sb">
+        <div class="row2">
+          <div class="f">
+            <label>Họ tên học sinh <span class="r">*</span></label>
+            <input type="text" id="name" placeholder="Nguyễn Văn A">
           </div>
-          <div class="full-card">
-            <div class="ico">📘</div>
-            <div class="rtxt">
-              <div class="nm">Toán · Văn · Khoa học tự nhiên · Khoa học xã hội · Tiếng Anh</div>
-              <div class="sub">ĐGNL ĐHQG HN thi đủ tất cả các môn — không cần chọn tổ hợp</div>
+          <div class="f">
+            <label>SĐT học sinh <span class="r">*</span></label>
+            <input type="tel" id="phone" placeholder="0912 345 678" maxlength="10">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="f">
+            <label>Email <span class="r">*</span></label>
+            <input type="email" id="email" placeholder="hs@example.com">
+          </div>
+          <div class="f">
+            <label>Khối lớp <span class="r">*</span></label>
+            <select id="grade">
+              <option value="">-- Chọn --</option>
+              <option value="10">Lớp 10</option>
+              <option value="11">Lớp 11 (lên 12)</option>
+              <option value="12">Lớp 12 (hiện tại)</option>
+            </select>
+            <div id="grade-warn">❌ Không nhận lớp 12. Vui lòng liên hệ để tư vấn thêm.</div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="f">
+            <label>Lớp học</label>
+            <input type="text" id="class" placeholder="VD: 11A1, 11 Toán...">
+          </div>
+          <div class="f">
+            <label>Trường học</label>
+            <input type="text" id="school" placeholder="VD: THPT Chu Văn An">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="f">
+            <label>Năm học đăng ký <span class="r">*</span></label>
+            <select id="school-year">
+              <option value="">-- Chọn --</option>
+              <option value="2025-2026">2025 – 2026</option>
+              <option value="2026-2027" selected>2026 – 2027</option>
+              <option value="2027-2028">2027 – 2028</option>
+            </select>
+          </div>
+          <div class="f">
+            <!-- placeholder for layout balance -->
+          </div>
+        </div>
+        <hr class="div">
+        <div class="row2">
+          <div class="f">
+            <label>Họ tên phụ huynh <span class="r">*</span></label>
+            <input type="text" id="pname" placeholder="Nguyễn Văn B">
+          </div>
+          <div class="f">
+            <label>SĐT phụ huynh <span class="r">*</span></label>
+            <input type="tel" id="pphone" placeholder="0987 654 321" maxlength="10">
+          </div>
+        </div>
+      </div>
+
+      <!-- KỲ THI -->
+      <div class="sh">🎯 Kỳ thi đăng ký</div>
+      <div class="sb">
+        <p class="pick-hint">Chọn một hoặc nhiều kỳ thi — phần môn học sẽ hiện bên dưới</p>
+        <div class="sel-grid">
+
+          <label class="sel-card" id="card-DGNL_HN" onclick="toggleExam(this,'DGNL_HN')">
+            <input type="checkbox" name="exam" value="DGNL_HN">
+            <div class="dot"></div>
+            <div class="ico">🏛️</div>
+            <div class="nm">ĐGNL ĐHQG Hà Nội</div>
+            <div class="sub">ĐH Quốc gia HN</div>
+          </label>
+
+          <label class="sel-card" id="card-DGNL_QD" onclick="toggleExam(this,'DGNL_QD')">
+            <input type="checkbox" name="exam" value="DGNL_QD">
+            <div class="dot"></div>
+            <div class="ico">⭐</div>
+            <div class="nm">ĐGNL Quân Đội</div>
+            <div class="sub">Học viện Quân sự</div>
+          </label>
+
+          <label class="sel-card" id="card-DGNL_CA" onclick="toggleExam(this,'DGNL_CA')">
+            <input type="checkbox" name="exam" value="DGNL_CA">
+            <div class="dot"></div>
+            <div class="ico">🛡️</div>
+            <div class="nm">ĐGNL Công An</div>
+            <div class="sub">Học viện Công an</div>
+          </label>
+
+          <label class="sel-card" id="card-DGTD_BK" onclick="toggleExam(this,'DGTD_BK')">
+            <input type="checkbox" name="exam" value="DGTD_BK">
+            <div class="dot"></div>
+            <div class="ico">⚙️</div>
+            <div class="nm">ĐGTD Bách Khoa</div>
+            <div class="sub">ĐHBK Hà Nội</div>
+          </label>
+
+          <label class="sel-card" id="card-DGTD_SP" onclick="toggleExam(this,'DGTD_SP')">
+            <input type="checkbox" name="exam" value="DGTD_SP">
+            <div class="dot"></div>
+            <div class="ico">📐</div>
+            <div class="nm">ĐGTD Sư Phạm</div>
+            <div class="sub">ĐHSP Hà Nội</div>
+          </label>
+
+          <label class="sel-card" id="card-ON_TN" onclick="toggleExam(this,'ON_TN')">
+            <input type="checkbox" name="exam" value="ON_TN">
+            <div class="dot"></div>
+            <div class="ico">📋</div>
+            <div class="nm">Ôn thi TN THPT</div>
+            <div class="sub">Tốt nghiệp</div>
+          </label>
+
+        </div>
+
+        <!-- ── DYNAMIC SUBJECT BLOCKS ── -->
+        <div class="subject-sections" id="subject-sections">
+
+          <!-- ĐGNL ĐHQG HN: học đủ, fix cứng -->
+          <div class="subject-block" id="block-DGNL_HN">
+            <div class="subject-block-inner">
+              <div class="subject-block-title">
+                <span class="exam-tag">🏛️ ĐGNL ĐHQG Hà Nội</span>
+                <span class="arrow">→</span>
+                <span class="prompt">Môn thi bắt buộc</span>
+              </div>
+              <div class="full-card">
+                <div class="ico">📘</div>
+                <div class="rtxt">
+                  <div class="nm">Toán · Văn · Khoa học tự nhiên · Khoa học xã hội · Tiếng Anh</div>
+                  <div class="sub">ĐGNL ĐHQG HN thi đủ tất cả các môn — không cần chọn tổ hợp</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ĐGNL Quân Đội: 2 tổ hợp -->
-      <div class="subject-block" id="block-DGNL_QD">
-        <div class="subject-block-inner">
-          <div class="subject-block-title">
-            <span class="exam-tag">⭐ ĐGNL Quân Đội</span>
-            <span class="arrow">→</span>
-            <span class="prompt">Chọn tổ hợp ôn</span>
-          </div>
-          <div class="radio-grid">
-            <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_QD')">
-              <input type="radio" name="combo_DGNL_QD" value="Toán – Văn – Anh">
-              <div class="rdot"></div>
-              <div class="rtxt">
-                <div class="nm">Toán – Văn – Anh</div>
-                <div class="sub">Khoa học xã hội</div>
+          <!-- ĐGNL Quân Đội: 2 tổ hợp -->
+          <div class="subject-block" id="block-DGNL_QD">
+            <div class="subject-block-inner">
+              <div class="subject-block-title">
+                <span class="exam-tag">⭐ ĐGNL Quân Đội</span>
+                <span class="arrow">→</span>
+                <span class="prompt">Chọn tổ hợp ôn</span>
               </div>
-            </label>
-            <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_QD')">
-              <input type="radio" name="combo_DGNL_QD" value="Toán – Văn – KHTN">
-              <div class="rdot"></div>
-              <div class="rtxt">
-                <div class="nm">Toán – Văn – KHTN</div>
-                <div class="sub">Khoa học tự nhiên</div>
+              <div class="radio-grid">
+                <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_QD')">
+                  <input type="radio" name="combo_DGNL_QD" value="Toán – Văn – Anh">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">Toán – Văn – Anh</div>
+                    <div class="sub">Khoa học xã hội</div>
+                  </div>
+                </label>
+                <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_QD')">
+                  <input type="radio" name="combo_DGNL_QD" value="Toán – Văn – KHTN">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">Toán – Văn – KHTN</div>
+                    <div class="sub">Khoa học tự nhiên</div>
+                  </div>
+                </label>
               </div>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- ĐGNL Công An: 2 tổ hợp -->
-      <div class="subject-block" id="block-DGNL_CA">
-        <div class="subject-block-inner">
-          <div class="subject-block-title">
-            <span class="exam-tag">🛡️ ĐGNL Công An</span>
-            <span class="arrow">→</span>
-            <span class="prompt">Chọn tổ hợp ôn</span>
-          </div>
-          <div class="radio-grid">
-            <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_CA')">
-              <input type="radio" name="combo_DGNL_CA" value="Toán – Văn – Anh">
-              <div class="rdot"></div>
-              <div class="rtxt">
-                <div class="nm">Toán – Văn – Anh</div>
-                <div class="sub">Khoa học xã hội</div>
-              </div>
-            </label>
-            <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_CA')">
-              <input type="radio" name="combo_DGNL_CA" value="Toán – Văn – KHTN">
-              <div class="rdot"></div>
-              <div class="rtxt">
-                <div class="nm">Toán – Văn – KHTN</div>
-                <div class="sub">Khoa học tự nhiên</div>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- ĐGTD Bách Khoa: học đủ, fix cứng -->
-      <div class="subject-block" id="block-DGTD_BK">
-        <div class="subject-block-inner">
-          <div class="subject-block-title">
-            <span class="exam-tag">⚙️ ĐGTD Bách Khoa</span>
-            <span class="arrow">→</span>
-            <span class="prompt">Môn thi bắt buộc</span>
-          </div>
-          <div class="full-card">
-            <div class="ico">📘</div>
-            <div class="rtxt">
-              <div class="nm">Toán · Vật Lý · Hóa học</div>
-              <div class="sub">ĐGTD ĐHBK thi cả 3 môn — không cần chọn tổ hợp</div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ĐGTD Sư Phạm: 2 tổ hợp -->
-      <div class="subject-block" id="block-DGTD_SP">
-        <div class="subject-block-inner">
-          <div class="subject-block-title">
-            <span class="exam-tag">📐 ĐGTD Sư Phạm</span>
-            <span class="arrow">→</span>
-            <span class="prompt">Chọn tổ hợp ôn</span>
-          </div>
-          <div class="radio-grid">
-            <label class="radio-card" onclick="pickRadio(this,'combo_DGTD_SP')">
-              <input type="radio" name="combo_DGTD_SP" value="Toán – Văn – Anh">
-              <div class="rdot"></div>
-              <div class="rtxt">
-                <div class="nm">Toán – Văn – Anh</div>
-                <div class="sub">Khoa học xã hội</div>
+          <!-- ĐGNL Công An: 2 tổ hợp -->
+          <div class="subject-block" id="block-DGNL_CA">
+            <div class="subject-block-inner">
+              <div class="subject-block-title">
+                <span class="exam-tag">🛡️ ĐGNL Công An</span>
+                <span class="arrow">→</span>
+                <span class="prompt">Chọn tổ hợp ôn</span>
               </div>
-            </label>
-            <label class="radio-card" onclick="pickRadio(this,'combo_DGTD_SP')">
-              <input type="radio" name="combo_DGTD_SP" value="Toán – Văn – KHTN">
-              <div class="rdot"></div>
-              <div class="rtxt">
-                <div class="nm">Toán – Văn – KHTN</div>
-                <div class="sub">Khoa học tự nhiên</div>
+              <div class="radio-grid">
+                <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_CA')">
+                  <input type="radio" name="combo_DGNL_CA" value="Toán – Văn – Anh">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">Toán – Văn – Anh</div>
+                    <div class="sub">Khoa học xã hội</div>
+                  </div>
+                </label>
+                <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_CA')">
+                  <input type="radio" name="combo_DGNL_CA" value="Toán – Văn – KHTN">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">Toán – Văn – KHTN</div>
+                    <div class="sub">Khoa học tự nhiên</div>
+                  </div>
+                </label>
               </div>
-            </label>
+            </div>
           </div>
-        </div>
+
+          <!-- ĐGTD Bách Khoa: học đủ, fix cứng -->
+          <div class="subject-block" id="block-DGTD_BK">
+            <div class="subject-block-inner">
+              <div class="subject-block-title">
+                <span class="exam-tag">⚙️ ĐGTD Bách Khoa</span>
+                <span class="arrow">→</span>
+                <span class="prompt">Môn thi bắt buộc</span>
+              </div>
+              <div class="full-card">
+                <div class="ico">📘</div>
+                <div class="rtxt">
+                  <div class="nm">Toán · Vật Lý · Hóa học</div>
+                  <div class="sub">ĐGTD ĐHBK thi cả 3 môn — không cần chọn tổ hợp</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ĐGTD Sư Phạm: 2 tổ hợp -->
+          <div class="subject-block" id="block-DGTD_SP">
+            <div class="subject-block-inner">
+              <div class="subject-block-title">
+                <span class="exam-tag">📐 ĐGTD Sư Phạm</span>
+                <span class="arrow">→</span>
+                <span class="prompt">Chọn tổ hợp ôn</span>
+              </div>
+              <div class="radio-grid">
+                <label class="radio-card" onclick="pickRadio(this,'combo_DGTD_SP')">
+                  <input type="radio" name="combo_DGTD_SP" value="Toán – Văn – Anh">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">Toán – Văn – Anh</div>
+                    <div class="sub">Khoa học xã hội</div>
+                  </div>
+                </label>
+                <label class="radio-card" onclick="pickRadio(this,'combo_DGTD_SP')">
+                  <input type="radio" name="combo_DGTD_SP" value="Toán – Văn – KHTN">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">Toán – Văn – KHTN</div>
+                    <div class="sub">Khoa học tự nhiên</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ôn TN THPT: chọn môn -->
+          <div class="subject-block" id="block-ON_TN">
+            <div class="subject-block-inner">
+              <div class="subject-block-title">
+                <span class="exam-tag">📋 Ôn thi TN THPT</span>
+                <span class="arrow">→</span>
+                <span class="prompt">Chọn môn ôn thi (có thể chọn nhiều)</span>
+              </div>
+              <div class="sel-grid">
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Toán">
+                  <div class="dot"></div>
+                  <div class="ico">🔢</div>
+                  <div class="nm">Toán</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Ngữ Văn">
+                  <div class="dot"></div>
+                  <div class="ico">📖</div>
+                  <div class="nm">Ngữ Văn</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Tiếng Anh">
+                  <div class="dot"></div>
+                  <div class="ico">🌐</div>
+                  <div class="nm">Tiếng Anh</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Vật Lý">
+                  <div class="dot"></div>
+                  <div class="ico">⚛️</div>
+                  <div class="nm">Vật Lý</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Hóa học">
+                  <div class="dot"></div>
+                  <div class="ico">🧪</div>
+                  <div class="nm">Hóa học</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Sinh học">
+                  <div class="dot"></div>
+                  <div class="ico">🧬</div>
+                  <div class="nm">Sinh học</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Lịch Sử">
+                  <div class="dot"></div>
+                  <div class="ico">📜</div>
+                  <div class="nm">Lịch Sử</div>
+                </label>
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="on_tn_mon" value="Địa Lý">
+                  <div class="dot"></div>
+                  <div class="ico">🗺️</div>
+                  <div class="nm">Địa Lý</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /subject-sections -->
       </div>
 
-      <!-- Ôn TN THPT: chọn môn -->
-      <div class="subject-block" id="block-ON_TN">
-        <div class="subject-block-inner">
-          <div class="subject-block-title">
-            <span class="exam-tag">📋 Ôn thi TN THPT</span>
-            <span class="arrow">→</span>
-            <span class="prompt">Chọn môn ôn thi (có thể chọn nhiều)</span>
-          </div>
-          <div class="sel-grid">
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Toán">
-              <div class="dot"></div>
-              <div class="ico">🔢</div>
-              <div class="nm">Toán</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Ngữ Văn">
-              <div class="dot"></div>
-              <div class="ico">📖</div>
-              <div class="nm">Ngữ Văn</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Tiếng Anh">
-              <div class="dot"></div>
-              <div class="ico">🌐</div>
-              <div class="nm">Tiếng Anh</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Vật Lý">
-              <div class="dot"></div>
-              <div class="ico">⚛️</div>
-              <div class="nm">Vật Lý</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Hóa học">
-              <div class="dot"></div>
-              <div class="ico">🧪</div>
-              <div class="nm">Hóa học</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Sinh học">
-              <div class="dot"></div>
-              <div class="ico">🧬</div>
-              <div class="nm">Sinh học</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Lịch Sử">
-              <div class="dot"></div>
-              <div class="ico">📜</div>
-              <div class="nm">Lịch Sử</div>
-            </label>
-            <label class="sel-card" onclick="toggleCard(this)">
-              <input type="checkbox" name="on_tn_mon" value="Địa Lý">
-              <div class="dot"></div>
-              <div class="ico">🗺️</div>
-              <div class="nm">Địa Lý</div>
-            </label>
-          </div>
+      <!-- GHI CHÚ + SUBMIT -->
+      <div class="sub-area">
+        <div class="f row1" style="text-align:left;">
+          <label>Ghi chú thêm</label>
+          <textarea id="note" rows="2" placeholder="Câu hỏi hoặc yêu cầu thêm (nếu có)..."></textarea>
         </div>
+        <button type="submit" class="btn" id="btn">Gửi Đăng Ký</button>
+        <p class="note">🔒 Thông tin bảo mật · Phản hồi trong 24h</p>
       </div>
 
-    </div><!-- /subject-sections -->
+    </form>
   </div>
 
-  <!-- GHI CHÚ + SUBMIT -->
-  <div class="sub-area">
-    <div class="f row1" style="text-align:left;">
-      <label>Ghi chú thêm</label>
-      <textarea id="note" rows="2" placeholder="Câu hỏi hoặc yêu cầu thêm (nếu có)..."></textarea>
-    </div>
-    <button type="submit" class="btn" id="btn">Gửi Đăng Ký</button>
-    <p class="note">🔒 Thông tin bảo mật · Phản hồi trong 24h</p>
-  </div>
+  <div class="toast" id="toast"><b id="tt"></b><span id="tm"></span></div>
 
-</form>
-</div>
+  <script>
+    const API = 'https://happyeduhub.vn/api';
 
-<div class="toast" id="toast"><b id="tt"></b><span id="tm"></span></div>
-
-<script>
-const API = 'https://happyeduhub.vn/api';
-
-// ── Toggle exam checkbox + show/hide subject block ──
-function toggleExam(el, examId) {
-  const cb = el.querySelector('input');
-  setTimeout(() => {
-    const checked = cb.checked;
-    el.classList.toggle('on', checked);
-    const block = document.getElementById('block-' + examId);
-    if (block) block.classList.toggle('visible', checked);
-  }, 0);
-}
-
-// ── Toggle generic checkbox card ──
-function toggleCard(el) {
-  const cb = el.querySelector('input');
-  setTimeout(() => el.classList.toggle('on', cb.checked), 0);
-}
-
-// ── Pick radio card ──
-function pickRadio(el, name) {
-  document.querySelectorAll(`.radio-card input[name="${name}"]`).forEach(r => {
-    r.closest('.radio-card').classList.remove('on');
-  });
-  setTimeout(() => el.classList.add('on'), 0);
-}
-
-document.getElementById('grade').addEventListener('change', function() {
-  const g12 = this.value === '12';
-  document.getElementById('grade-warn').style.display = g12 ? 'block' : 'none';
-  document.getElementById('btn').disabled = g12;
-});
-
-function getChecked(name) {
-  return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(e => e.value);
-}
-
-function getRadio(name) {
-  const el = document.querySelector(`input[name="${name}"]:checked`);
-  return el ? el.value : null;
-}
-
-function validate() {
-  const n  = document.getElementById('name').value.trim();
-  const ph = document.getElementById('phone').value.trim();
-  const gr = document.getElementById('grade').value;
-  const pn = document.getElementById('pname').value.trim();
-  const pp = document.getElementById('pphone').value.trim();
-  const ex = getChecked('exam');
-  if (!n)                           return 'Vui lòng nhập họ tên học sinh.';
-  if (!ph || !/^\d{10}$/.test(ph)) return 'SĐT học sinh phải đủ 10 chữ số.';
-  if (!gr)                          return 'Vui lòng chọn khối lớp.';
-  if (gr === '12')                  return 'Không nhận học sinh lớp 12 hiện tại.';
-  if (!pn)                          return 'Vui lòng nhập họ tên phụ huynh.';
-  if (!pp || !/^\d{10}$/.test(pp)) return 'SĐT phụ huynh phải đủ 10 chữ số.';
-  if (!ex.length)                   return 'Vui lòng chọn ít nhất một kỳ thi.';
-  const sy = document.getElementById('school-year').value;
-  if (!sy)                          return 'Vui lòng chọn năm học đăng ký.';
-  // Validate each selected exam has subject choice (if required)
-  const needCombo = ['DGNL_QD','DGNL_CA','DGTD_SP'];
-  for (const e of ex) {
-    if (needCombo.includes(e) && !getRadio('combo_' + e)) {
-      const names = { DGNL_HN:'ĐGNL ĐHQG HN', DGNL_QD:'ĐGNL Quân Đội', DGNL_CA:'ĐGNL Công An', DGTD_SP:'ĐGTD Sư Phạm' };
-      return `Vui lòng chọn tổ hợp môn cho ${names[e]}.`;
+    // ── Toggle exam checkbox + show/hide subject block ──
+    function toggleExam(el, examId) {
+      const cb = el.querySelector('input');
+      setTimeout(() => {
+        const checked = cb.checked;
+        el.classList.toggle('on', checked);
+        const block = document.getElementById('block-' + examId);
+        if (block) block.classList.toggle('visible', checked);
+      }, 0);
     }
-    if (e === 'ON_TN' && !getChecked('on_tn_mon').length) {
-      return 'Vui lòng chọn ít nhất một môn ôn TN THPT.';
+
+    // ── Toggle generic checkbox card ──
+    function toggleCard(el) {
+      const cb = el.querySelector('input');
+      setTimeout(() => el.classList.toggle('on', cb.checked), 0);
     }
-  }
-  return null;
-}
 
-function toast(title, msg, err) {
-  const t = document.getElementById('toast');
-  document.getElementById('tt').textContent = title;
-  document.getElementById('tm').textContent = msg;
-  t.className = 'toast' + (err ? ' err' : '');
-  t.style.display = 'block';
-  setTimeout(() => t.style.display = 'none', 5000);
-}
-
-document.getElementById('frm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const err = validate();
-  if (err) { toast('Thiếu thông tin', err, true); return; }
-
-  const btn = document.getElementById('btn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spin"></span>Đang gửi...';
-
-  const name   = document.getElementById('name').value.trim();
-  const phone  = document.getElementById('phone').value.trim();
-  const email  = document.getElementById('email').value.trim();
-  const grade  = document.getElementById('grade').value;
-  const cls    = document.getElementById('class').value.trim();
-  const school = document.getElementById('school').value.trim();
-  const pname  = document.getElementById('pname').value.trim();
-  const pphone = document.getElementById('pphone').value.trim();
-  const exams  = getChecked('exam');
-  const schoolYear = document.getElementById('school-year').value;
-  const note   = document.getElementById('note').value.trim();
-
-  // Build subject selection per exam
-  const fixedSubjects = {
-    'DGNL_HN': 'Toán · Văn · KHTN · KHXH · Tiếng Anh (học đủ)',
-    'DGTD_BK': 'Toán · Vật Lý · Hóa học (học đủ)',
-  };
-  const subjectChoices = {};
-  exams.forEach(ex => {
-    if (fixedSubjects[ex]) {
-      subjectChoices[ex] = fixedSubjects[ex];
-    } else if (ex === 'ON_TN') {
-      subjectChoices[ex] = getChecked('on_tn_mon').join(', ');
-    } else {
-      subjectChoices[ex] = getRadio('combo_' + ex) || '';
+    // ── Pick radio card ──
+    function pickRadio(el, name) {
+      document.querySelectorAll(`.radio-card input[name="${name}"]`).forEach(r => {
+        r.closest('.radio-card').classList.remove('on');
+      });
+      setTimeout(() => el.classList.add('on'), 0);
     }
-  });
 
-  const dobMap = { '11': '2009-01-01', '12': '2008-01-01' };
-  const dob = new Date(dobMap[grade] || '2007-01-01').toISOString();
-
-  let errMsg = null;
-  try {
-    const res = await fetch(`${API}/user`, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name,
-        email: email || `hs_${phone}@dgnl.happyeduhub.vn`,
-        password: 'Abc@1234',
-        phone_number: phone,
-        date_of_birth: dob,
-        gender: 'OTHER',
-        address: '',
-        additional_student_data: {
-          first_contact_name: pname,
-          first_contact_tel: pphone,
-          class: cls   || null,
-          school: school || null,
-          registration_info: { exams, subjectChoices, schoolYear, note: note || null }
-        }
-      })
+    document.getElementById('grade').addEventListener('change', function () {
+      const g12 = this.value === '12';
+      document.getElementById('grade-warn').style.display = g12 ? 'block' : 'none';
+      document.getElementById('btn').disabled = g12;
     });
-    const json = await res.json();
-    if (!res.ok) errMsg = json?.message || 'Tạo tài khoản thất bại.';
-  } catch(ex) {
-    errMsg = 'Không kết nối được máy chủ.';
-  }
 
-  if (errMsg) {
-    btn.disabled = false; btn.innerHTML = 'Gửi Đăng Ký';
-    toast('Có lỗi xảy ra', errMsg, true);
-    return;
-  }
+    function getChecked(name) {
+      return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(e => e.value);
+    }
 
-  btn.disabled = false; btn.innerHTML = 'Gửi Đăng Ký';
-  toast('✅ Đăng ký thành công!', `Cảm ơn ${name}! Chúng tôi sẽ liên hệ sớm.`);
-  document.getElementById('frm').reset();
-  document.querySelectorAll('.sel-card, .radio-card').forEach(el => el.classList.remove('on'));
-  document.querySelectorAll('.subject-block').forEach(el => el.classList.remove('visible'));
-  document.getElementById('grade-warn').style.display = 'none';
-});
-</script>
+    function getRadio(name) {
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : null;
+    }
+
+    function validate() {
+      const n = document.getElementById('name').value.trim();
+      const ph = document.getElementById('phone').value.trim();
+      const gr = document.getElementById('grade').value;
+      const pn = document.getElementById('pname').value.trim();
+      const pp = document.getElementById('pphone').value.trim();
+      const ex = getChecked('exam');
+      if (!n) return 'Vui lòng nhập họ tên học sinh.';
+      if (!ph || !/^\d{10}$/.test(ph)) return 'SĐT học sinh phải đủ 10 chữ số.';
+      if (!gr) return 'Vui lòng chọn khối lớp.';
+      if (gr === '12') return 'Không nhận học sinh lớp 12 hiện tại.';
+      if (!pn) return 'Vui lòng nhập họ tên phụ huynh.';
+      if (!pp || !/^\d{10}$/.test(pp)) return 'SĐT phụ huynh phải đủ 10 chữ số.';
+      if (!ex.length) return 'Vui lòng chọn ít nhất một kỳ thi.';
+      const sy = document.getElementById('school-year').value;
+      if (!sy) return 'Vui lòng chọn năm học đăng ký.';
+      // Validate each selected exam has subject choice (if required)
+      const needCombo = ['DGNL_QD', 'DGNL_CA', 'DGTD_SP'];
+      for (const e of ex) {
+        if (needCombo.includes(e) && !getRadio('combo_' + e)) {
+          const names = { DGNL_HN: 'ĐGNL ĐHQG HN', DGNL_QD: 'ĐGNL Quân Đội', DGNL_CA: 'ĐGNL Công An', DGTD_SP: 'ĐGTD Sư Phạm' };
+          return `Vui lòng chọn tổ hợp môn cho ${names[e]}.`;
+        }
+        if (e === 'ON_TN' && !getChecked('on_tn_mon').length) {
+          return 'Vui lòng chọn ít nhất một môn ôn TN THPT.';
+        }
+      }
+      return null;
+    }
+
+    function toast(title, msg, err) {
+      const t = document.getElementById('toast');
+      document.getElementById('tt').textContent = title;
+      document.getElementById('tm').textContent = msg;
+      t.className = 'toast' + (err ? ' err' : '');
+      t.style.display = 'block';
+      setTimeout(() => t.style.display = 'none', 5000);
+    }
+
+    document.getElementById('frm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const err = validate();
+      if (err) { toast('Thiếu thông tin', err, true); return; }
+
+      const btn = document.getElementById('btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spin"></span>Đang gửi...';
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const grade = document.getElementById('grade').value;
+      const cls = document.getElementById('class').value.trim();
+      const school = document.getElementById('school').value.trim();
+      const pname = document.getElementById('pname').value.trim();
+      const pphone = document.getElementById('pphone').value.trim();
+      const exams = getChecked('exam');
+      const schoolYear = document.getElementById('school-year').value;
+      const note = document.getElementById('note').value.trim();
+
+      // Build subject selection per exam
+      const fixedSubjects = {
+        'DGNL_HN': 'Toán · Văn · KHTN · KHXH · Tiếng Anh (học đủ)',
+        'DGTD_BK': 'Toán · Vật Lý · Hóa học (học đủ)',
+      };
+      const subjectChoices = {};
+      exams.forEach(ex => {
+        if (fixedSubjects[ex]) {
+          subjectChoices[ex] = fixedSubjects[ex];
+        } else if (ex === 'ON_TN') {
+          subjectChoices[ex] = getChecked('on_tn_mon').join(', ');
+        } else {
+          subjectChoices[ex] = getRadio('combo_' + ex) || '';
+        }
+      });
+
+      const dobMap = { '11': '2009-01-01', '12': '2008-01-01' };
+      const dob = new Date(dobMap[grade] || '2007-01-01').toISOString();
+
+      let errMsg = null;
+      try {
+        const res = await fetch(`${API}/user`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email: email || `hs_${phone}@dgnl.happyeduhub.vn`,
+            password: 'Abc@1234',
+            phone_number: phone,
+            date_of_birth: dob,
+            gender: 'OTHER',
+            address: '',
+            additional_student_data: {
+              first_contact_name: pname,
+              first_contact_tel: pphone,
+              class: cls || null,
+              school: school || null,
+              registration_info: { exams, subjectChoices, schoolYear, note: note || null }
+            }
+          })
+        });
+        const json = await res.json();
+        if (!res.ok) errMsg = json?.message || 'Tạo tài khoản thất bại.';
+      } catch (ex) {
+        errMsg = 'Không kết nối được máy chủ.';
+      }
+
+      if (errMsg) {
+        btn.disabled = false; btn.innerHTML = 'Gửi Đăng Ký';
+        toast('Có lỗi xảy ra', errMsg, true);
+        return;
+      }
+
+      btn.disabled = false; btn.innerHTML = 'Gửi Đăng Ký';
+      toast('✅ Đăng ký thành công!', `Cảm ơn ${name}! Chúng tôi sẽ liên hệ sớm.`);
+      document.getElementById('frm').reset();
+      document.querySelectorAll('.sel-card, .radio-card').forEach(el => el.classList.remove('on'));
+      document.querySelectorAll('.subject-block').forEach(el => el.classList.remove('visible'));
+      document.getElementById('grade-warn').style.display = 'none';
+    });
+  </script>
 </body>
+
 </html>
