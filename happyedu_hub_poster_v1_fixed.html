@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>HappyEdu Hub – FB Poster</title>
+<title>HappyEdu Hub – Poster</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
 <style>
@@ -18,33 +18,31 @@ body {
 }
 
 .poster {
-  width: 1200px;
-  height: 1200px;
-  display: flex;
-  flex-direction: column;
+  width: 820px;
+  border-radius: 0;
   overflow: hidden;
-  position: relative;
+  box-shadow: 0 12px 48px rgba(21,101,192,0.22);
 }
 
-/* ══ TOP — blue hero ══ */
-.hero {
+.row-hero {
   background: #1565C0;
-  flex: 0 0 530px;
-  padding: 52px 72px 44px;
-  position: relative;
-  overflow: hidden;
+  padding: 38px 52px 48px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
 }
-.hero::before {
+
+.row-hero::before {
   content: '';
   position: absolute; top: -200px; right: -180px;
   width: 640px; height: 640px; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 65%);
   pointer-events: none;
 }
-.hero::after {
+
+.row-hero::after {
   content: '';
   position: absolute; bottom: -100px; left: 40px;
   width: 360px; height: 360px; border-radius: 50%;
@@ -53,26 +51,26 @@ body {
 }
 
 .topbar {
-  display: flex; align-items: center; justify-content: space-between;
   position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
 }
+
 .logo-row { display: flex; align-items: center; gap: 18px; }
 
-/* Logo image — src="img/logo.png" by default, fallback text "HE" */
 .logo-img {
   width: 72px; height: 72px;
   border-radius: 18px;
   background: #fff;
-  object-fit: contain;
   padding: 6px;
+  object-fit: contain;
   flex-shrink: 0;
-  display: block;
 }
+
 .logo-placeholder {
   width: 72px; height: 72px;
   border-radius: 18px;
   background: #FFD54F;
-  display: none;           /* hidden when real logo loads */
+  display: none;
   align-items: center; justify-content: center;
   font-size: 26px; font-weight: 900; font-style: italic;
   color: #1565C0; flex-shrink: 0;
@@ -92,33 +90,35 @@ body {
 .badge-dot { width: 10px; height: 10px; border-radius: 50%; background: #FFD54F; flex-shrink: 0; }
 .badge-txt { font-size: 16px; font-weight: 700; color: #FFD54F; }
 
+.hero-body { position: relative; z-index: 2; }
+
 .hl-eyebrow {
   font-size: 14px; font-weight: 700;
   letter-spacing: 5px; text-transform: uppercase;
   color: rgba(255,255,255,0.38);
-  position: relative; z-index: 2;
+  margin-bottom: 10px;
 }
 
 .title-block { position: relative; z-index: 2; }
 .title-stack { position: relative; display: inline-block; line-height: 1; }
 .t-shadow {
-  font-size: 196px; font-weight: 900; font-style: italic;
-  letter-spacing: -10px; line-height: 0.88;
+  font-size: 96px; font-weight: 900; font-style: italic;
+  letter-spacing: -4px; line-height: 0.88;
   color: rgba(0,30,100,0.50);
-  position: absolute; top: 12px; left: 10px;
+  position: absolute; top: 6px; left: 5px;
   white-space: nowrap; user-select: none;
 }
 .t-outline {
-  font-size: 196px; font-weight: 900; font-style: italic;
-  letter-spacing: -10px; line-height: 0.88;
+  font-size: 96px; font-weight: 900; font-style: italic;
+  letter-spacing: -4px; line-height: 0.88;
   color: transparent;
-  -webkit-text-stroke: 3px rgba(255,213,79,0.20);
+  -webkit-text-stroke: 2px rgba(255,213,79,0.20);
   position: absolute; top: 0; left: 0;
   white-space: nowrap; user-select: none;
 }
 .t-main {
-  font-size: 196px; font-weight: 900; font-style: italic;
-  letter-spacing: -10px; line-height: 0.88;
+  font-size: 96px; font-weight: 900; font-style: italic;
+  letter-spacing: -4px; line-height: 0.88;
   position: relative; white-space: nowrap;
   background: linear-gradient(140deg, #FFE566 0%, #FFD54F 35%, #FFAA00 65%, #FF8C00 100%);
   -webkit-background-clip: text;
@@ -126,33 +126,28 @@ body {
   background-clip: text;
   filter: drop-shadow(0 4px 16px rgba(255,160,0,0.50));
 }
-.t-amp { font-size: 130px; letter-spacing: 0; }
 
 .hero-pills {
   display: flex; align-items: center; gap: 18px;
   position: relative; z-index: 2;
+  margin-top: 20px;
 }
 .pill-solid {
   background: #FFD54F; color: #1A237E;
   border-radius: 99px; padding: 13px 30px;
-  font-size: 18px; font-weight: 800;
+  font-size: 15px; font-weight: 800;
 }
-.pill-ghost { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.35); }
+.pill-ghost { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.35); }
 
-/* gold bar */
 .gold-bar {
   height: 8px;
   background: linear-gradient(90deg, #FFD54F 0%, #FF8C00 50%, #FFD54F 100%);
   flex-shrink: 0;
 }
 
-/* ══ BOTTOM — light exams ══ */
-.section-exams {
+.row-exams {
   background: #EEF3FF;
-  flex: 1;
-  padding: 34px 72px 50px;
-  display: flex;
-  flex-direction: column;
+  padding: 34px 52px 44px;
 }
 
 .exams-eyebrow {
@@ -166,7 +161,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  flex: 1;
 }
 
 .ec {
@@ -188,59 +182,64 @@ body {
 .stripe-thpt  { background: linear-gradient(90deg, #26C6A0, #00796B); }
 .stripe-gold  { background: linear-gradient(90deg, #FFE566, #FFA000); }
 
-.ec-body { padding: 22px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+.ec-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ec-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.ec-icon { font-size: 36px; line-height: 1; }
 
 .ec-badge {
   display: inline-block;
-  font-size: 11px; font-weight: 800;
-  letter-spacing: 2px; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 99px;
-  margin-bottom: 14px;
-  width: fit-content;
+  font-size: 9px; font-weight: 800;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  white-space: nowrap;
 }
 .badge-hsa  { background: #DBEAFE; color: #1D4ED8; }
 .badge-tsa  { background: #EDE9FE; color: #5B21B6; }
 .badge-thpt { background: #CCFBF1; color: #065F46; }
 .badge-gold { background: #FFF8E1; color: #B45309; }
 
-/* BIG uni name */
-.ec-uni {
-  font-size: 46px;
-  font-weight: 900;
-  line-height: 1.02;
+.ec-name {
+  font-size: 24px; font-weight: 900;
   color: #0D2060;
-  letter-spacing: -1px;
+  line-height: 1.15;
   margin-bottom: 10px;
-  flex: 1;
+  white-space: nowrap;
 }
-.ec.featured .ec-uni { color: #B45309; }
+.ec.featured .ec-name { color: #B45309; }
 
 .ec-full {
-  font-size: 14px;
-  font-weight: 600;
-  color: #7A94BE;
+  font-size: 14px; font-weight: 700;
+  color: #3A5A90;
   line-height: 1.4;
+  margin-top: auto;
   padding-top: 10px;
   border-top: 1px solid #E8EFFE;
 }
 .ec.featured .ec-full {
-  color: #A06000;
+  color: #8B4E00;
   border-top-color: #FFE8A0;
+  font-weight: 700;
 }
 </style>
 </head>
 <body>
 <div class="poster">
 
-  <!-- HERO -->
-  <div class="hero">
+  <div class="row-hero">
     <div class="topbar">
       <div class="logo-row">
-        <!--
-          ★ ĐỂ DÙNG LOGO THẬT:
-          Đặt file logo vào cùng thư mục và đổi src="img/logo.png"
-          thành đúng tên file, ví dụ src="happyedu_logo.png"
-        -->
         <img class="logo-img"
              src="img/logo.png"
              alt="HappyEdu Hub"
@@ -253,47 +252,52 @@ body {
       </div>
       <div class="badge">
         <div class="badge-dot"></div>
-        <div class="badge-txt">Khai giảng Tháng 6 · 2026</div>
+        <div class="badge-txt">Khai giảng T6 · 2026</div>
       </div>
     </div>
 
-    <div class="hl-eyebrow">Đăng ký luyện thi ngay</div>
-
-    <div class="title-block">
-      <div class="title-stack">
-        <div class="t-shadow">HSA <span class="t-amp">&amp;</span> TSA</div>
-        <div class="t-outline">HSA <span class="t-amp">&amp;</span> TSA</div>
-        <div class="t-main">HSA <span class="t-amp">&amp;</span> TSA</div>
+    <div class="hero-body">
+      <div class="hl-eyebrow">Đăng ký học</div>
+      <div class="title-block">
+        <div class="title-stack">
+          <div class="t-shadow">HSA &amp; TSA</div>
+          <div class="t-outline">HSA &amp; TSA</div>
+          <div class="t-main">HSA &amp; TSA</div>
+        </div>
       </div>
-    </div>
-
-    <div class="hero-pills">
-      <div class="pill-solid">🎯 Học sinh lớp 11 lên 12</div>
-      <div class="pill-ghost">Năm học 2026 – 2027</div>
+      <div class="hero-pills">
+        <div class="pill-solid">🎯 Học sinh lớp 11 lên 12</div>
+        <div class="pill-ghost">Năm học 2026 – 2027</div>
+      </div>
     </div>
   </div>
 
   <div class="gold-bar"></div>
 
-  <!-- EXAMS -->
-  <div class="section-exams">
+  <div class="row-exams">
     <div class="exams-eyebrow">Các kỳ thi đang mở đăng ký</div>
     <div class="exams-grid">
 
       <div class="ec featured">
         <div class="ec-stripe stripe-gold"></div>
         <div class="ec-body">
-          <span class="ec-badge badge-gold">HSA</span>
-          <div class="ec-uni">ĐHQG<br>Hà Nội</div>
-          <div class="ec-full">Đại học Quốc gia Hà Nội</div>
+          <div class="ec-header">
+            <div class="ec-icon">🏛️</div>
+            <span class="ec-badge badge-gold">HSA</span>
+          </div>
+          <div class="ec-name">ĐHQG Hà Nội</div>
+          <div class="ec-full">ĐH Quốc gia Hà Nội</div>
         </div>
       </div>
 
       <div class="ec">
         <div class="ec-stripe stripe-hsa"></div>
         <div class="ec-body">
-          <span class="ec-badge badge-hsa">HSA</span>
-          <div class="ec-uni">Quân<br>Đội</div>
+          <div class="ec-header">
+            <div class="ec-icon">⭐</div>
+            <span class="ec-badge badge-hsa">HSA</span>
+          </div>
+          <div class="ec-name">Quân Đội</div>
           <div class="ec-full">HV Kỹ thuật Quân sự</div>
         </div>
       </div>
@@ -301,8 +305,11 @@ body {
       <div class="ec">
         <div class="ec-stripe stripe-hsa"></div>
         <div class="ec-body">
-          <span class="ec-badge badge-hsa">HSA</span>
-          <div class="ec-uni">Công<br>An</div>
+          <div class="ec-header">
+            <div class="ec-icon">🛡️</div>
+            <span class="ec-badge badge-hsa">HSA</span>
+          </div>
+          <div class="ec-name">Công An</div>
           <div class="ec-full">HV An ninh Nhân dân</div>
         </div>
       </div>
@@ -310,8 +317,11 @@ body {
       <div class="ec">
         <div class="ec-stripe stripe-tsa"></div>
         <div class="ec-body">
-          <span class="ec-badge badge-tsa">TSA</span>
-          <div class="ec-uni">Bách<br>Khoa HN</div>
+          <div class="ec-header">
+            <div class="ec-icon">⚙️</div>
+            <span class="ec-badge badge-tsa">TSA</span>
+          </div>
+          <div class="ec-name">Bách Khoa HN</div>
           <div class="ec-full">ĐH Bách Khoa Hà Nội</div>
         </div>
       </div>
@@ -319,8 +329,11 @@ body {
       <div class="ec">
         <div class="ec-stripe stripe-tsa"></div>
         <div class="ec-body">
-          <span class="ec-badge badge-tsa">TSA</span>
-          <div class="ec-uni">Sư<br>Phạm HN</div>
+          <div class="ec-header">
+            <div class="ec-icon">📐</div>
+            <span class="ec-badge badge-tsa">TSA</span>
+          </div>
+          <div class="ec-name">Sư Phạm HN</div>
           <div class="ec-full">ĐH Sư Phạm Hà Nội</div>
         </div>
       </div>
@@ -328,8 +341,11 @@ body {
       <div class="ec">
         <div class="ec-stripe stripe-thpt"></div>
         <div class="ec-body">
-          <span class="ec-badge badge-thpt">Ôn thi</span>
-          <div class="ec-uni">TN<br>THPT</div>
+          <div class="ec-header">
+            <div class="ec-icon">📋</div>
+            <span class="ec-badge badge-thpt">ÔN THI</span>
+          </div>
+          <div class="ec-name">TN THPT</div>
           <div class="ec-full">Tốt nghiệp THPT Quốc gia</div>
         </div>
       </div>

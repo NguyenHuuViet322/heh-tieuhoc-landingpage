@@ -577,6 +577,22 @@
       line-height: 1.4;
     }
 
+    /* ── Info note box (dùng cho ghi chú dưới radio) ── */
+    .info-note {
+      margin-top: 10px;
+      padding: 10px 13px;
+      background: #E6F1FB;
+      border: 1px solid #B5D4F4;
+      border-radius: 9px;
+      font-size: 12px;
+      color: #378ADD;
+      line-height: 1.55;
+    }
+
+    .info-note strong {
+      color: #0C447C;
+    }
+
     /* ── Submit ── */
     .sub-area {
       padding: 4px 24px 28px;
@@ -910,31 +926,34 @@
             </div>
           </div>
 
-          <!-- ĐGNL Quân Đội: 2 tổ hợp -->
+          <!-- ĐGNL Quân Đội: chọn bài thi nền HSA hoặc APT -->
           <div class="subject-block" id="block-DGNL_QD">
             <div class="subject-block-inner">
               <div class="subject-block-title">
                 <span class="exam-tag">⭐ ĐGNL Quân Đội</span>
                 <span class="arrow">→</span>
-                <span class="prompt">Chọn tổ hợp ôn</span>
+                <span class="prompt">Chọn bài thi sử dụng để xét tuyển</span>
               </div>
               <div class="radio-grid">
                 <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_QD')">
-                  <input type="radio" name="combo_DGNL_QD" value="Toán – Văn – Anh">
+                  <input type="radio" name="combo_DGNL_QD" value="HSA – ĐGNL ĐHQG Hà Nội">
                   <div class="rdot"></div>
                   <div class="rtxt">
-                    <div class="nm">Toán – Văn – Anh</div>
-                    <div class="sub">Khoa học xã hội</div>
+                    <div class="nm">HSA – ĐGNL ĐHQG Hà Nội</div>
+                    <div class="sub">Dùng kết quả bài thi của ĐHQG Hà Nội (phù hợp trường khu vực phía Bắc)</div>
                   </div>
                 </label>
                 <label class="radio-card" onclick="pickRadio(this,'combo_DGNL_QD')">
-                  <input type="radio" name="combo_DGNL_QD" value="Toán – Văn – KHTN">
+                  <input type="radio" name="combo_DGNL_QD" value="APT – ĐGNL ĐHQG TP.HCM">
                   <div class="rdot"></div>
                   <div class="rtxt">
-                    <div class="nm">Toán – Văn – KHTN</div>
-                    <div class="sub">Khoa học tự nhiên</div>
+                    <div class="nm">APT – ĐGNL ĐHQG TP.HCM</div>
+                    <div class="sub">Dùng kết quả bài thi của ĐHQG TP.HCM (phù hợp trường khu vực phía Nam)</div>
                   </div>
                 </label>
+              </div>
+              <div class="info-note">
+                💡 Các trường Quân đội xét tuyển dựa trên kết quả <strong>HSA</strong> (ĐHQG Hà Nội) hoặc <strong>APT</strong> (ĐHQG TP.HCM) tùy theo khu vực. Học sinh chọn bài thi phù hợp với trường mình đăng ký.
               </div>
             </div>
           </div>
@@ -1153,12 +1172,20 @@
       if (!ex.length) return 'Vui lòng chọn ít nhất một kỳ thi.';
       const sy = document.getElementById('school-year').value;
       if (!sy) return 'Vui lòng chọn năm học đăng ký.';
-      // Validate each selected exam has subject choice (if required)
+      // Validate each selected exam has required selection
       const needCombo = ['DGNL_QD', 'DGNL_CA', 'DGTD_SP'];
+      const examNames = {
+        DGNL_HN: 'ĐGNL ĐHQG HN',
+        DGNL_QD: 'ĐGNL Quân Đội',
+        DGNL_CA: 'ĐGNL Công An',
+        DGTD_SP: 'ĐGTD Sư Phạm'
+      };
       for (const e of ex) {
         if (needCombo.includes(e) && !getRadio('combo_' + e)) {
-          const names = { DGNL_HN: 'ĐGNL ĐHQG HN', DGNL_QD: 'ĐGNL Quân Đội', DGNL_CA: 'ĐGNL Công An', DGTD_SP: 'ĐGTD Sư Phạm' };
-          return `Vui lòng chọn tổ hợp môn cho ${names[e]}.`;
+          const label = e === 'DGNL_QD'
+            ? 'bài thi xét tuyển cho ĐGNL Quân Đội'
+            : `tổ hợp môn cho ${examNames[e]}`;
+          return `Vui lòng chọn ${label}.`;
         }
         if (e === 'ON_TN' && !getChecked('on_tn_mon').length) {
           return 'Vui lòng chọn ít nhất một môn ôn TN THPT.';
