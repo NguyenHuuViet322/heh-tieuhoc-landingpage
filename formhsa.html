@@ -5,33 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đăng Ký Học ĐGNL & ĐGTD 2026–2027 – HappyEdu Hub</title>
-
-  <!-- ── SEO cơ bản ── -->
-  <meta name="description"
-    content="Đăng ký học ĐGNL & ĐGTD năm học 2026–2027 tại HappyEdu Hub. Khai giảng tháng 6/2026. Ôn luyện chuyên sâu cho học sinh lớp 11 lên 12.">
+  <meta name="description" content="Đăng ký học ĐGNL & ĐGTD năm học 2026–2027 tại HappyEdu Hub. Khai giảng tháng 6/2026. Ôn luyện chuyên sâu cho học sinh lớp 11 lên 12.">
   <meta name="robots" content="index, follow">
-
-  <!-- ── Open Graph (Facebook, Zalo, Messenger) ── -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://happyeduhub.vn/dang-ki-hsa/">
   <meta property="og:site_name" content="HappyEdu Hub">
   <meta property="og:title" content="📚 Đăng Ký Học ĐGNL & ĐGTD 2026–2027 – HappyEdu Hub">
-  <meta property="og:description"
-    content="Khai giảng tháng 6/2026 · Dành cho học sinh lớp 11 lên 12 · Ôn luyện ĐGNL ĐHQG, Quân Đội, Công An, ĐGTD Bách Khoa, Sư Phạm và TN THPT. Đăng ký ngay để nhận lịch học!">
-  <meta property="og:image" content="https://happyeduhub.vn/dang-ki-hsa/img/og-dang-ky_2.png?v=21">
+  <meta property="og:description" content="Khai giảng tháng 6/2026 · Dành cho học sinh lớp 11 lên 12 · Ôn luyện ĐGNL ĐHQG, Quân Đội, Công An, ĐGTD Bách Khoa, Sư Phạm và TN THPT.">
+  <meta property="og:image" content="https://happyeduhub.vn/dang-ki-hsa/img/og-dang-ky_3.jpg?v=22">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="HappyEdu Hub – Đăng ký học ĐGNL & ĐGTD 2026-2027">
   <meta property="og:locale" content="vi_VN">
-
-  <!-- ── Twitter Card (cũng dùng được cho một số nền tảng) ── -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="📚 Đăng Ký Học ĐGNL & ĐGTD 2026–2027 – HappyEdu Hub">
-  <meta name="twitter:description"
-    content="Khai giảng tháng 6/2026 · Ôn luyện ĐGNL, ĐGTD chuyên sâu cho học sinh lớp 11 lên 12.">
-  <meta name="twitter:image" content="https://happyeduhub.vn/dang-ki-hsa/img/og-dang-ky_2.png">
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <meta name="twitter:description" content="Khai giảng tháng 6/2026 · Ôn luyện ĐGNL, ĐGTD chuyên sâu cho học sinh lớp 11 lên 12.">
+  <meta name="twitter:image" content="https://happyeduhub.vn/dang-ki-hsa/img/og-dang-ky_3.jpg?v=22">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -148,19 +138,6 @@
       padding: 18px 20px;
       line-height: 1.65;
       box-shadow: 0 4px 16px rgba(12, 68, 124, 0.08);
-    }
-
-    .notice .ntag {
-      display: inline-block;
-      background: #0C447C;
-      color: white;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 5px;
-      margin-bottom: 10px;
     }
 
     .notice p {
@@ -416,7 +393,7 @@
     }
 
     .subject-block.visible {
-      max-height: 600px;
+      max-height: 800px;
       opacity: 1;
       margin: 0;
     }
@@ -577,7 +554,7 @@
       line-height: 1.4;
     }
 
-    /* ── Info note box (dùng cho ghi chú dưới radio) ── */
+    /* ── Info note box ── */
     .info-note {
       margin-top: 10px;
       padding: 10px 13px;
@@ -591,6 +568,127 @@
 
     .info-note strong {
       color: #0C447C;
+    }
+
+    /* ── LỊCH HỌC ── */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 90px repeat(6, 1fr);
+      gap: 0;
+      border: 1.5px solid #B5D4F4;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .sch-head {
+      background: #0C447C;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      padding: 9px 4px;
+      letter-spacing: .5px;
+    }
+
+    .sch-head.day {
+      font-size: 10.5px;
+    }
+
+    .sch-session {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #1a2a3a;
+      background: #E6F1FB;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 10px;
+      border-right: 1px solid #B5D4F4;
+      border-bottom: 1px solid #B5D4F4;
+    }
+
+    .sch-session .st {
+      font-size: 10px;
+      color: #378ADD;
+      margin-top: 2px;
+    }
+
+    .sch-cell {
+      border-right: 1px solid #B5D4F4;
+      border-bottom: 1px solid #B5D4F4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 4px;
+      cursor: pointer;
+      background: white;
+      transition: background .12s;
+    }
+
+    .sch-cell:last-child {
+      border-right: none;
+    }
+
+    .sch-row-last .sch-cell,
+    .sch-row-last .sch-session {
+      border-bottom: none;
+    }
+
+    .sch-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 1.5px solid #B5D4F4;
+      background: #E6F1FB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+    }
+
+    .sch-check.on {
+      background: #0C447C;
+      border-color: #0C447C;
+    }
+
+    .sch-check.on::after {
+      content: '✓';
+    }
+
+    .sch-cell:hover .sch-check:not(.on) {
+      border-color: #378ADD;
+      background: #B5D4F4;
+    }
+
+    .sch-legend {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 11.5px;
+      color: #378ADD;
+    }
+
+    .sch-legend .dot-on {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: #0C447C;
+      flex-shrink: 0;
+    }
+
+    .sch-counter {
+      display: none;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #0C447C;
+      font-weight: 600;
     }
 
     /* ── Submit ── */
@@ -668,15 +766,8 @@
     }
 
     @keyframes tin {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-
-      to {
-        opacity: 1;
-        transform: none;
-      }
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: none; }
     }
 
     .spin {
@@ -692,9 +783,7 @@
     }
 
     @keyframes rot {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
 
     .wm {
@@ -722,33 +811,17 @@
     }
 
     @media (max-width: 500px) {
-      .row2 {
-        grid-template-columns: 1fr;
-      }
-
-      .sel-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .radio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .radio-grid.col3 {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .sb {
-        padding: 18px 16px 14px;
-      }
-
-      .sh {
-        padding: 11px 16px;
-      }
-
-      .sub-area {
-        padding: 4px 16px 24px;
-      }
+      .row2 { grid-template-columns: 1fr; }
+      .sel-grid { grid-template-columns: 1fr 1fr; }
+      .radio-grid { grid-template-columns: 1fr; }
+      .radio-grid.col3 { grid-template-columns: 1fr 1fr; }
+      .sb { padding: 18px 16px 14px; }
+      .sh { padding: 11px 16px; }
+      .sub-area { padding: 4px 16px 24px; }
+      .schedule-grid { grid-template-columns: 68px repeat(6, 1fr); }
+      .sch-head.day { font-size: 9px; letter-spacing: 0; }
+      .sch-session { font-size: 10px; padding: 6px 6px; }
+      .sch-session .st { font-size: 9px; }
     }
   </style>
 </head>
@@ -775,8 +848,7 @@
     <div class="notice">
       <p>Dành cho các bạn <strong>học sinh khối 11 lên 12</strong> muốn chuẩn bị sớm cho kỳ thi đánh giá năng lực
         <strong>năm học 2026–2027</strong>.</p>
-      <div class="nsub">📅 Dự kiến khai giảng tháng 6/2026 — Để lại thông tin, chúng tôi sẽ liên hệ xác nhận lịch học.
-      </div>
+      <div class="nsub">📅 Dự kiến khai giảng tháng 6/2026 — Để lại thông tin, chúng tôi sẽ liên hệ xác nhận lịch học.</div>
     </div>
   </div>
 
@@ -832,9 +904,7 @@
               <option value="2027-2028">2027 – 2028</option>
             </select>
           </div>
-          <div class="f">
-            <!-- placeholder for layout balance -->
-          </div>
+          <div class="f"><!-- layout balance --></div>
         </div>
         <hr class="div">
         <div class="row2">
@@ -908,25 +978,67 @@
         <!-- ── DYNAMIC SUBJECT BLOCKS ── -->
         <div class="subject-sections" id="subject-sections">
 
-          <!-- ĐGNL ĐHQG HN: học đủ, fix cứng -->
+          <!-- ĐGNL ĐHQG HN: Toán + Văn fix cứng, còn lại checkbox -->
           <div class="subject-block" id="block-DGNL_HN">
             <div class="subject-block-inner">
               <div class="subject-block-title">
                 <span class="exam-tag">🏛️ ĐGNL ĐHQG Hà Nội</span>
                 <span class="arrow">→</span>
-                <span class="prompt">Môn thi bắt buộc</span>
+                <span class="prompt">Chọn môn ôn thêm ngoài Toán &amp; Văn</span>
               </div>
-              <div class="full-card">
-                <div class="ico">📘</div>
-                <div class="rtxt">
-                  <div class="nm">Toán · Văn · Khoa học tự nhiên · Khoa học xã hội · Tiếng Anh</div>
-                  <div class="sub">ĐGNL ĐHQG HN thi đủ tất cả các môn — không cần chọn tổ hợp</div>
+              <div class="info-note" style="margin-bottom:12px;">
+                <strong>📌 Toán &amp; Ngữ Văn:</strong> Bắt buộc — đã được tính vào chương trình ôn luyện.<br>
+                Chọn thêm các môn khác bạn muốn ôn:
+              </div>
+              <div class="sel-grid">
+                <!-- Fixed: Toán -->
+                <div class="full-card" style="padding:10px 13px; gap:8px; flex-direction:column; align-items:flex-start;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:20px;">🔢</span>
+                    <div>
+                      <div class="nm" style="font-size:12.5px;font-weight:700;color:#0C447C;">Toán</div>
+                      <div style="font-size:10.5px;color:#0C447C;font-weight:700;margin-top:2px;">Bắt buộc</div>
+                    </div>
+                  </div>
                 </div>
+                <!-- Fixed: Văn -->
+                <div class="full-card" style="padding:10px 13px; gap:8px; flex-direction:column; align-items:flex-start;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:20px;">📖</span>
+                    <div>
+                      <div class="nm" style="font-size:12.5px;font-weight:700;color:#0C447C;">Ngữ Văn</div>
+                      <div style="font-size:10.5px;color:#0C447C;font-weight:700;margin-top:2px;">Bắt buộc</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Checkbox: Tiếng Anh -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="Tiếng Anh">
+                  <div class="dot"></div>
+                  <div class="ico">🌐</div>
+                  <div class="nm">Tiếng Anh</div>
+                </label>
+                <!-- Checkbox: KHTN -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="KHTN">
+                  <div class="dot"></div>
+                  <div class="ico">⚛️</div>
+                  <div class="nm">KHTN</div>
+                  <div class="sub">Lý · Hóa · Sinh</div>
+                </label>
+                <!-- Checkbox: KHXH -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="KHXH">
+                  <div class="dot"></div>
+                  <div class="ico">🌍</div>
+                  <div class="nm">KHXH</div>
+                  <div class="sub">Sử · Địa · GDCD</div>
+                </label>
               </div>
             </div>
           </div>
 
-          <!-- ĐGNL Quân Đội: chọn bài thi nền HSA hoặc APT -->
+          <!-- ĐGNL Quân Đội -->
           <div class="subject-block" id="block-DGNL_QD">
             <div class="subject-block-inner">
               <div class="subject-block-title">
@@ -958,7 +1070,7 @@
             </div>
           </div>
 
-          <!-- ĐGNL Công An: 2 tổ hợp -->
+          <!-- ĐGNL Công An -->
           <div class="subject-block" id="block-DGNL_CA">
             <div class="subject-block-inner">
               <div class="subject-block-title">
@@ -987,7 +1099,7 @@
             </div>
           </div>
 
-          <!-- ĐGTD Bách Khoa: học đủ, fix cứng -->
+          <!-- ĐGTD Bách Khoa -->
           <div class="subject-block" id="block-DGTD_BK">
             <div class="subject-block-inner">
               <div class="subject-block-title">
@@ -1005,7 +1117,7 @@
             </div>
           </div>
 
-          <!-- ĐGTD Sư Phạm: 2 tổ hợp -->
+          <!-- ĐGTD Sư Phạm -->
           <div class="subject-block" id="block-DGTD_SP">
             <div class="subject-block-inner">
               <div class="subject-block-title">
@@ -1034,7 +1146,7 @@
             </div>
           </div>
 
-          <!-- Ôn TN THPT: chọn môn -->
+          <!-- Ôn TN THPT -->
           <div class="subject-block" id="block-ON_TN">
             <div class="subject-block-inner">
               <div class="subject-block-title">
@@ -1098,6 +1210,26 @@
         </div><!-- /subject-sections -->
       </div>
 
+      <!-- LỊCH HỌC -->
+      <div class="sh">📅 Thời gian có thể học</div>
+      <div class="sb">
+        <p style="font-size:12.5px; color:#378ADD; margin-bottom:12px;">👆 Tick vào các ô bạn <strong>có thể tham gia học</strong> — có thể chọn nhiều ca</p>
+        <div class="schedule-grid" id="schedule-grid">
+          <div class="sch-head"></div>
+          <div class="sch-head day">Thứ 2</div>
+          <div class="sch-head day">Thứ 3</div>
+          <div class="sch-head day">Thứ 4</div>
+          <div class="sch-head day">Thứ 5</div>
+          <div class="sch-head day">Thứ 6</div>
+          <div class="sch-head day">Thứ 7</div>
+        </div>
+        <div class="sch-legend">
+          <div class="dot-on"></div>
+          <span>Ca đã chọn</span>
+        </div>
+        <div class="sch-counter" id="sch-counter"></div>
+      </div>
+
       <!-- GHI CHÚ + SUBMIT -->
       <div class="sub-area">
         <div class="f row1" style="text-align:left;">
@@ -1115,6 +1247,80 @@
 
   <script>
     const API = 'https://happyeduhub.vn/api';
+
+    // ── Cấu hình lịch học ──
+    const SESSIONS = [
+      { id: 'sang1',   label: 'Sáng ca 1',  time: '7:30 – 9:00'   },
+      { id: 'sang2',   label: 'Sáng ca 2',  time: '9:30 – 11:00'  },
+      { id: 'chieu1',   label: 'Chiều ca 1',  time: '14:00 – 15:30' },
+      { id: 'chieu2',   label: 'Chiều ca 2',  time: '15:45 – 17:15' },
+      { id: 'chieu3',  label: 'Chiều ca 3', time: '17:30 – 19:15' },
+      { id: 'chieu4',  label: 'Chiều ca 4', time: '19:30 – 21:30' },
+    ];
+    const DAYS      = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7'];Ư
+    const DAYS_FULL = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+    const scheduleState = {};
+
+    function buildSchedule() {
+      const grid = document.getElementById('schedule-grid');
+      SESSIONS.forEach((sess, si) => {
+        const isLast = si === SESSIONS.length - 1;
+
+        // Session label cell
+        const sessCell = document.createElement('div');
+        sessCell.className = 'sch-session' + (isLast ? ' sch-row-last' : '');
+        sessCell.innerHTML = `<span>${sess.label}</span><span class="st">${sess.time}</span>`;
+        grid.appendChild(sessCell);
+
+        // Day cells
+        DAYS.forEach((day, di) => {
+          const key = `${sess.id}_${day}`;
+          scheduleState[key] = false;
+
+          const cell = document.createElement('div');
+          cell.className = 'sch-cell' + (isLast ? ' sch-row-last' : '');
+
+          const chk = document.createElement('div');
+          chk.className = 'sch-check';
+          chk.id = 'chk_' + key;
+
+          cell.appendChild(chk);
+          cell.addEventListener('click', () => {
+            scheduleState[key] = !scheduleState[key];
+            chk.classList.toggle('on', scheduleState[key]);
+            updateCounter();
+          });
+
+          grid.appendChild(cell);
+        });
+      });
+    }
+
+    function updateCounter() {
+      const selected = Object.values(scheduleState).filter(Boolean).length;
+      const ctr = document.getElementById('sch-counter');
+      if (selected > 0) {
+        ctr.style.display = 'block';
+        ctr.textContent = `✅ Đã chọn ${selected} ca học`;
+      } else {
+        ctr.style.display = 'none';
+      }
+    }
+
+    function getScheduleSelected() {
+      const result = [];
+      SESSIONS.forEach(sess => {
+        DAYS.forEach((day, di) => {
+          const key = `${sess.id}_${day}`;
+          if (scheduleState[key]) {
+            result.push(`${DAYS_FULL[di]} – ${sess.label} (${sess.time})`);
+          }
+        });
+      });
+      return result;
+    }
+
+    buildSchedule();
 
     // ── Toggle exam checkbox + show/hide subject block ──
     function toggleExam(el, examId) {
@@ -1157,22 +1363,24 @@
     }
 
     function validate() {
-      const n = document.getElementById('name').value.trim();
+      const n  = document.getElementById('name').value.trim();
       const ph = document.getElementById('phone').value.trim();
       const gr = document.getElementById('grade').value;
       const pn = document.getElementById('pname').value.trim();
       const pp = document.getElementById('pphone').value.trim();
       const ex = getChecked('exam');
-      if (!n) return 'Vui lòng nhập họ tên học sinh.';
+
+      if (!n)  return 'Vui lòng nhập họ tên học sinh.';
       if (!ph || !/^\d{10}$/.test(ph)) return 'SĐT học sinh phải đủ 10 chữ số.';
       if (!gr) return 'Vui lòng chọn khối lớp.';
       if (gr === '12') return 'Không nhận học sinh lớp 12 hiện tại.';
       if (!pn) return 'Vui lòng nhập họ tên phụ huynh.';
       if (!pp || !/^\d{10}$/.test(pp)) return 'SĐT phụ huynh phải đủ 10 chữ số.';
       if (!ex.length) return 'Vui lòng chọn ít nhất một kỳ thi.';
+
       const sy = document.getElementById('school-year').value;
       if (!sy) return 'Vui lòng chọn năm học đăng ký.';
-      // Validate each selected exam has required selection
+
       const needCombo = ['DGNL_QD', 'DGNL_CA', 'DGTD_SP'];
       const examNames = {
         DGNL_HN: 'ĐGNL ĐHQG HN',
@@ -1180,6 +1388,7 @@
         DGNL_CA: 'ĐGNL Công An',
         DGTD_SP: 'ĐGTD Sư Phạm'
       };
+
       for (const e of ex) {
         if (needCombo.includes(e) && !getRadio('combo_' + e)) {
           const label = e === 'DGNL_QD'
@@ -1212,26 +1421,30 @@
       btn.disabled = true;
       btn.innerHTML = '<span class="spin"></span>Đang gửi...';
 
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const grade = document.getElementById('grade').value;
-      const cls = document.getElementById('class').value.trim();
-      const school = document.getElementById('school').value.trim();
-      const pname = document.getElementById('pname').value.trim();
-      const pphone = document.getElementById('pphone').value.trim();
-      const exams = getChecked('exam');
+      const name       = document.getElementById('name').value.trim();
+      const phone      = document.getElementById('phone').value.trim();
+      const email      = document.getElementById('email').value.trim();
+      const grade      = document.getElementById('grade').value;
+      const cls        = document.getElementById('class').value.trim();
+      const school     = document.getElementById('school').value.trim();
+      const pname      = document.getElementById('pname').value.trim();
+      const pphone     = document.getElementById('pphone').value.trim();
+      const exams      = getChecked('exam');
       const schoolYear = document.getElementById('school-year').value;
-      const note = document.getElementById('note').value.trim();
+      const note       = document.getElementById('note').value.trim();
+      const scheduleSlots = getScheduleSelected();
 
       // Build subject selection per exam
       const fixedSubjects = {
-        'DGNL_HN': 'Toán · Văn · KHTN · KHXH · Tiếng Anh (học đủ)',
         'DGTD_BK': 'Toán · Vật Lý · Hóa học (học đủ)',
       };
       const subjectChoices = {};
       exams.forEach(ex => {
-        if (fixedSubjects[ex]) {
+        if (ex === 'DGNL_HN') {
+          const extra = getChecked('hsa_mon');
+          const base  = 'Toán (bắt buộc) · Ngữ Văn (bắt buộc)';
+          subjectChoices[ex] = extra.length ? `${base} + ${extra.join(' · ')}` : base;
+        } else if (fixedSubjects[ex]) {
           subjectChoices[ex] = fixedSubjects[ex];
         } else if (ex === 'ON_TN') {
           subjectChoices[ex] = getChecked('on_tn_mon').join(', ');
@@ -1246,7 +1459,8 @@
       let errMsg = null;
       try {
         const res = await fetch(`${API}/user`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name,
             email: email || `hs_${phone}@dgnl.happyeduhub.vn`,
@@ -1260,7 +1474,7 @@
               first_contact_tel: pphone,
               class: cls || null,
               school: school || null,
-              registration_info: { exams, subjectChoices, schoolYear, note: note || null }
+              registration_info: { exams, subjectChoices, schoolYear, scheduleSlots, note: note || null }
             }
           })
         });
@@ -1271,17 +1485,23 @@
       }
 
       if (errMsg) {
-        btn.disabled = false; btn.innerHTML = 'Gửi Đăng Ký';
+        btn.disabled = false;
+        btn.innerHTML = 'Gửi Đăng Ký';
         toast('Có lỗi xảy ra', errMsg, true);
         return;
       }
 
-      btn.disabled = false; btn.innerHTML = 'Gửi Đăng Ký';
+      btn.disabled = false;
+      btn.innerHTML = 'Gửi Đăng Ký';
       toast('✅ Đăng ký thành công!', `Cảm ơn ${name}! Chúng tôi sẽ liên hệ sớm.`);
+
       document.getElementById('frm').reset();
       document.querySelectorAll('.sel-card, .radio-card').forEach(el => el.classList.remove('on'));
       document.querySelectorAll('.subject-block').forEach(el => el.classList.remove('visible'));
       document.getElementById('grade-warn').style.display = 'none';
+      Object.keys(scheduleState).forEach(k => scheduleState[k] = false);
+      document.querySelectorAll('.sch-check').forEach(c => c.classList.remove('on'));
+      document.getElementById('sch-counter').style.display = 'none';
     });
   </script>
 </body>
