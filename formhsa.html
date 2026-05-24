@@ -393,7 +393,7 @@
     }
 
     .subject-block.visible {
-      max-height: 800px;
+      max-height: 1200px;
       opacity: 1;
       margin: 0;
     }
@@ -1018,21 +1018,53 @@
                   <div class="ico">🌐</div>
                   <div class="nm">Tiếng Anh</div>
                 </label>
-                <!-- Checkbox: KHTN -->
+                <!-- Checkbox: Vật Lý -->
                 <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="KHTN">
+                  <input type="checkbox" name="hsa_mon" value="Vật Lý">
                   <div class="dot"></div>
                   <div class="ico">⚛️</div>
-                  <div class="nm">KHTN</div>
-                  <div class="sub">Lý · Hóa · Sinh</div>
+                  <div class="nm">Vật Lý</div>
+                  <div class="sub">KHTN</div>
                 </label>
-                <!-- Checkbox: KHXH -->
+                <!-- Checkbox: Hóa học -->
                 <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="KHXH">
+                  <input type="checkbox" name="hsa_mon" value="Hóa học">
                   <div class="dot"></div>
-                  <div class="ico">🌍</div>
-                  <div class="nm">KHXH</div>
-                  <div class="sub">Sử · Địa · GDCD</div>
+                  <div class="ico">🧪</div>
+                  <div class="nm">Hóa học</div>
+                  <div class="sub">KHTN</div>
+                </label>
+                <!-- Checkbox: Sinh học -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="Sinh học">
+                  <div class="dot"></div>
+                  <div class="ico">🧬</div>
+                  <div class="nm">Sinh học</div>
+                  <div class="sub">KHTN</div>
+                </label>
+                <!-- Checkbox: Lịch Sử -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="Lịch Sử">
+                  <div class="dot"></div>
+                  <div class="ico">📜</div>
+                  <div class="nm">Lịch Sử</div>
+                  <div class="sub">KHXH</div>
+                </label>
+                <!-- Checkbox: Địa Lý -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="Địa Lý">
+                  <div class="dot"></div>
+                  <div class="ico">🗺️</div>
+                  <div class="nm">Địa Lý</div>
+                  <div class="sub">KHXH</div>
+                </label>
+                <!-- Checkbox: GDCD -->
+                <label class="sel-card" onclick="toggleCard(this)">
+                  <input type="checkbox" name="hsa_mon" value="GDCD">
+                  <div class="dot"></div>
+                  <div class="ico">⚖️</div>
+                  <div class="nm">GDCD</div>
+                  <div class="sub">KHXH</div>
                 </label>
               </div>
             </div>
@@ -1252,12 +1284,12 @@
     const SESSIONS = [
       { id: 'sang1',   label: 'Sáng ca 1',  time: '7:30 – 9:00'   },
       { id: 'sang2',   label: 'Sáng ca 2',  time: '9:30 – 11:00'  },
-      { id: 'chieu1',   label: 'Chiều ca 1',  time: '14:00 – 15:30' },
-      { id: 'chieu2',   label: 'Chiều ca 2',  time: '15:45 – 17:15' },
+      { id: 'chieu1',  label: 'Chiều ca 1', time: '14:00 – 15:30' },
+      { id: 'chieu2',  label: 'Chiều ca 2', time: '15:45 – 17:15' },
       { id: 'chieu3',  label: 'Chiều ca 3', time: '17:30 – 19:15' },
       { id: 'chieu4',  label: 'Chiều ca 4', time: '19:30 – 21:30' },
     ];
-    const DAYS      = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7'];Ư
+    const DAYS      = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
     const DAYS_FULL = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
     const scheduleState = {};
 
