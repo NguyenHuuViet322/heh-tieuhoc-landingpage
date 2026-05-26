@@ -978,95 +978,97 @@
         <!-- ── DYNAMIC SUBJECT BLOCKS ── -->
         <div class="subject-sections" id="subject-sections">
 
-          <!-- ĐGNL ĐHQG HN: Toán + Văn fix cứng, còn lại checkbox -->
+          <!-- ĐGNL ĐHQG HN: 3 phần theo cấu trúc HSA -->
           <div class="subject-block" id="block-DGNL_HN">
             <div class="subject-block-inner">
               <div class="subject-block-title">
-                <span class="exam-tag">🏛️ ĐGNL ĐHQG Hà Nội</span>
+                <span class="exam-tag">🏛️ ĐGNL ĐHQG Hà Nội (HSA)</span>
                 <span class="arrow">→</span>
-                <span class="prompt">Chọn môn ôn thêm ngoài Toán &amp; Văn</span>
+                <span class="prompt">Cấu trúc 3 phần · 150 điểm · 195 phút</span>
               </div>
-              <div class="info-note" style="margin-bottom:12px;">
-                <strong>📌 Toán &amp; Ngữ Văn:</strong> Bắt buộc — đã được tính vào chương trình ôn luyện.<br>
-                Chọn thêm các môn khác bạn muốn ôn:
-              </div>
-              <div class="sel-grid">
-                <!-- Fixed: Toán -->
-                <div class="full-card" style="padding:10px 13px; gap:8px; flex-direction:column; align-items:flex-start;">
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <span style="font-size:20px;">🔢</span>
-                    <div>
-                      <div class="nm" style="font-size:12.5px;font-weight:700;color:#0C447C;">Toán</div>
-                      <div style="font-size:10.5px;color:#0C447C;font-weight:700;margin-top:2px;">Bắt buộc</div>
-                    </div>
+
+              <!-- Phần 1 + 2: Bắt buộc -->
+              <div style="font-size:11px;font-weight:700;color:#378ADD;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;">Bắt buộc</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px;">
+                <div class="full-card" style="padding:12px 14px;">
+                  <div class="ico">🔢</div>
+                  <div class="rtxt">
+                    <div class="nm">Phần 1 – Toán học &amp; Xử lý số liệu</div>
+                    <div class="sub">50 câu · 75 phút · Tư duy định lượng</div>
                   </div>
                 </div>
-                <!-- Fixed: Văn -->
-                <div class="full-card" style="padding:10px 13px; gap:8px; flex-direction:column; align-items:flex-start;">
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <span style="font-size:20px;">📖</span>
-                    <div>
-                      <div class="nm" style="font-size:12.5px;font-weight:700;color:#0C447C;">Ngữ Văn</div>
-                      <div style="font-size:10.5px;color:#0C447C;font-weight:700;margin-top:2px;">Bắt buộc</div>
-                    </div>
+                <div class="full-card" style="padding:12px 14px;">
+                  <div class="ico">📖</div>
+                  <div class="rtxt">
+                    <div class="nm">Phần 2 – Văn học &amp; Ngôn ngữ</div>
+                    <div class="sub">50 câu · 60 phút · Tư duy định tính</div>
                   </div>
                 </div>
-                <!-- Checkbox: Tiếng Anh -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="Tiếng Anh">
-                  <div class="dot"></div>
-                  <div class="ico">🌐</div>
-                  <div class="nm">Tiếng Anh</div>
+              </div>
+
+              <!-- Phần 3: Tự chọn -->
+              <div style="font-size:11px;font-weight:700;color:#378ADD;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;">Phần 3 – Tự chọn <span style="font-weight:400;text-transform:none;letter-spacing:0;">(50 câu · 60 phút)</span></div>
+              <div class="radio-grid" style="margin-bottom:10px;">
+                <label class="radio-card" onclick="pickRadio(this,'hsa_p3'); toggleHsaP3('tieng_anh')">
+                  <input type="radio" name="hsa_p3" value="Tiếng Anh">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">🌐 Tiếng Anh</div>
+                    <div class="sub">Đánh giá năng lực ngôn ngữ theo khung 6 bậc Việt Nam</div>
+                  </div>
                 </label>
-                <!-- Checkbox: Vật Lý -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="Vật Lý">
-                  <div class="dot"></div>
-                  <div class="ico">⚛️</div>
-                  <div class="nm">Vật Lý</div>
-                  <div class="sub">KHTN</div>
-                </label>
-                <!-- Checkbox: Hóa học -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="Hóa học">
-                  <div class="dot"></div>
-                  <div class="ico">🧪</div>
-                  <div class="nm">Hóa học</div>
-                  <div class="sub">KHTN</div>
-                </label>
-                <!-- Checkbox: Sinh học -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="Sinh học">
-                  <div class="dot"></div>
-                  <div class="ico">🧬</div>
-                  <div class="nm">Sinh học</div>
-                  <div class="sub">KHTN</div>
-                </label>
-                <!-- Checkbox: Lịch Sử -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="Lịch Sử">
-                  <div class="dot"></div>
-                  <div class="ico">📜</div>
-                  <div class="nm">Lịch Sử</div>
-                  <div class="sub">KHXH</div>
-                </label>
-                <!-- Checkbox: Địa Lý -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="Địa Lý">
-                  <div class="dot"></div>
-                  <div class="ico">🗺️</div>
-                  <div class="nm">Địa Lý</div>
-                  <div class="sub">KHXH</div>
-                </label>
-                <!-- Checkbox: GDCD -->
-                <label class="sel-card" onclick="toggleCard(this)">
-                  <input type="checkbox" name="hsa_mon" value="GDCD">
-                  <div class="dot"></div>
-                  <div class="ico">⚖️</div>
-                  <div class="nm">GDCD</div>
-                  <div class="sub">KHXH</div>
+                <label class="radio-card" onclick="pickRadio(this,'hsa_p3'); toggleHsaP3('khoa_hoc')">
+                  <input type="radio" name="hsa_p3" value="Khoa học">
+                  <div class="rdot"></div>
+                  <div class="rtxt">
+                    <div class="nm">🔬 Khoa học</div>
+                    <div class="sub">Chọn 3 trong 5 môn: Vật lí, Hóa học, Sinh học, Lịch sử, Địa lí</div>
+                  </div>
                 </label>
               </div>
+
+              <!-- Sub-block: chọn môn Khoa học (hiện khi chọn Khoa học) -->
+              <div id="hsa-khoa-hoc" style="overflow:hidden;max-height:0;opacity:0;transition:max-height .3s ease,opacity .25s ease;">
+                <div class="info-note" style="margin-bottom:10px;">
+                  💡 Chọn <strong>3 trong 5 môn</strong> bạn muốn ôn luyện:
+                </div>
+                <div class="sel-grid">
+                  <label class="sel-card" onclick="toggleKhoaHoc(this)">
+                    <input type="checkbox" name="hsa_khoa_hoc" value="Vật lí">
+                    <div class="dot"></div>
+                    <div class="ico">⚛️</div>
+                    <div class="nm">Vật lí</div>
+                  </label>
+                  <label class="sel-card" onclick="toggleKhoaHoc(this)">
+                    <input type="checkbox" name="hsa_khoa_hoc" value="Hóa học">
+                    <div class="dot"></div>
+                    <div class="ico">🧪</div>
+                    <div class="nm">Hóa học</div>
+                  </label>
+                  <label class="sel-card" onclick="toggleKhoaHoc(this)">
+                    <input type="checkbox" name="hsa_khoa_hoc" value="Sinh học">
+                    <div class="dot"></div>
+                    <div class="ico">🧬</div>
+                    <div class="nm">Sinh học</div>
+                  </label>
+                  <label class="sel-card" onclick="toggleKhoaHoc(this)">
+                    <input type="checkbox" name="hsa_khoa_hoc" value="Lịch sử">
+                    <div class="dot"></div>
+                    <div class="ico">📜</div>
+                    <div class="nm">Lịch sử</div>
+                  </label>
+                  <label class="sel-card" onclick="toggleKhoaHoc(this)">
+                    <input type="checkbox" name="hsa_khoa_hoc" value="Địa lí">
+                    <div class="dot"></div>
+                    <div class="ico">🗺️</div>
+                    <div class="nm">Địa lí</div>
+                  </label>
+                </div>
+                <div id="hsa-khoa-hoc-warn" style="display:none;margin-top:8px;padding:8px 11px;background:#FFF8E1;border:1.5px solid #FFD54F;border-radius:8px;font-size:12px;color:#795548;">
+                  ⚠️ Vui lòng chọn đúng 3 môn.
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -1352,6 +1354,42 @@
       return result;
     }
 
+    // ── Toggle Phần 3 HSA: Tiếng Anh vs Khoa học ──
+    function toggleHsaP3(type) {
+      const kh = document.getElementById('hsa-khoa-hoc');
+      if (type === 'khoa_hoc') {
+        kh.style.maxHeight = '400px';
+        kh.style.opacity = '1';
+      } else {
+        kh.style.maxHeight = '0';
+        kh.style.opacity = '0';
+        // uncheck all khoa hoc
+        document.querySelectorAll('input[name="hsa_khoa_hoc"]').forEach(cb => {
+          cb.checked = false;
+          cb.closest('.sel-card').classList.remove('on');
+        });
+      }
+    }
+
+    // ── Toggle Khoa học checkbox (max 3) ──
+    function toggleKhoaHoc(el) {
+      const cb = el.querySelector('input');
+      const checked = document.querySelectorAll('input[name="hsa_khoa_hoc"]:checked');
+      if (!cb.checked && checked.length >= 3) {
+        // prevent checking more than 3
+        setTimeout(() => {
+          cb.checked = false;
+          el.classList.remove('on');
+          document.getElementById('hsa-khoa-hoc-warn').style.display = 'block';
+          setTimeout(() => document.getElementById('hsa-khoa-hoc-warn').style.display = 'none', 2500);
+        }, 0);
+        return;
+      }
+      setTimeout(() => el.classList.toggle('on', cb.checked), 0);
+    }
+
+
+
     buildSchedule();
 
     // ── Toggle exam checkbox + show/hide subject block ──
@@ -1428,6 +1466,14 @@
             : `tổ hợp môn cho ${examNames[e]}`;
           return `Vui lòng chọn ${label}.`;
         }
+        if (e === 'DGNL_HN') {
+          const p3 = getRadio('hsa_p3');
+          if (!p3) return 'Vui lòng chọn Phần 3 cho ĐGNL ĐHQG Hà Nội (Tiếng Anh hoặc Khoa học).';
+          if (p3 === 'Khoa học') {
+            const kh = getChecked('hsa_khoa_hoc');
+            if (kh.length !== 3) return 'Vui lòng chọn đúng 3 môn Khoa học cho Phần 3.';
+          }
+        }
         if (e === 'ON_TN' && !getChecked('on_tn_mon').length) {
           return 'Vui lòng chọn ít nhất một môn ôn TN THPT.';
         }
@@ -1473,9 +1519,9 @@
       const subjectChoices = {};
       exams.forEach(ex => {
         if (ex === 'DGNL_HN') {
-          const extra = getChecked('hsa_mon');
-          const base  = 'Toán (bắt buộc) · Ngữ Văn (bắt buộc)';
-          subjectChoices[ex] = extra.length ? `${base} + ${extra.join(' · ')}` : base;
+          const p3 = getRadio('hsa_p3') || '';
+          const kh = p3 === 'Khoa học' ? getChecked('hsa_khoa_hoc').join(', ') : '';
+          subjectChoices[ex] = `P1: Toán học & Xử lý số liệu (bắt buộc) | P2: Văn học & Ngôn ngữ (bắt buộc) | P3: ${p3 === 'Khoa học' ? `Khoa học (${kh})` : p3}`;
         } else if (fixedSubjects[ex]) {
           subjectChoices[ex] = fixedSubjects[ex];
         } else if (ex === 'ON_TN') {
@@ -1534,6 +1580,8 @@
       Object.keys(scheduleState).forEach(k => scheduleState[k] = false);
       document.querySelectorAll('.sch-check').forEach(c => c.classList.remove('on'));
       document.getElementById('sch-counter').style.display = 'none';
+      const kh = document.getElementById('hsa-khoa-hoc');
+      kh.style.maxHeight = '0'; kh.style.opacity = '0';
     });
   </script>
 </body>

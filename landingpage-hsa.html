@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On Luyen HSA – HappyEdu Hub | Khai giang thang 6/2026</title>
+<meta name="description" content="On luyen DGNL DHQG Ha Noi (HSA) chuyen sau tai HappyEdu Hub. Chi 700.000d/thang. Uu dai nhom hap dan. Khai giang thang 6/2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0C3D6E;--navy-d:#071f38;--navy-m:#154f8a;
+  --gold:#F5B731;--gold-d:#c9921a;
+  --sky:#3B8FD4;--sky-p:#C8DFF5;
+  --bg:#EDF4FB;--white:#fff;--ink:#0f1f30;--muted:#5c7a96;--bdr:#cce0f5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+#nav.stuck{background:rgba(7,31,56,.96);backdrop-filter:blur(14px);box-shadow:0 2px 24px rgba(0,0,0,.25)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nl-i{width:36px;height:36px;border-radius:9px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.nl-t{font-size:16px;font-weight:800;color:#fff;line-height:1.1}
+.nl-t b{color:var(--gold)}
+.nav-btn{background:var(--gold);color:var(--navy-d);font-family:inherit;font-size:13px;font-weight:700;padding:9px 22px;border-radius:50px;border:none;text-decoration:none;cursor:pointer;transition:background .18s,transform .18s;white-space:nowrap}
+.nav-btn:hover{background:#fff;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy-d);display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(59,143,212,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(59,143,212,.07) 1px,transparent 1px);background-size:56px 56px}
+.hb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
+.hb1{width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(12,61,110,.7) 0%,transparent 65%)}
+.hb2{width:360px;height:360px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(245,183,49,.08) 0%,transparent 65%)}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:52px;align-items:center;padding:60px 0;width:100%}
+.kicker{display:inline-flex;align-items:center;gap:7px;background:rgba(245,183,49,.14);border:1px solid rgba(245,183,49,.35);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:5px 14px;border-radius:40px;margin-bottom:22px}
+.h1{font-size:clamp(2.5rem,5.5vw,3.8rem);font-weight:800;color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-.5px}
+.h1 .hl{color:var(--gold)}.h1 .dim{color:rgba(255,255,255,.38)}
+.hsub{font-size:15.5px;color:rgba(255,255,255,.6);line-height:1.72;margin-bottom:34px;max-width:460px}
+.hsub strong{color:var(--gold);font-weight:700}
+.hcta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy-d);font-family:inherit;font-size:15px;font-weight:700;padding:13px 28px;border-radius:50px;border:none;text-decoration:none;cursor:pointer;box-shadow:0 6px 22px rgba(245,183,49,.32);transition:background .2s,transform .2s,box-shadow .2s}
+.btn-gold:hover{background:#ffc93d;transform:translateY(-2px);box-shadow:0 10px 32px rgba(245,183,49,.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.6);font-size:14px;font-weight:600;text-decoration:none;transition:color .18s}
+.btn-ghost:hover{color:#fff}
+.hstats{display:flex;gap:32px;flex-wrap:wrap;margin-top:46px;padding-top:34px;border-top:1px solid rgba(255,255,255,.08)}
+.hs{display:flex;flex-direction:column}
+.hs-n{font-size:2rem;font-weight:800;color:var(--gold);line-height:1}
+.hs-l{font-size:11.5px;color:rgba(255,255,255,.4);margin-top:4px;font-weight:500}
+
+/* HERO CARD */
+.hcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:26px;backdrop-filter:blur(12px);animation:fadeUp .65s .15s both}
+.pp{background:linear-gradient(135deg,var(--gold),#e8a020);border-radius:14px;padding:18px 20px;text-align:center;margin-bottom:18px}
+.pp-amt{font-size:2.3rem;font-weight:800;color:var(--navy-d);line-height:1}
+.pp-sub{font-size:11.5px;font-weight:700;color:rgba(7,31,56,.55);margin-top:4px}
+.hrows{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.hrow{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.75)}
+.hrow .ck{width:19px;height:19px;border-radius:50%;background:rgba(245,183,49,.13);border:1px solid rgba(245,183,49,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;color:var(--gold)}
+.hcard-cta{display:block;text-align:center;background:#fff;color:var(--navy-d);font-family:inherit;font-size:14px;font-weight:700;padding:12px;border-radius:11px;text-decoration:none;transition:background .18s,transform .18s}
+.hcard-cta:hover{background:var(--gold);transform:translateY(-1px)}
+.gtease{margin-top:14px;background:rgba(245,183,49,.1);border:1px solid rgba(245,183,49,.22);border-radius:10px;padding:10px 13px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gold);font-weight:600;line-height:1.4}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-l{animation:fadeUp .6s ease both}
+
+/* MARQUEE */
+.mbar{background:var(--gold);padding:11px 0;overflow:hidden;white-space:nowrap}
+.mtrack{display:inline-flex;animation:mscroll 26s linear infinite}
+.mtrack span{font-size:12.5px;font-weight:700;color:var(--navy-d);padding:0 28px;letter-spacing:.4px}
+.mtrack span::after{content:' \2736';opacity:.35}
+@keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:88px 0}
+.sh{text-align:center;margin-bottom:56px}
+.stag{display:inline-flex;align-items:center;gap:6px;background:rgba(12,61,110,.07);border:1px solid rgba(12,61,110,.14);color:var(--navy-m);font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;padding:5px 13px;border-radius:30px;margin-bottom:12px}
+.sh h2{font-size:clamp(1.75rem,3.8vw,2.6rem);font-weight:800;color:var(--navy-d);line-height:1.15;letter-spacing:-.3px}
+.sh p{font-size:14.5px;color:var(--muted);margin-top:10px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto}
+
+/* WHY */
+.why{background:var(--bg)}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wcard{background:var(--white);border-radius:18px;padding:26px;border:1px solid var(--bdr);position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s}
+.wcard::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--sky));opacity:0;transition:opacity .2s}
+.wcard:hover{transform:translateY(-5px);box-shadow:0 18px 48px rgba(12,61,110,.1);border-color:var(--sky-p)}
+.wcard:hover::after{opacity:1}
+.wico{width:48px;height:48px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.wcard h3{font-size:15px;font-weight:700;color:var(--navy-d);margin-bottom:7px}
+.wcard p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* STRUCTURE */
+.struct{background:var(--white)}
+.sin{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.sl h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;color:var(--navy-d);line-height:1.15;margin:12px 0 14px}
+.sl p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:26px}
+.tots{display:flex;gap:12px;flex-wrap:wrap}
+.tot{display:inline-flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--bdr);border-radius:11px;padding:11px 16px}
+.tot .n{font-size:1.4rem;font-weight:800;color:var(--navy);line-height:1}
+.tot .l{font-size:11.5px;color:var(--muted);line-height:1.3}
+.pstack{display:flex;flex-direction:column;gap:13px}
+.pc{border-radius:15px;padding:18px 20px;border:1.5px solid var(--bdr);background:var(--white);transition:transform .2s,box-shadow .2s}
+.pc.req{border-color:var(--navy);background:rgba(12,61,110,.025)}
+.pc:hover{transform:translateX(4px);box-shadow:0 8px 24px rgba(12,61,110,.09)}
+.pt{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+.pn{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky)}
+.pb{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.6px;text-transform:uppercase}
+.pb.r{background:rgba(12,61,110,.1);color:var(--navy)}
+.pb.o{background:rgba(245,183,49,.18);color:var(--gold-d)}
+.pc h4{font-size:14px;font-weight:700;color:var(--navy-d);margin-bottom:5px}
+.pm{font-size:12px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+.popts{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap}
+.popt{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid var(--bdr);color:var(--navy);background:var(--bg)}
+
+/* PRICING */
+.pricing{background:var(--bg)}
+.price-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:780px;margin:0 auto}
+.pbox{background:var(--white);border-radius:22px;padding:30px 26px;border:1.5px solid var(--bdr);display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}
+.pbox:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(12,61,110,.1)}
+.pbox.main{background:var(--navy-d);border-color:var(--navy)}
+.pbox-nm{font-size:13px;font-weight:700;color:var(--navy-d);margin-bottom:3px;letter-spacing:.3px}
+.pbox.main .pbox-nm{color:rgba(255,255,255,.55)}
+.pbox-amt{font-size:2.4rem;font-weight:800;color:var(--navy-d);line-height:1;margin:10px 0 4px}
+.pbox.main .pbox-amt{color:var(--gold)}
+.pbox-unit{font-size:13px;color:var(--muted);margin-bottom:20px}
+.pbox.main .pbox-unit{color:rgba(255,255,255,.4)}
+.pbox-note{font-size:13px;font-weight:600;background:rgba(245,183,49,.14);border:1px solid rgba(245,183,49,.3);border-radius:9px;padding:9px 12px;color:#a06a00;margin-bottom:20px;line-height:1.5}
+.pbox.main .pbox-note{background:rgba(245,183,49,.1);border-color:rgba(245,183,49,.2);color:var(--gold)}
+.pdiv{height:1px;background:var(--bdr);margin-bottom:18px}
+.pbox.main .pdiv{background:rgba(255,255,255,.1)}
+.pfeats{display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:24px}
+.pf{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink)}
+.pbox.main .pf{color:rgba(255,255,255,.8)}
+.pf-ic{width:18px;height:18px;border-radius:50%;background:rgba(12,61,110,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:8.5px;color:var(--navy)}
+.pbox.main .pf-ic{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+.pbox-btn{display:block;text-align:center;padding:12px;border-radius:11px;font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:1.5px solid var(--bdr);background:var(--bg);color:var(--navy-d);transition:background .18s,color .18s}
+.pbox-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pbox.main .pbox-btn{background:var(--gold);color:var(--navy-d);border-color:transparent}
+.pbox.main .pbox-btn:hover{background:#ffd44a}
+.gbanner{margin-top:28px;background:linear-gradient(130deg,var(--navy-d),var(--navy-m));border-radius:20px;padding:32px 36px;display:flex;align-items:center;gap:28px}
+.gbi{font-size:3rem;flex-shrink:0}
+.gbb{flex:1}
+.gbb h3{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:6px}
+.gbb p{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.65}
+.gbtn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:var(--navy-d);font-family:inherit;font-size:14px;font-weight:700;padding:12px 24px;border-radius:50px;border:none;text-decoration:none;cursor:pointer;flex-shrink:0;transition:background .18s,transform .18s}
+.gbtn:hover{background:#ffd44a;transform:translateY(-1px)}
+
+/* TESTI */
+.testi{background:var(--white)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tc{background:var(--bg);border-radius:18px;padding:24px;border:1px solid var(--bdr);transition:box-shadow .22s,border-color .22s}
+.tc:hover{box-shadow:0 12px 36px rgba(12,61,110,.08);border-color:var(--sky-p)}
+.tc-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.tc-txt{font-size:13.5px;color:var(--ink);line-height:1.7;margin-bottom:16px;font-style:italic}
+.tc-au{display:flex;align-items:center;gap:10px}
+.tc-av{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
+.tc-nm{font-size:13px;font-weight:700;color:var(--navy-d)}
+.tc-sc{font-size:11.5px;color:var(--muted)}
+
+/* FAQ */
+.faq-sec{background:var(--bg)}
+.flist{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.fi{background:var(--white);border-radius:14px;border:1px solid var(--bdr);overflow:hidden;transition:border-color .2s}
+.fi.open{border-color:var(--sky-p);box-shadow:0 6px 22px rgba(12,61,110,.07)}
+.fq{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;gap:12px}
+.fq-t{font-size:14px;font-weight:600;color:var(--navy-d);line-height:1.4}
+.fq-i{width:26px;height:26px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;color:var(--navy);transition:background .2s,transform .2s}
+.fi.open .fq-i{background:var(--navy);color:#fff;transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.fi.open .fa{max-height:180px}
+.fa-in{padding:0 20px 16px;font-size:13.5px;color:var(--muted);line-height:1.7;border-top:1px solid var(--bdr);padding-top:13px}
+
+/* CTA FINAL */
+.ctaf{background:var(--navy-d);padding:88px 0;position:relative;overflow:hidden;text-align:center}
+.ctaf::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(59,143,212,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,143,212,.05) 1px,transparent 1px);background-size:56px 56px}
+.ctaf-in{position:relative;z-index:1}
+.cf-h{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;color:#fff;line-height:1.15;margin:16px 0 16px}
+.cf-h em{color:var(--gold);font-style:normal}
+.cf-p{font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.7;max-width:440px;margin:0 auto 32px}
+.cf-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-wh{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--navy-d);font-family:inherit;font-size:15px;font-weight:700;padding:13px 28px;border-radius:50px;text-decoration:none;transition:background .18s,transform .18s}
+.btn-wh:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ol{display:inline-flex;align-items:center;gap:7px;background:transparent;color:rgba(255,255,255,.65);font-family:inherit;font-size:14px;font-weight:600;padding:12px 24px;border-radius:50px;border:1.5px solid rgba(255,255,255,.2);text-decoration:none;transition:border-color .18s,color .18s}
+.btn-ol:hover{border-color:#fff;color:#fff}
+.cf-foot{margin-top:22px;font-size:12px;color:rgba(255,255,255,.25)}
+
+/* FOOTER */
+footer{background:#050e18;padding:36px 20px;text-align:center}
+.fl{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:14px}
+.fl-i{width:33px;height:33px;border-radius:8px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:16px}
+.fl-t{font-size:15px;font-weight:800;color:#fff}
+.fl-t b{color:var(--gold)}
+footer p{font-size:12px;color:rgba(255,255,255,.28);line-height:1.6}
+footer a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .15s}
+footer a:hover{color:var(--gold)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .55s ease,transform .55s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .hero-in{grid-template-columns:1fr;gap:36px}
+  .hcard{max-width:420px}
+  .wgrid{grid-template-columns:1fr 1fr}
+  .sin{grid-template-columns:1fr;gap:36px}
+  .price-row{grid-template-columns:1fr;max-width:420px}
+  .tgrid{grid-template-columns:1fr}
+  .gbanner{flex-direction:column;text-align:center;padding:24px}
+}
+@media(max-width:560px){
+  .wgrid{grid-template-columns:1fr}
+  .hstats{gap:20px}
+  nav{padding:11px 16px}
+  .hs-n{font-size:1.7rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nl" href="#">
+    <div class="nl-i">&#127891;</div>
+    <div class="nl-t">Happy<b>Edu</b> Hub</div>
+  </a>
+  <a class="nav-btn" href="/dang-ky-hsa">&#9998; &#272;&#259;ng k&#253; ngay</a>
+</nav>
+
+<section class="hero">
+  <div class="hb hb1"></div>
+  <div class="hb hb2"></div>
+  <div class="w">
+    <div class="hero-in">
+      <div class="hero-l">
+        <div class="kicker">&#128197; Khai gi&#7843;ng th&#225;ng 6 &middot; 2026</div>
+        <h1 class="h1">
+          Chinh ph&#7909;c<br>
+          <span class="hl">HSA &ndash; &#272;GNL</span><br>
+          <span class="dim">&#272;HQG H&#224; N&#7897;i</span>
+        </h1>
+        <p class="hsub">L&#7897; tr&#236;nh &#244;n luy&#7879;n b&#224;i b&#7843;n, &#273;&#7897;i ng&#361; gi&#225;o vi&#234;n kinh nghi&#7879;m, h&#7885;c ph&#237; ch&#7881; <strong>700.000&#273;/th&#225;ng</strong>. D&#224;nh ri&#234;ng cho h&#7885;c sinh l&#7899;p 11 l&#234;n 12.</p>
+        <div class="hcta">
+          <a class="btn-gold" href="/dang-ky-hsa">&#9998; &#272;&#259;ng k&#253; h&#7885;c th&#7917; mi&#7877;n ph&#237;</a>
+          <a class="btn-ghost" href="#cau-truc">Xem c&#7845;u tr&#250;c &#273;&#7873; &#8594;</a>
+        </div>
+        <!-- <div class="hstats">
+          <div class="hs"><span class="hs-n">3+</span><span class="hs-l">N&#259;m kinh nghi&#7879;m<br>luy&#7879;n thi</span></div>
+          <div class="hs"><span class="hs-n">500+</span><span class="hs-l">H&#7885;c sinh &#273;&#227;<br>theo h&#7885;c</span></div>
+          <div class="hs"><span class="hs-n">85%</span><span class="hs-l">&#272;&#7841;t tr&#234;n<br>80/150 &#273;i&#7875;m</span></div>
+          <div class="hs"><span class="hs-n">700K</span><span class="hs-l">H&#7885;c ph&#237;<br>m&#7895;i th&#225;ng</span></div>
+        </div> -->
+      </div>
+      <div>
+        <div class="hcard">
+          <div class="pp">
+            <div class="pp-amt">700.000&#273;</div>
+            <div class="pp-sub">/ th&#225;ng / h&#7885;c sinh</div>
+          </div>
+          <div class="hrows">
+            <div class="hrow"><div class="ck">&#10003;</div> &#212;n &#273;&#7911; 3 ph&#7847;n b&#224;i thi HSA</div>
+            <div class="hrow"><div class="ck">&#10003;</div> L&#7899;p nh&#7887; &mdash; t&#7889;i &#273;a 15 h&#7885;c sinh</div>
+            <div class="hrow"><div class="ck">&#10003;</div> T&#224;i li&#7879;u &#244;n luy&#7879;n &#273;&#7897;c quy&#7873;n</div>
+            <div class="hrow"><div class="ck">&#10003;</div> H&#7895; tr&#7907; online 24/7 qua Zalo</div>
+            <div class="hrow"><div class="ck">&#10003;</div> Thi th&#7917; h&#224;ng th&#225;ng c&#243; ch&#7845;m &#273;i&#7875;m</div>
+          </div>
+          <a class="hcard-cta" href="/dang-ky-hsa">&#272;&#259;ng k&#253; ngay &rarr;</a>
+          <div class="gtease">&#128101; &#272;&#259;ng k&#253; theo nh&#243;m &mdash; nhi&#7873;u &#432;u &#273;&#227;i h&#7845;p d&#7851;n h&#417;n!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mbar">
+  <div class="mtrack">
+    <span>&#272;GNL &#272;HQG H&#224; N&#7897;i</span><span>HSA 2026&ndash;2027</span><span>To&#225;n h&#7885;c &amp; X&#7917; l&#253; s&#7889; li&#7879;u</span><span>V&#259;n h&#7885;c &amp; Ng&#244;n ng&#7919;</span><span>Khoa h&#7885;c / Ti&#7871;ng Anh</span><span>150 &#273;i&#7875;m &middot; 195 ph&#250;t</span><span>L&#7899;p h&#7885;c ch&#7845;t l&#432;&#7907;ng cao</span><span>Khai gi&#7843;ng th&#225;ng 6/2026</span>
+    <span>&#272;GNL &#272;HQG H&#224; N&#7897;i</span><span>HSA 2026&ndash;2027</span><span>To&#225;n h&#7885;c &amp; X&#7917; l&#253; s&#7889; li&#7879;u</span><span>V&#259;n h&#7885;c &amp; Ng&#244;n ng&#7919;</span><span>Khoa h&#7885;c / Ti&#7871;ng Anh</span><span>150 &#273;i&#7875;m &middot; 195 ph&#250;t</span><span>L&#7899;p h&#7885;c ch&#7845;t l&#432;&#7907;ng cao</span><span>Khai gi&#7843;ng th&#225;ng 6/2026</span>
+  </div>
+</div>
+
+<section class="why">
+  <div class="w">
+    <div class="sh rv">
+      <div class="stag">&#11088; T&#7841;i sao ch&#7885;n ch&#250;ng t&#244;i</div>
+      <h2>H&#7885;c &#273;&#250;ng &middot; H&#7885;c &#273;&#7911; &middot; H&#7885;c hi&#7879;u qu&#7843;</h2>
+      <p>HappyEdu Hub x&#226;y d&#7921;ng l&#7897; tr&#236;nh &#244;n luy&#7879;n HSA khoa h&#7885;c, b&#225;m s&#225;t c&#7845;u tr&#250;c &#273;&#7873; thi th&#7921;c t&#7871;.</p>
+    </div>
+    <div class="wgrid">
+      <div class="wcard rv d1"><div class="wico">&#127919;</div><h3>B&#225;m s&#225;t &#273;&#7873; thi HSA</h3><p>To&#224;n b&#7897; n&#7897;i dung thi&#7871;t k&#7871; theo c&#7845;u tr&#250;c 3 ph&#7847;n, c&#7853;p nh&#7853;t li&#234;n t&#7909;c theo &#273;&#7873; g&#7889;c.</p></div>
+      <div class="wcard rv d2"><div class="wico">&#128104;&#8205;&#127979;</div><h3>Gi&#225;o vi&#234;n chuy&#234;n m&#244;n cao</h3><p>&#272;&#7897;i ng&#361; nhi&#7873;u n&#259;m kinh nghi&#7879;m, n&#7855;m v&#7919;ng &#273;&#7863;c th&#249; t&#7915;ng ph&#7847;n thi, truy&#7873;n &#273;&#7841;t r&#245; r&#224;ng.</p></div>
+      <div class="wcard rv d3"><div class="wico">&#128202;</div><h3>Theo d&#245;i ti&#7871;n &#273;&#7897; c&#225; nh&#226;n</h3><p>B&#225;o c&#225;o &#273;i&#7875;m s&#7889; &#273;&#7883;nh k&#7923; qua thi th&#7917; h&#224;ng th&#225;ng, gi&#225;o vi&#234;n t&#432; v&#7845;n &#273;i&#7875;m y&#7871;u.</p></div>
+      <div class="wcard rv d1"><div class="wico">&#128336;</div><h3>L&#7883;ch h&#7885;c linh ho&#7841;t</h3><p>6 khung gi&#7901; m&#7895;i ng&#224;y t&#7915; th&#7913; 2 &#273;&#7871;n th&#7913; 7, ch&#7911; &#273;&#7897;ng ch&#7885;n ca ph&#249; h&#7907;p.</p></div>
+      <div class="wcard rv d2"><div class="wico">&#128172;</div><h3>H&#7895; tr&#7907; 24/7 qua Zalo</h3><p>Gi&#7843;i &#273;&#225;p th&#7855;c m&#7855;c ngay qua nh&#243;m Zalo l&#7899;p, kh&#244;ng c&#7847;n ch&#7901; bu&#7893;i h&#7885;c k&#7871; ti&#7871;p.</p></div>
+      <div class="wcard rv d3"><div class="wico">&#128100;</div><h3>&#431;u &#273;&#227;i khi h&#7885;c nh&#243;m</h3><p>&#272;&#259;ng k&#253; c&#249;ng b&#7841;n b&#232; &mdash; c&#224;ng &#273;&#244;ng c&#224;ng c&#243; nhi&#7873;u &#432;u &#273;&#227;i. V&#7915;a ti&#7871;t ki&#7879;m v&#7915;a t&#259;ng &#273;&#7897;ng l&#7921;c!</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="struct" id="cau-truc">
+  <div class="w">
+    <div class="sin">
+      <div class="sl rv">
+        <div class="stag">&#128203; C&#7845;u tr&#250;c &#273;&#7873; thi</div>
+        <h2>B&#224;i thi HSA &mdash; 3 ph&#7847;n r&#245; r&#224;ng</h2>
+        <p>B&#224;i thi &#272;GNL &#272;HQG H&#224; N&#7897;i (HSA) g&#7891;m 3 ph&#7847;n v&#7899;i t&#7893;ng 150 &#273;i&#7875;m, l&#224;m b&#224;i trong 195 ph&#250;t.</p>
+        <div class="tots">
+          <div class="tot"><span class="n">150</span><span class="l">&#273;i&#7875;m<br>t&#7893;ng</span></div>
+          <div class="tot"><span class="n">195</span><span class="l">ph&#250;t<br>l&#224;m b&#224;i</span></div>
+          <div class="tot"><span class="n">150</span><span class="l">c&#226;u<br>h&#7887;i</span></div>
+        </div>
+      </div>
+      <div class="pstack rv d1">
+        <div class="pc req">
+          <div class="pt"><span class="pn">Ph&#7847;n 1</span><span class="pb r">B&#7855;t bu&#7897;c</span></div>
+          <h4>To&#225;n h&#7885;c &amp; X&#7917; l&#253; s&#7889; li&#7879;u</h4>
+          <div class="pm"><span>&#128221; 50 c&#226;u</span><span>&#8987; 75 ph&#250;t</span><span>&#129518; T&#432; duy &#273;&#7883;nh l&#432;&#7907;ng</span></div>
+          <p style="font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5">35 c&#226;u tr&#7855;c nghi&#7879;m + 15 c&#226;u &#273;i&#7873;n &#273;&#225;p &#225;n</p>
+        </div>
+        <div class="pc req">
+          <div class="pt"><span class="pn">Ph&#7847;n 2</span><span class="pb r">B&#7855;t bu&#7897;c</span></div>
+          <h4>V&#259;n h&#7885;c &amp; Ng&#244;n ng&#7919;</h4>
+          <div class="pm"><span>&#128221; 50 c&#226;u</span><span>&#8987; 60 ph&#250;t</span><span>&#128218; T&#432; duy &#273;&#7883;nh t&#237;nh</span></div>
+          <p style="font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5">50 c&#226;u tr&#7855;c nghi&#7879;m kh&#225;ch quan</p>
+        </div>
+        <div class="pc">
+          <div class="pt"><span class="pn">Ph&#7847;n 3</span><span class="pb o">T&#7921; ch&#7885;n</span></div>
+          <h4>Khoa h&#7885;c ho&#7863;c Ti&#7871;ng Anh</h4>
+          <div class="pm"><span>&#128221; 50 c&#226;u</span><span>&#8987; 60 ph&#250;t</span></div>
+          <div class="popts">
+            <span class="popt">&#127758; Ti&#7871;ng Anh</span>
+            <span class="popt">&#9883; V&#7853;t l&#237;</span>
+            <span class="popt">&#129514; H&#243;a h&#7885;c</span>
+            <span class="popt">&#129514; Sinh h&#7885;c</span>
+            <span class="popt">&#128220; L&#7883;ch s&#7917;</span>
+            <span class="popt">&#128506; &#272;&#7883;a l&#237;</span>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5">Ch&#7885;n Ti&#7871;ng Anh &mdash; ho&#7863;c ch&#7885;n 3 trong 5 m&#244;n Khoa h&#7885;c</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="hoc-phi">
+  <div class="w">
+    <div class="sh rv">
+      <div class="stag">&#128179; H&#7885;c ph&#237;</div>
+      <h2>Minh b&#7841;ch &middot; Kh&#244;ng ph&#225;t sinh</h2>
+      <p>H&#7885;c ph&#237; ni&#234;m y&#7871;t r&#245; r&#224;ng, bao g&#7891;m t&#224;i li&#7879;u v&#224; thi th&#7917;. &#272;&#259;ng k&#253; nh&#243;m c&#224;ng &#273;&#244;ng c&#224;ng c&#243; nhi&#7873;u &#432;u &#273;&#227;i h&#7845;p d&#7851;n.</p>
+    </div>
+    <div class="price-row">
+      <div class="pbox rv d1">
+        <div class="pbox-nm">C&#225; nh&#226;n</div>
+        <div class="pbox-amt">700.000&#273;</div>
+        <div class="pbox-unit">/ th&#225;ng</div>
+        <div class="pdiv"></div>
+        <div class="pfeats">
+          <div class="pf"><div class="pf-ic">&#10003;</div> &#212;n &#273;&#7911; 3 ph&#7847;n HSA</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> L&#7899;p t&#7889;i &#273;a 15 h&#7885;c sinh</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> T&#224;i li&#7879;u &#244;n luy&#7879;n &#273;&#7847;y &#273;&#7911;</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> Thi th&#7917; h&#224;ng th&#225;ng</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> H&#7895; tr&#7907; Zalo h&#7885;c t&#7853;p</div>
+        </div>
+        <a href="/dang-ky-hsa" class="pbox-btn">&#272;&#259;ng k&#253; ngay &rarr;</a>
+      </div>
+      <div class="pbox main rv d2">
+        <div class="pbox-nm">&#272;&#259;ng k&#253; nh&#243;m</div>
+        <div class="pbox-amt">&#431;u &#273;&#227;i</div>
+        <div class="pbox-unit">c&#224;ng &#273;&#244;ng c&#224;ng ti&#7871;t ki&#7879;m</div>
+        <div class="pbox-note">&#128101; R&#7911; b&#7841;n c&#249;ng h&#7885;c &mdash; nh&#7853;n ngay nhi&#7873;u &#432;u &#273;&#227;i! Li&#234;n h&#7879; &#273;&#7875; bi&#7871;t m&#7913;c c&#7909; th&#7875;.</div>
+        <div class="pdiv"></div>
+        <div class="pfeats">
+          <div class="pf"><div class="pf-ic">&#10003;</div> T&#7845;t c&#7843; quy&#7873;n l&#7907;i g&#243;i c&#225; nh&#226;n</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> Gi&#7843;m h&#7885;c ph&#237; h&#7845;p d&#7851;n theo s&#7889; &#273;&#432;&#7901;ng</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> &#431;u ti&#234;n ch&#7885;n ca h&#7885;c theo nh&#243;m</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> Nh&#243;m Zalo ri&#234;ng v&#7899;i gi&#225;o vi&#234;n</div>
+          <div class="pf"><div class="pf-ic">&#10003;</div> B&#225;o c&#225;o ti&#7871;n &#273;&#7897; c&#225; nh&#226;n h&#224;ng th&#225;ng</div>
+        </div>
+        <a href="/dang-ky-hsa" class="pbox-btn">&#272;&#259;ng k&#253; nh&#243;m &rarr;</a>
+      </div>
+    </div>
+    <div class="gbanner rv">
+      <div class="gbi">&#128101;</div>
+      <div class="gbb">
+        <h3>R&#7911; b&#7841;n b&#232; &mdash; nhi&#7873;u &#432;u &#273;&#227;i, th&#234;m &#273;&#7897;ng l&#7921;c!</h3>
+        <p>H&#7885;c nh&#243;m kh&#244;ng ch&#7881; ti&#7871;t ki&#7879;m m&#224; c&#242;n gi&#250;p c&#225;c b&#7841;n c&#249;ng nhau &#244;n b&#224;i v&#224; t&#7841;o &#273;&#7897;ng l&#7921;c chinh ph&#7909;c HSA hi&#7879;u qu&#7843; h&#417;n. Li&#234;n h&#7879; &#273;&#7875; &#273;&#432;&#7907;c t&#432; v&#7845;n m&#7913;c &#432;u &#273;&#227;i c&#7909; th&#7875;!</p>
+      </div>
+      <a class="gbtn" href="/dang-ky-hsa">&#272;&#259;ng k&#253; nh&#243;m &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="testi">
+  <div class="w">
+    <div class="sh rv">
+      <div class="stag">&#128172; C&#7843;m nh&#7853;n h&#7885;c sinh</div>
+      <h2>K&#7871;t qu&#7843; th&#7921;c t&#7871; t&#7915; h&#7885;c sinh HappyEdu</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tc rv d1">
+        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tc-txt">&#8220;M&#236;nh &#273;&#259;ng k&#253; t&#7915; &#273;&#7847;u h&#232;, sau 2 th&#225;ng &#273;i&#7875;m thi th&#7917; t&#259;ng t&#7915; 65 l&#234;n 98/150. Ph&#432;&#417;ng ph&#225;p d&#7841;y &#7903; &#273;&#226;y r&#7845;t kh&#225;c, kh&#244;ng h&#7885;c v&#7865;t m&#224; hi&#7875;u b&#7843;n ch&#7845;t.&#8221;</p>
+        <div class="tc-au"><div class="tc-av">MN</div><div><div class="tc-nm">Minh Nguy&#7879;t</div><div class="tc-sc">THPT Vi&#7879;t &#272;&#7913;c &middot; &#272;&#7841;t 112/150</div></div></div>
+      </div>
+      <div class="tc rv d2">
+        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tc-txt">&#8220;M&#236;nh v&#7899;i 4 b&#7841;n &#273;&#259;ng k&#253; nh&#243;m, v&#7915;a r&#7867; h&#417;n v&#7915;a vui h&#417;n h&#7859;n. Th&#7847;y c&#244; nhi&#7879;t t&#236;nh l&#7855;m, h&#7887;i Zalo l&#250;c 11h &#273;&#234;m v&#7851;n &#273;&#432;&#7907;c tr&#7843; l&#7901;i.&#8221;</p>
+        <div class="tc-au"><div class="tc-av" style="background:var(--sky)">TH</div><div><div class="tc-nm">Ti&#7871;n Ho&#224;ng</div><div class="tc-sc">THPT Chu V&#259;n An &middot; Nh&#243;m 5 ng&#432;&#7901;i</div></div></div>
+      </div>
+      <div class="tc rv d3">
+        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tc-txt">&#8220;Ph&#7847;n 3 m&#236;nh ch&#7885;n Khoa h&#7885;c, th&#7847;y d&#7841;y c&#225;ch ch&#7885;n 3 m&#244;n ph&#249; h&#7907;p nh&#7845;t. R&#7845;t ti&#7871;t ki&#7879;m th&#7901;i gian v&#224; hi&#7879;u qu&#7843; h&#417;n nhi&#7873;u.&#8221;</p>
+        <div class="tc-au"><div class="tc-av" style="background:var(--gold-d)">LP</div><div><div class="tc-nm">Lan Ph&#432;&#417;ng</div><div class="tc-sc">THPT Tr&#7847;n Ph&#250; &middot; &#272;&#7841;t 105/150</div></div></div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="faq-sec">
+  <div class="w">
+    <div class="sh rv">
+      <div class="stag">&#10067; C&#226;u h&#7887;i th&#432;&#7901;ng g&#7863;p</div>
+      <h2>B&#7841;n &#273;ang th&#7855;c m&#7855;c &#273;i&#7873;u g&#236;?</h2>
+    </div>
+    <div class="flist">
+      <div class="fi rv" onclick="doFaq(this)">
+        <div class="fq"><span class="fq-t">Kh&#243;a h&#7885;c ph&#249; h&#7907;p v&#7899;i h&#7885;c sinh n&#224;o?</span><div class="fq-i">+</div></div>
+        <div class="fa"><div class="fa-in">Kh&#243;a h&#7885;c d&#224;nh cho h&#7885;c sinh l&#7899;p 11 l&#234;n 12, mu&#7889;n chu&#7849;n b&#7883; s&#7899;m cho k&#7923; thi HSA n&#259;m 2026&ndash;2027. H&#7885;c sinh c&#243; th&#7875; b&#7855;t &#273;&#7847;u t&#7915; m&#7913;c zero.</div></div>
+      </div>
+      <div class="fi rv d1" onclick="doFaq(this)">
+        <div class="fq"><span class="fq-t">H&#7885;c ph&#237; 700.000&#273;/th&#225;ng bao g&#7891;m nh&#7919;ng g&#236;?</span><div class="fq-i">+</div></div>
+        <div class="fa"><div class="fa-in">Bao g&#7891;m to&#224;n b&#7897; bu&#7893;i h&#7885;c, t&#224;i li&#7879;u in s&#7861;n, 1 b&#224;i thi th&#7917;/th&#225;ng c&#243; ch&#7845;m chi ti&#7871;t, v&#224; h&#7895; tr&#7907; Zalo. Kh&#244;ng ph&#225;t sinh th&#234;m b&#7845;t k&#7923; kho&#7843;n ph&#237;.</div></div>
+      </div>
+      <div class="fi rv" onclick="doFaq(this)">
+        <div class="fq"><span class="fq-t">&#272;&#259;ng k&#253; nh&#243;m c&#243; &#432;u &#273;&#227;i g&#236;?</span><div class="fq-i">+</div></div>
+        <div class="fa"><div class="fa-in">H&#7885;c nh&#243;m s&#7869; &#273;&#432;&#7907;c gi&#7843;m h&#7885;c ph&#237; h&#7845;p d&#7851;n &mdash; c&#224;ng nhi&#7873;u ng&#432;&#7901;i c&#224;ng nhi&#7873;u &#432;u &#273;&#227;i. Ngo&#224;i ra c&#242;n &#273;&#432;&#7907;c &#432;u ti&#234;n ch&#7885;n ca, nh&#243;m Zalo ri&#234;ng v&#224; b&#225;o c&#225;o ti&#7871;n &#273;&#7897;. Li&#234;n h&#7879; &#273;&#7875; bi&#7871;t c&#7909; th&#7875;!</div></div>
+      </div>
+      <div class="fi rv d1" onclick="doFaq(this)">
+        <div class="fq"><span class="fq-t">M&#7895;i tu&#7847;n h&#7885;c m&#7845;y bu&#7893;i?</span><div class="fq-i">+</div></div>
+        <div class="fa"><div class="fa-in">Ti&#234;u chu&#7849;n 2&ndash;3 bu&#7893;i/tu&#7847;n, m&#7895;i bu&#7893;i 90 ph&#250;t. C&#243; 6 khung gi&#7901; m&#7895;i ng&#224;y t&#7915; th&#7913; 2 &#273;&#7871;n th&#7913; 7 &#273;&#7875; ch&#7885;n linh ho&#7841;t.</div></div>
+      </div>
+      <div class="fi rv" onclick="doFaq(this)">
+        <div class="fq"><span class="fq-t">C&#243; h&#7885;c th&#7917; tr&#432;&#7899;c khi &#273;&#243;ng h&#7885;c ph&#237; kh&#244;ng?</span><div class="fq-i">+</div></div>
+        <div class="fa"><div class="fa-in">C&#243;! H&#7885;c sinh &#273;&#432;&#7907;c h&#7885;c th&#7917; 1 bu&#7893;i mi&#7877;n ph&#237; tr&#432;&#7899;c khi quy&#7871;t &#273;&#7883;nh &#273;&#259;ng k&#253; ch&#237;nh th&#7913;c.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaf" id="dang-ky">
+  <div class="w ctaf-in">
+    <div class="kicker" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)">&#9998; &#272;&#259;ng k&#253; ngay</div>
+    <h2 class="cf-h">B&#7855;t &#273;&#7847;u h&#224;nh tr&#236;nh<br>chinh ph&#7909;c <em>HSA 2026</em></h2>
+    <p class="cf-p">Khai gi&#7843;ng th&#225;ng 6/2026. &#272;i&#7873;n form &#273;&#259;ng k&#253; &mdash; ch&#250;ng t&#244;i s&#7869; li&#234;n h&#7879; x&#225;c nh&#7853;n l&#7883;ch h&#7885;c trong v&#242;ng 24h.</p>
+    <div class="cf-btns">
+      <a class="btn-wh" href="/dang-ky-hsa">&#9998; &#272;i&#7873;n form &#273;&#259;ng k&#253;</a>
+      <a class="btn-ol" href="tel:0817219986">&#128222; 0817 219 986</a>
+    </div>
+    <div class="cf-foot">&#128274; Th&#244;ng tin b&#7843;o m&#7853;t &middot; Kh&#244;ng spam &middot; Ph&#7843;n h&#7891;i trong 24h</div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">
+    <div class="fl-i">&#127891;</div>
+    <div class="fl-t">Happy<b>Edu</b> Hub</div>
+  </div>
+  <p>Trung t&#226;m &#244;n luy&#7879;n &#272;GNL &amp; &#272;GTD chuy&#234;n s&#226;u cho h&#7885;c sinh l&#7899;p 11 &ndash; 12</p>
+  <p style="margin-top:10px">
+    <a href="/dang-ky-hsa">Form &#273;&#259;ng k&#253;</a> &nbsp;&middot;&nbsp;
+    <a href="#">Ch&#237;nh s&#225;ch b&#7843;o m&#7853;t</a> &nbsp;&middot;&nbsp;
+    <a href="#">Li&#234;n h&#7879;</a>
+  </p>
+  <p style="margin-top:14px">&#169; 2026 HappyEdu Hub. All rights reserved.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('stuck',window.scrollY>50);
+});
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')});
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+function doFaq(item){
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+</script>
+</body>
+</html>
