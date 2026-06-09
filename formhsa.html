@@ -978,7 +978,7 @@
         <!-- ── DYNAMIC SUBJECT BLOCKS ── -->
         <div class="subject-sections" id="subject-sections">
 
-          <!-- ĐGNL ĐHQG HN: 3 phần theo cấu trúc HSA -->
+          <!-- ĐGNL ĐHQG HN -->
           <div class="subject-block" id="block-DGNL_HN">
             <div class="subject-block-inner">
               <div class="subject-block-title">
@@ -987,7 +987,6 @@
                 <span class="prompt">Cấu trúc 3 phần · 150 điểm · 195 phút</span>
               </div>
 
-              <!-- Phần 1 + 2: Bắt buộc -->
               <div style="font-size:11px;font-weight:700;color:#378ADD;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;">Bắt buộc</div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px;">
                 <div class="full-card" style="padding:12px 14px;">
@@ -1006,7 +1005,6 @@
                 </div>
               </div>
 
-              <!-- Phần 3: Tự chọn -->
               <div style="font-size:11px;font-weight:700;color:#378ADD;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;">Phần 3 – Tự chọn <span style="font-weight:400;text-transform:none;letter-spacing:0;">(50 câu · 60 phút)</span></div>
               <div class="radio-grid" style="margin-bottom:10px;">
                 <label class="radio-card" onclick="pickRadio(this,'hsa_p3'); toggleHsaP3('tieng_anh')">
@@ -1027,7 +1025,6 @@
                 </label>
               </div>
 
-              <!-- Sub-block: chọn môn Khoa học (hiện khi chọn Khoa học) -->
               <div id="hsa-khoa-hoc" style="overflow:hidden;max-height:0;opacity:0;transition:max-height .3s ease,opacity .25s ease;">
                 <div class="info-note" style="margin-bottom:10px;">
                   💡 Chọn <strong>3 trong 5 môn</strong> bạn muốn ôn luyện:
@@ -1299,15 +1296,12 @@
       const grid = document.getElementById('schedule-grid');
       SESSIONS.forEach((sess, si) => {
         const isLast = si === SESSIONS.length - 1;
-
-        // Session label cell
         const sessCell = document.createElement('div');
         sessCell.className = 'sch-session' + (isLast ? ' sch-row-last' : '');
         sessCell.innerHTML = `<span>${sess.label}</span><span class="st">${sess.time}</span>`;
         grid.appendChild(sessCell);
 
-        // Day cells
-        DAYS.forEach((day, di) => {
+        DAYS.forEach((day) => {
           const key = `${sess.id}_${day}`;
           scheduleState[key] = false;
 
@@ -1354,7 +1348,6 @@
       return result;
     }
 
-    // ── Toggle Phần 3 HSA: Tiếng Anh vs Khoa học ──
     function toggleHsaP3(type) {
       const kh = document.getElementById('hsa-khoa-hoc');
       if (type === 'khoa_hoc') {
@@ -1363,7 +1356,6 @@
       } else {
         kh.style.maxHeight = '0';
         kh.style.opacity = '0';
-        // uncheck all khoa hoc
         document.querySelectorAll('input[name="hsa_khoa_hoc"]').forEach(cb => {
           cb.checked = false;
           cb.closest('.sel-card').classList.remove('on');
@@ -1371,12 +1363,10 @@
       }
     }
 
-    // ── Toggle Khoa học checkbox (max 3) ──
     function toggleKhoaHoc(el) {
       const cb = el.querySelector('input');
       const checked = document.querySelectorAll('input[name="hsa_khoa_hoc"]:checked');
       if (!cb.checked && checked.length >= 3) {
-        // prevent checking more than 3
         setTimeout(() => {
           cb.checked = false;
           el.classList.remove('on');
@@ -1388,11 +1378,8 @@
       setTimeout(() => el.classList.toggle('on', cb.checked), 0);
     }
 
-
-
     buildSchedule();
 
-    // ── Toggle exam checkbox + show/hide subject block ──
     function toggleExam(el, examId) {
       const cb = el.querySelector('input');
       setTimeout(() => {
@@ -1403,13 +1390,11 @@
       }, 0);
     }
 
-    // ── Toggle generic checkbox card ──
     function toggleCard(el) {
       const cb = el.querySelector('input');
       setTimeout(() => el.classList.toggle('on', cb.checked), 0);
     }
 
-    // ── Pick radio card ──
     function pickRadio(el, name) {
       document.querySelectorAll(`.radio-card input[name="${name}"]`).forEach(r => {
         r.closest('.radio-card').classList.remove('on');
@@ -1490,6 +1475,19 @@
       setTimeout(() => t.style.display = 'none', 5000);
     }
 
+    function resetForm(name) {
+      document.getElementById('frm').reset();
+      document.querySelectorAll('.sel-card, .radio-card').forEach(el => el.classList.remove('on'));
+      document.querySelectorAll('.subject-block').forEach(el => el.classList.remove('visible'));
+      document.getElementById('grade-warn').style.display = 'none';
+      Object.keys(scheduleState).forEach(k => scheduleState[k] = false);
+      document.querySelectorAll('.sch-check').forEach(c => c.classList.remove('on'));
+      document.getElementById('sch-counter').style.display = 'none';
+      const kh = document.getElementById('hsa-khoa-hoc');
+      kh.style.maxHeight = '0';
+      kh.style.opacity = '0';
+    }
+
     document.getElementById('frm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const err = validate();
@@ -1512,10 +1510,7 @@
       const note       = document.getElementById('note').value.trim();
       const scheduleSlots = getScheduleSelected();
 
-      // Build subject selection per exam
-      const fixedSubjects = {
-        'DGTD_BK': 'Toán · Vật Lý · Hóa học (học đủ)',
-      };
+      const fixedSubjects = { 'DGTD_BK': 'Toán · Vật Lý · Hóa học (học đủ)' };
       const subjectChoices = {};
       exams.forEach(ex => {
         if (ex === 'DGNL_HN') {
@@ -1533,6 +1528,9 @@
 
       const dobMap = { '11': '2009-01-01', '12': '2008-01-01' };
       const dob = new Date(dobMap[grade] || '2007-01-01').toISOString();
+
+      // Payload registration_info dùng chung cho cả 2 nhánh
+      const registrationInfo = { exams, subjectChoices, schoolYear, scheduleSlots, note: note || null };
 
       let errMsg = null;
       try {
@@ -1552,36 +1550,42 @@
               first_contact_tel: pphone,
               class: cls || null,
               school: school || null,
-              registration_info: { exams, subjectChoices, schoolYear, scheduleSlots, note: note || null }
+              registration_info: registrationInfo
             }
           })
         });
+
         const json = await res.json();
-        if (!res.ok) errMsg = json?.message || 'Tạo tài khoản thất bại.';
+
+        if (res.status === 409 && json.user_id) {
+          // ── Học sinh đã tồn tại → update registration_info qua route public ──
+          const putRes = await fetch(`${API}/student-data/${json.user_id}/registration`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ registration_info: registrationInfo })
+          });
+          if (!putRes.ok) {
+            const putJson = await putRes.json();
+            errMsg = putJson?.message || 'Cập nhật thông tin thất bại.';
+          }
+        } else if (!res.ok) {
+          errMsg = json?.message || 'Tạo tài khoản thất bại.';
+        }
+
       } catch (ex) {
         errMsg = 'Không kết nối được máy chủ.';
       }
 
+      btn.disabled = false;
+      btn.innerHTML = 'Gửi Đăng Ký';
+
       if (errMsg) {
-        btn.disabled = false;
-        btn.innerHTML = 'Gửi Đăng Ký';
         toast('Có lỗi xảy ra', errMsg, true);
         return;
       }
 
-      btn.disabled = false;
-      btn.innerHTML = 'Gửi Đăng Ký';
       toast('✅ Đăng ký thành công!', `Cảm ơn ${name}! Chúng tôi sẽ liên hệ sớm.`);
-
-      document.getElementById('frm').reset();
-      document.querySelectorAll('.sel-card, .radio-card').forEach(el => el.classList.remove('on'));
-      document.querySelectorAll('.subject-block').forEach(el => el.classList.remove('visible'));
-      document.getElementById('grade-warn').style.display = 'none';
-      Object.keys(scheduleState).forEach(k => scheduleState[k] = false);
-      document.querySelectorAll('.sch-check').forEach(c => c.classList.remove('on'));
-      document.getElementById('sch-counter').style.display = 'none';
-      const kh = document.getElementById('hsa-khoa-hoc');
-      kh.style.maxHeight = '0'; kh.style.opacity = '0';
+      resetForm(name);
     });
   </script>
 </body>
